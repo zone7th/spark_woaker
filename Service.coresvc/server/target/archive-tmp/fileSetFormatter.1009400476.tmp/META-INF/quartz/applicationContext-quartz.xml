@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- 要调用的工作类 -->
+	<bean id="safetySourceSynQuartz" class="com.iflytek.epdcloud.epsp.quartz.SafetySourceSynQuartz"></bean>
+	<!-- 定义调用对象和调用对象的方法 -->
+	<bean id="safetySourceSynQuartzJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 调用的类 -->
+		<property name="targetObject">
+			<ref bean="safetySourceSynQuartz" />
+		</property>
+		<!-- 调用类中的方法 -->
+		<property name="targetMethod">
+			<value>execute</value>
+		</property>
+	</bean>
+	<!-- 定义触发时间 -->
+	<bean id="doTimesafetySourceSynQuartzJob" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="safetySourceSynQuartzJob" />
+		</property>
+		<!-- cron表达式 -->
+		<property name="cronExpression">
+			<value>0 20 19 ? * *</value>
+			<!-- <value>0, * * * * ?</value> -->
+		</property>
+	</bean>
+	<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+	    <property name="rejectedExecutionHandler">
+	        <bean class="java.util.concurrent.ThreadPoolExecutor$DiscardPolicy" />
+	    </property>
+	    <!--线程池维护线程的最少数量 -->
+	    <property name="corePoolSize" value="5" />
+	    <!--线程池维护线程的最大数量 -->  
+	    <property name="maxPoolSize" value="20" />
+	    <!--线程池所使用的缓冲队列 -->
+	    <property name="queueCapacity" value="3000" />
+    </bean>
+    
+	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序 -->
+	<!-- <bean id="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"> 
+		<property name="triggers"> <list> <ref bean="doTimesafetySourceSynQuartzJob" 
+		/> </list> </property> </bean> -->
+
+
+
+
+	<!-- <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean"> 
+		<property name="triggers"> <list> <ref bean="SafetySourceSynTrigger" /> </list> 
+		</property> </bean> <bean name="safetyResourceSynService" class="com.iflytek.epdcloud.epsp.service.quartz.impl.SafetyResourceSynServiceImpl" 
+		></bean> 安全监管资源同步使用继承QuartzJobBean的方式 <bean name="SafetySourceSynJob" class="org.springframework.scheduling.quartz.JobDetailBean"> 
+		<property name="jobClass" value="com.iflytek.epdcloud.epsp.quartz.SafetySourceSynQuartz" 
+		/> <property name="jobDataAsMap"> <map> <entry key="timeout" value="0" /> 
+		<entry key="safetyResourceSynService" value-ref="safetyResourceSynService" 
+		/> </map> </property> </bean> 安全监管资源同步继QuartzJobBean类的方式 <bean id="SafetySourceSynTrigger" 
+		class="org.springframework.scheduling.quartz.CronTriggerBean"> <property 
+		name="jobDetail" ref="SafetySourceSynJob" /> 每分钟的第0,10,20,30,40,50秒调度一次 <property 
+		name="cronExpression" value="0, * * * * ?" /> </bean> -->
+
+
+	<!-- 作业使用继承QuartzJobBean的方式 -->
+	<!-- <bean name="demoJob" class="org.springframework.scheduling.quartz.JobDetailBean"> 
+		<property name="jobClass" value="com.iflytek.epdcloud.ercsvc.quartz.DemoQuartz" 
+		/> <property name="jobDataAsMap"> <map> <entry key="timeout" value="0" /> 
+		<entry key="lessonService" value-ref="lessonService" /> </map> </property> 
+		</bean> -->
+
+	<!-- 对应于作业继QuartzJobBean类的方式 -->
+	<!-- <bean id="demoTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"> 
+		<property name="jobDetail" ref="demoJob" /> 每分钟的第0,10,20,30,40,50秒调度一次 <property 
+		name="cronExpression" value="0,10,20,30,40,50 * * * * ?" /> </bean> -->
+
+	<!-- 公开课开课提醒quartz任务 -->
+	<!-- <bean name="noticeBeforeLiveQuartz" class="org.springframework.scheduling.quartz.JobDetailBean"> 
+		<property name="jobClass" value="com.iflytek.epdcloud.ercsvc.quartz.NoticeBeforeLiveQuartz" 
+		/> <property name="jobDataAsMap"> <map> <entry key="timeout" value="0" /> 
+		</map> </property> </bean> -->
+
+	<!--公开课开课提醒quartz任务时间设置 -->
+	<!-- <bean id="noticeBeforeLiveQuartzTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"> 
+		<property name="jobDetail" ref="noticeBeforeLiveQuartz" /> 每分钟的第0,10,20,30,40,50秒调度一次 
+		<property name="cronExpression" value="0,10,20,30,40,50 * * * * ?" /> </bean> -->
+
+	<bean id="startQuertz" lazy-init="true" autowire="no"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- <ref bean="demoTrigger" /> -->
+				<!-- <ref bean="tsDemoDataQuartzTrigger" /> -->
+				<ref bean="tsSensitiveWordsQuartzTrigger" />
+				<ref bean="doTimesafetySourceSynQuartzJob" />
+			</list>
+		</property>
+	</bean>
+
+
+	<bean name="tsDemoDataQuartzService"
+		class="com.iflytek.epdcloud.epsp.service.common.impl.TsDemoDataQuartzServiceImpl"></bean>
+	<!-- ts_demo_data表数据定时更新任务 -->
+	<bean name="tsDemoDataQuartz" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.iflytek.epdcloud.epsp.quartz.TsDemoDataQuartz" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="timeout" value="0" />
+				<entry key="tsDemoDataQuartzService" value-ref="tsDemoDataQuartzService" />
+			</map>
+		</property>
+	</bean>
+	<!--ts_demo_data表数据任务更新时间设置 -->
+	<bean id="tsDemoDataQuartzTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="tsDemoDataQuartz" />
+		<!-- 每分钟的第0,10,20,30,40,50秒调度一次 -->
+		<property name="cronExpression" value="0 0 18/4 * * ?" />
+	</bean>
+
+
+	<bean id="TsSensitiveWordsQuartz" class="com.iflytek.epdcloud.epsp.quartz.TsSensitiveWordsQuartz"></bean>
+	<!-- 定义调用对象和调用对象的方法 -->
+	<bean id="TsSensitiveWordsQuartzJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 调用的类 -->
+		<property name="targetObject">
+			<ref bean="TsSensitiveWordsQuartz" />
+		</property>
+		<!-- 调用类中的方法 -->
+		<property name="targetMethod">
+			<value>executeInternal</value>
+		</property>
+		<property name="concurrent">
+			<value>false</value>
+		</property>
+	</bean>
+	<!-- 定义触发时间 -->
+	<bean id="tsSensitiveWordsQuartzTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="TsSensitiveWordsQuartzJob" />
+		</property>
+		<!-- cron表达式 -->
+		<property name="cronExpression">
+			<value>0 0/1 * * * ?</value>
+		</property>
+	</bean>
+</beans>

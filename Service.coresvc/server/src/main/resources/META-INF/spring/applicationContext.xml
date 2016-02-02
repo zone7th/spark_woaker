@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	<aop:aspectj-autoproxy />
+	<!--<bean class="com.iflytek.cycore.epdres.ServiceInterceptorAdvisor"/> -->
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.spark.cloud.coresvc"
+		annotation-config="true" />
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:config.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 配置管理中心 -->
+	<bean id="configurationHolder"
+		class="com.spark.cloud.coresvc.common.config.ConfigurationHolder"
+		factory-method="getInstance">
+		<property name="propertyFiles">
+			<list>
+				<value>config.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!-- 连接池启动时的初始值 -->
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		<!-- 连接池的最大值 -->
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		<!-- 最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止 -->
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		<!-- 最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请 -->
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="360" />
+		<property name="preferredTestQuery" value="select 1" />
+		<property name="acquireIncrement" value="5" />
+		<property name="acquireRetryAttempts" value="50" />
+		<property name="acquireRetryDelay" value="1000" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="autoCommitOnClose" value="false" />
+		<property name="testConnectionOnCheckout" value="true" />
+		<property name="maxStatements" value="100" />
+		<property name="maxStatementsPerConnection" value="5" />
+	</bean>
+
+	<!-- <bean id="snsDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		连接池启动时的初始值
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		连接池的最大值
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="360" />
+		<property name="preferredTestQuery" value="select 1" />
+		<property name="acquireIncrement" value="5" />
+		<property name="acquireRetryAttempts" value="50" />
+		<property name="acquireRetryDelay" value="1000" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="autoCommitOnClose" value="false" />
+		<property name="testConnectionOnCheckout" value="true" />
+		<property name="maxStatements" value="100" />
+		<property name="maxStatementsPerConnection" value="5" />
+	</bean>
+
+	<bean id="cycoreDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.cycore.url}" />
+		<property name="user" value="${jdbc.cycore.username}" />
+		<property name="password" value="${jdbc.cycore.password}" />
+		连接池启动时的初始值
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		连接池的最大值
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="360" />
+		<property name="preferredTestQuery" value="select 1" />
+		<property name="acquireIncrement" value="5" />
+		<property name="acquireRetryAttempts" value="50" />
+		<property name="acquireRetryDelay" value="1000" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="autoCommitOnClose" value="false" />
+		<property name="testConnectionOnCheckout" value="true" />
+		<property name="maxStatements" value="100" />
+		<property name="maxStatementsPerConnection" value="5" />
+	</bean>
+
+	<bean id="dataSourceResource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.resource.url}" />
+		<property name="user" value="${jdbc.resource.username}" />
+		<property name="password" value="${jdbc.resource.password}" />
+		连接池启动时的初始值
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		连接池的最大值
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="360" />
+		<property name="preferredTestQuery" value="select 1" />
+		<property name="acquireIncrement" value="5" />
+		<property name="acquireRetryAttempts" value="50" />
+		<property name="acquireRetryDelay" value="1000" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="autoCommitOnClose" value="false" />
+		<property name="testConnectionOnCheckout" value="true" />
+		<property name="maxStatements" value="100" />
+		<property name="maxStatementsPerConnection" value="5" />
+	</bean>
+
+	<bean id="dataSourceMarket" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.market.url}" />
+		<property name="user" value="${jdbc.market.username}" />
+		<property name="password" value="${jdbc.market.password}" />
+		连接池启动时的初始值
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		连接池的最大值
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="360" />
+		<property name="preferredTestQuery" value="select 1" />
+		<property name="acquireIncrement" value="5" />
+		<property name="acquireRetryAttempts" value="50" />
+		<property name="acquireRetryDelay" value="1000" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="autoCommitOnClose" value="false" />
+		<property name="testConnectionOnCheckout" value="true" />
+		<property name="maxStatements" value="100" />
+		<property name="maxStatementsPerConnection" value="5" />
+	</bean>
+
+	<bean id="dataSourceErcse" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.ercse.url}" />
+		<property name="user" value="${jdbc.ercse.username}" />
+		<property name="password" value="${jdbc.ercse.password}" />
+		连接池启动时的初始值
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		连接池的最大值
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="360" />
+		<property name="preferredTestQuery" value="select 1" />
+		<property name="acquireIncrement" value="5" />
+		<property name="acquireRetryAttempts" value="50" />
+		<property name="acquireRetryDelay" value="1000" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="autoCommitOnClose" value="false" />
+		<property name="testConnectionOnCheckout" value="true" />
+		<property name="maxStatements" value="100" />
+		<property name="maxStatementsPerConnection" value="5" />
+	</bean>
+
+	<bean id="dataSourceSafety" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.safety.url}" />
+		<property name="user" value="${jdbc.safety.username}" />
+		<property name="password" value="${jdbc.safety.password}" />
+		连接池启动时的初始值
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		连接池的最大值
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="360" />
+		<property name="preferredTestQuery" value="select 1" />
+		<property name="acquireIncrement" value="5" />
+		<property name="acquireRetryAttempts" value="50" />
+		<property name="acquireRetryDelay" value="1000" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="autoCommitOnClose" value="false" />
+		<property name="testConnectionOnCheckout" value="true" />
+		<property name="maxStatements" value="100" />
+		<property name="maxStatementsPerConnection" value="5" />
+	</bean>
+
+	<bean id="namedParameterJdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	异常处理
+	<bean id="exceptionHandler" class="com.iflytek.epdcloud.epsp.exception.ExceptionHandler"></bean>
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="exceptionPointcut"
+			expression="execution(* com.iflytek.epdcloud.epsp.service.*.impl.*Impl.*(..)) " />
+		<aop:advisor pointcut-ref="exceptionPointcut" advice-ref="exceptionHandler"
+			order="1" />
+	</aop:config>
+
+	动态数据源（数据源切换&读写分离功能相关）
+	<bean id="dataSource"
+		class="com.spark.cloud.coresvc.common.datasource.DynamicDataSource">
+		<property name="targetDataSources">
+			<map key-type="java.lang.String">
+				sns
+				<entry key="changyan_sns" value-ref="snsDataSource" />
+				个人空间-从库
+				<entry key="changyan_sns_slave" value-ref="snsDataSource" />
+				cycore
+				<entry key="cycore" value-ref="cycoreDataSource" />
+				resource
+				<entry key="changyan_resource" value-ref="dataSourceResource" />
+				market
+				<entry key="changyan_market" value-ref="dataSourceMarket" />
+				ercse
+				<entry key="ercse" value-ref="dataSourceErcse" />
+				ercse
+				<entry key="safety" value-ref="dataSourceSafety" />
+			</map>
+		</property>
+		默认使用个人空间主数据库
+		<property name="defaultTargetDataSource" ref="snsDataSource" />
+	</bean>
+
+	数据库切换切面，接口调用之前，自动把数据源切换至默认数据源
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="defaultDataSourcePointcut"
+			expression="execution(* com.iflytek.epdcloud.epsp.api.*.impl.*Impl.*(..))" />
+		<aop:advisor pointcut-ref="defaultDataSourcePointcut"
+			advice-ref="defaultDataSourceAspect" />
+	</aop:config>
+
+	读写分离
+	<bean id="slaveSwitchAspect"
+		class="com.spark.cloud.coresvc.common.datasource.SlaveSwitchAspect"></bean>
+	读写分离切面
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="slaveSwitchPointcut"
+			expression="execution(* com.iflytek.epdcloud.epsp.service.*.impl.*Impl.*(..))" />
+		<aop:advisor pointcut-ref="slaveSwitchPointcut"
+			advice-ref="slaveSwitchAspect" order="2" />
+	</aop:config>
+
+	事务控制
+	<bean name="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	配置事务传播特性
+	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="edit*" propagation="REQUIRED" />
+			<tx:method name="modify*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="query*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
+			<tx:method name="*" propagation="SUPPORTS" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	配置参与事务的方法
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="allServiceMethod"
+			expression="execution(* com.iflytek.epdcloud.epsp.service.*.impl.*Impl.*(..))" />
+		<aop:advisor pointcut-ref="allServiceMethod" advice-ref="transactionAdvice"
+			order="3" />
+	</aop:config>
+
+	jedis配置
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		最小空闲数：低于minIdle时，将创建新的连接
+		<property name="minIdle" value="${redis.minIdle}" />
+		最大空闲数：空闲连接数大于maxIdle时，将进行回收
+		<property name="maxIdle" value="${redis.maxIdle}" />
+		最大连接数：能够同时建立的最大连接个数
+		<property name="maxTotal" value="${redis.maxActive}" />
+		最大等待时间：单位ms
+		<property name="maxWaitMillis" value="${redis.maxWait}" />
+		使用连接时，检测连接是否成功
+		<property name="testOnBorrow" value="${redis.testOnBorrow}" />
+	</bean>
+
+	<bean id="jedisConnFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="hostName" value="${redis.host}" />
+		<property name="port" value="${redis.port}" />
+		<property name="password" value="${redis.password}" />
+		<property name="usePool" value="true" />
+		<property name="poolConfig" ref="jedisPoolConfig" />
+	</bean>
+
+	redis template 配置
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="jedisConnFactory" />
+		<property name="keySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
+		<property name="valueSerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
+		<property name="hashKeySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
+		<property name="hashValueSerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+		</property>
+	</bean>
+
+	缓存操作管理工具类
+	<bean id="singleRedisCacheClient"
+		class="com.spark.cloud.coresvc.common.cache.client.SingleRedisCacheClient">
+		<constructor-arg name="redisTemplate" ref="redisTemplate"></constructor-arg>
+	</bean>
+
+
+	邮件服务器配置
+	<util:properties id="smtpProperties">
+		<prop key="mail.smtp.host">${mail.host}</prop>
+		<prop key="mail.smtp.auth">true</prop>
+		<prop key="mail.smtp.port">${mail.port}</prop>
+		<prop key="mail.smtp.starttls.enable">true</prop>
+	</util:properties>
+	邮件发送账号配置
+	<bean id="passwordAuthentication" class="javax.mail.PasswordAuthentication">
+		<constructor-arg name="userName" value="${mail.username}" />
+		<constructor-arg name="password" value="${mail.password}" />
+	</bean>
+
+	邮件信息模板
+	<bean id="simpleMailMessage" class="org.springframework.mail.SimpleMailMessage">
+		<property name="from" value="${mail.from}" />
+		<property name="subject" value="${mail.subject}" />
+		<property name="text">
+			<value>
+			<![CDATA[
+			<p>尊敬的新用户，您好!</p>
+			<p style="text-indent:2em">非常感谢您使用%1$s!</p>
+			<p style="text-indent:2em">为了保障您的服务畅通，建议您在收到该邮件的1小时内完成注册，此链接将在您激活过一次后失效！</p>
+			<p style="text-indent:2em">请点击如下链接来激活邮箱：</p>
+			<p style="text-indent:2em"><a href="%2$s">%2$s</a></p>
+			<p style="text-indent:2em">如果浏览器不能自动打开，请您把地址复制到浏览器地址栏中手动打开。</p>
+			<p style="text-indent:2em">此邮件为系统自动发出的邮件，请勿直接回复。若非本人操作，请忽略此邮件，由此给您带来的不便请谅解！</p>
+			<p style="text-indent:2em">%1$s</p>
+			<p style="text-indent:2em">日期：%3$s</p>
+			]]>
+			</value>
+		</property>
+	</bean>
+
+	重置密码邮件信息模板
+	<bean id="resetMailMessage" class="org.springframework.mail.SimpleMailMessage">
+		<property name="from" value="${mail.from}" />
+		<property name="subject" value="${mail.resetPwdSubject}" />
+		<property name="text">
+			<value>
+			<![CDATA[
+			<p>尊敬的%1$s!，您好!</p>
+			<p style="text-indent:2em">非常感谢您使用%2$s!</p>
+			<p style="text-indent:2em">请点击以下链接重置您的密码，此链接1小时内有效，且将在您重置过一次后失效！</p>
+			<p style="text-indent:2em"><a href="%3$s">%3$s</a></p>
+			<p style="text-indent:2em">如果浏览器不能自动打开，请您把地址复制到浏览器地址栏中手动打开。</p>
+			<p style="text-indent:2em">此邮件为系统自动发出的邮件，请勿直接回复。若非本人操作，请忽略此邮件，由此给您带来的不便请谅解！</p>
+			<p style="text-indent:2em">%2$s</p>
+			<p style="text-indent:2em">日期：%4$s</p>
+			]]>
+			</value>
+		</property>
+	</bean>
+	<import resource="classpath*:META-INF/quartz/applicationContext*.xml" />
+	<import resource="classpath*:META-INF/mongo/mongodb.xml" /> -->
+</beans>

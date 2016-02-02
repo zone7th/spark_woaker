@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.spark.cloud</groupId>
+	<artifactId>coresvc-parent</artifactId>
+	<version>1.0.1</version>
+  </parent>
+  <artifactId>coresvc-common</artifactId>
+  <packaging>jar</packaging>
+  <name>${project.artifactId}</name>
+  <url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+    <repositories>
+        <repository>
+            <id>repo1-cache</id>
+            <name>repo1-cache</name>
+            <url>http://172.16.16.7:8081/nexus/content/groups/public</url>
+        </repository>
+
+        <repository>
+            <id>repo2-cache</id>
+            <name>repo2-cache</name>
+            <url>http://172.16.79.21:8081/nexus/content/groups/public</url>
+        </repository>
+
+        <repository>
+            <id>usercenter-releases</id>
+            <name>usercenter-releases</name>
+            <url>http://172.16.79.20:8081/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+	<dependencies>
+        <!-- add by hangli2 -->
+        <dependency>
+            <groupId>diamond</groupId>
+            <artifactId>diamond-client-epsp</artifactId>
+            <version>1.0.0</version>
+            <classifier>EPSP</classifier>
+        </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+
+		<!-- <dependency>
+			<groupId>com.iflytek.cycore</groupId>
+			<artifactId>logback-monitor</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>  -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+			<scope>compile</scope>
+		</dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+        <dependency>      
+            <groupId>redis.clients</groupId>      
+            <artifactId>jedis</artifactId>      
+            <version>2.7.3</version>    
+        </dependency>
+        <dependency>    
+            <groupId>org.springframework.data</groupId>    
+            <artifactId>spring-data-redis</artifactId>    
+            <version>1.5.2.RELEASE</version>    
+        </dependency>
+        		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+	</dependencies>
+</project>
