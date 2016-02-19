@@ -7,15 +7,18 @@
 	http://code.alibabatech.com/schema/dubbo/dubbo.xsd
 	">
 
-
 	<dubbo:monitor protocol="registry" />
 
 	<dubbo:protocol name="httpt" server="tomcat" port="${server.port}" />
-	
-	<dubbo:service path="demo0Api" interface="com.spark.cloud.coresvc.api.Demo0Api$Iface" 
-		ref="demo0ApiImpl" protocol="httpt" />
-	
-	<dubbo:service path="demo/demoApi" interface="com.spark.cloud.coresvc.api.demo.DemoApi$Iface" 
-		ref="demoApiImpl" protocol="httpt" />
+	<!-- 必须存在初始化目录需要 -->
+	<dubbo:service path="demoApi" interface="com.spark.cloud.coresvc.api.DemoApi$Iface" ref="demoApiImpl" protocol="httpt" />
+	<!-- 博客 -->
+	<dubbo:service path="woaker/BlogApi" interface="com.spark.cloud.coresvc.api.woaker.BlogApi$Iface" ref="blogApiImpl" protocol="httpt" />
+	<!-- 学习 -->
+	<dubbo:service path="woaker/StudyApi" interface="com.spark.cloud.coresvc.api.woaker.StudyApi$Iface" ref="studyApiImpl" protocol="httpt" />
+	<!-- 用户 -->
+	<dubbo:service path="woaker/UserApi" interface="com.spark.cloud.coresvc.api.woaker.UserApi$Iface" ref="userApiImpl" protocol="httpt" />
+	<!-- 工作 -->
+	<dubbo:service path="woaker/WorkApi" interface="com.spark.cloud.coresvc.api.woaker.WorkApi$Iface" ref="workApiImpl" protocol="httpt" />
 
 </beans>

@@ -36,13 +36,21 @@ public class BlogApi {
 
   public interface Iface {
 
+    public String getIndex() throws org.apache.thrift.TException;
+
     public String getBlogList(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit) throws org.apache.thrift.TException;
+
+    public String getBlogIndex(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit) throws org.apache.thrift.TException;
 
   }
 
   public interface AsyncIface {
 
+    public void getIndex(org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+
     public void getBlogList(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+
+    public void getBlogIndex(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
   }
 
@@ -64,6 +72,28 @@ public class BlogApi {
 
     public Client(org.apache.thrift.protocol.TProtocol iprot, org.apache.thrift.protocol.TProtocol oprot) {
       super(iprot, oprot);
+    }
+
+    public String getIndex() throws org.apache.thrift.TException
+    {
+      send_getIndex();
+      return recv_getIndex();
+    }
+
+    public void send_getIndex() throws org.apache.thrift.TException
+    {
+      getIndex_args args = new getIndex_args();
+      sendBase("getIndex", args);
+    }
+
+    public String recv_getIndex() throws org.apache.thrift.TException
+    {
+      getIndex_result result = new getIndex_result();
+      receiveBase(result, "getIndex");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getIndex failed: unknown result");
     }
 
     public String getBlogList(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit) throws org.apache.thrift.TException
@@ -100,6 +130,40 @@ public class BlogApi {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getBlogList failed: unknown result");
     }
 
+    public String getBlogIndex(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit) throws org.apache.thrift.TException
+    {
+      send_getBlogIndex(userId, blogId, keyWord, createType, createScope, customScope, startDate, endDate, isPublic, isDelete, page, limit);
+      return recv_getBlogIndex();
+    }
+
+    public void send_getBlogIndex(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit) throws org.apache.thrift.TException
+    {
+      getBlogIndex_args args = new getBlogIndex_args();
+      args.setUserId(userId);
+      args.setBlogId(blogId);
+      args.setKeyWord(keyWord);
+      args.setCreateType(createType);
+      args.setCreateScope(createScope);
+      args.setCustomScope(customScope);
+      args.setStartDate(startDate);
+      args.setEndDate(endDate);
+      args.setIsPublic(isPublic);
+      args.setIsDelete(isDelete);
+      args.setPage(page);
+      args.setLimit(limit);
+      sendBase("getBlogIndex", args);
+    }
+
+    public String recv_getBlogIndex() throws org.apache.thrift.TException
+    {
+      getBlogIndex_result result = new getBlogIndex_result();
+      receiveBase(result, "getBlogIndex");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getBlogIndex failed: unknown result");
+    }
+
   }
   public static class AsyncClient extends org.apache.thrift.async.TAsyncClient implements AsyncIface {
     public static class Factory implements org.apache.thrift.async.TAsyncClientFactory<AsyncClient> {
@@ -116,6 +180,35 @@ public class BlogApi {
 
     public AsyncClient(org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.async.TAsyncClientManager clientManager, org.apache.thrift.transport.TNonblockingTransport transport) {
       super(protocolFactory, clientManager, transport);
+    }
+
+    public void getIndex(org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      getIndex_call method_call = new getIndex_call(resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class getIndex_call extends org.apache.thrift.async.TAsyncMethodCall {
+      public getIndex_call(org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("getIndex", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        getIndex_args args = new getIndex_args();
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public String getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_getIndex();
+      }
     }
 
     public void getBlogList(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
@@ -183,6 +276,71 @@ public class BlogApi {
       }
     }
 
+    public void getBlogIndex(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      getBlogIndex_call method_call = new getBlogIndex_call(userId, blogId, keyWord, createType, createScope, customScope, startDate, endDate, isPublic, isDelete, page, limit, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class getBlogIndex_call extends org.apache.thrift.async.TAsyncMethodCall {
+      private String userId;
+      private String blogId;
+      private String keyWord;
+      private String createType;
+      private String createScope;
+      private String customScope;
+      private String startDate;
+      private String endDate;
+      private boolean isPublic;
+      private boolean isDelete;
+      private int page;
+      private int limit;
+      public getBlogIndex_call(String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.userId = userId;
+        this.blogId = blogId;
+        this.keyWord = keyWord;
+        this.createType = createType;
+        this.createScope = createScope;
+        this.customScope = customScope;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.isPublic = isPublic;
+        this.isDelete = isDelete;
+        this.page = page;
+        this.limit = limit;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("getBlogIndex", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        getBlogIndex_args args = new getBlogIndex_args();
+        args.setUserId(userId);
+        args.setBlogId(blogId);
+        args.setKeyWord(keyWord);
+        args.setCreateType(createType);
+        args.setCreateScope(createScope);
+        args.setCustomScope(customScope);
+        args.setStartDate(startDate);
+        args.setEndDate(endDate);
+        args.setIsPublic(isPublic);
+        args.setIsDelete(isDelete);
+        args.setPage(page);
+        args.setLimit(limit);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public String getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_getBlogIndex();
+      }
+    }
+
   }
 
   public static class Processor<I extends Iface> extends org.apache.thrift.TBaseProcessor<I> implements org.apache.thrift.TProcessor {
@@ -196,8 +354,30 @@ public class BlogApi {
     }
 
     private static <I extends Iface> Map<String,  org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> getProcessMap(Map<String,  org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> processMap) {
+      processMap.put("getIndex", new getIndex());
       processMap.put("getBlogList", new getBlogList());
+      processMap.put("getBlogIndex", new getBlogIndex());
       return processMap;
+    }
+
+    public static class getIndex<I extends Iface> extends org.apache.thrift.ProcessFunction<I, getIndex_args> {
+      public getIndex() {
+        super("getIndex");
+      }
+
+      public getIndex_args getEmptyArgsInstance() {
+        return new getIndex_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public getIndex_result getResult(I iface, getIndex_args args) throws org.apache.thrift.TException {
+        getIndex_result result = new getIndex_result();
+        result.success = iface.getIndex();
+        return result;
+      }
     }
 
     public static class getBlogList<I extends Iface> extends org.apache.thrift.ProcessFunction<I, getBlogList_args> {
@@ -220,6 +400,26 @@ public class BlogApi {
       }
     }
 
+    public static class getBlogIndex<I extends Iface> extends org.apache.thrift.ProcessFunction<I, getBlogIndex_args> {
+      public getBlogIndex() {
+        super("getBlogIndex");
+      }
+
+      public getBlogIndex_args getEmptyArgsInstance() {
+        return new getBlogIndex_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public getBlogIndex_result getResult(I iface, getBlogIndex_args args) throws org.apache.thrift.TException {
+        getBlogIndex_result result = new getBlogIndex_result();
+        result.success = iface.getBlogIndex(args.userId, args.blogId, args.keyWord, args.createType, args.createScope, args.customScope, args.startDate, args.endDate, args.isPublic, args.isDelete, args.page, args.limit);
+        return result;
+      }
+    }
+
   }
 
   public static class AsyncProcessor<I extends AsyncIface> extends org.apache.thrift.TBaseAsyncProcessor<I> {
@@ -233,8 +433,61 @@ public class BlogApi {
     }
 
     private static <I extends AsyncIface> Map<String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase,?>> getProcessMap(Map<String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase, ?>> processMap) {
+      processMap.put("getIndex", new getIndex());
       processMap.put("getBlogList", new getBlogList());
+      processMap.put("getBlogIndex", new getBlogIndex());
       return processMap;
+    }
+
+    public static class getIndex<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, getIndex_args, String> {
+      public getIndex() {
+        super("getIndex");
+      }
+
+      public getIndex_args getEmptyArgsInstance() {
+        return new getIndex_args();
+      }
+
+      public AsyncMethodCallback<String> getResultHandler(final AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new AsyncMethodCallback<String>() { 
+          public void onComplete(String o) {
+            getIndex_result result = new getIndex_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb,result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+              return;
+            } catch (Exception e) {
+              LOGGER.error("Exception writing to internal frame buffer", e);
+            }
+            fb.close();
+          }
+          public void onError(Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TBase msg;
+            getIndex_result result = new getIndex_result();
+            {
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TBase)new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+              return;
+            } catch (Exception ex) {
+              LOGGER.error("Exception writing to internal frame buffer", ex);
+            }
+            fb.close();
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, getIndex_args args, org.apache.thrift.async.AsyncMethodCallback<String> resultHandler) throws TException {
+        iface.getIndex(resultHandler);
+      }
     }
 
     public static class getBlogList<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, getBlogList_args, String> {
@@ -285,6 +538,657 @@ public class BlogApi {
 
       public void start(I iface, getBlogList_args args, org.apache.thrift.async.AsyncMethodCallback<String> resultHandler) throws TException {
         iface.getBlogList(args.userId, args.blogId, args.keyWord, args.createType, args.createScope, args.customScope, args.startDate, args.endDate, args.isPublic, args.isDelete, args.page, args.limit,resultHandler);
+      }
+    }
+
+    public static class getBlogIndex<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, getBlogIndex_args, String> {
+      public getBlogIndex() {
+        super("getBlogIndex");
+      }
+
+      public getBlogIndex_args getEmptyArgsInstance() {
+        return new getBlogIndex_args();
+      }
+
+      public AsyncMethodCallback<String> getResultHandler(final AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new AsyncMethodCallback<String>() { 
+          public void onComplete(String o) {
+            getBlogIndex_result result = new getBlogIndex_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb,result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+              return;
+            } catch (Exception e) {
+              LOGGER.error("Exception writing to internal frame buffer", e);
+            }
+            fb.close();
+          }
+          public void onError(Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TBase msg;
+            getBlogIndex_result result = new getBlogIndex_result();
+            {
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TBase)new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+              return;
+            } catch (Exception ex) {
+              LOGGER.error("Exception writing to internal frame buffer", ex);
+            }
+            fb.close();
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, getBlogIndex_args args, org.apache.thrift.async.AsyncMethodCallback<String> resultHandler) throws TException {
+        iface.getBlogIndex(args.userId, args.blogId, args.keyWord, args.createType, args.createScope, args.customScope, args.startDate, args.endDate, args.isPublic, args.isDelete, args.page, args.limit,resultHandler);
+      }
+    }
+
+  }
+
+  public static class getIndex_args implements org.apache.thrift.TBase<getIndex_args, getIndex_args._Fields>, java.io.Serializable, Cloneable, Comparable<getIndex_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getIndex_args");
+
+
+    private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
+    static {
+      schemes.put(StandardScheme.class, new getIndex_argsStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new getIndex_argsTupleSchemeFactory());
+    }
+
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+;
+
+      private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+
+      static {
+        for (_Fields field : EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final String _fieldName;
+
+      _Fields(short thriftId, String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public String getFieldName() {
+        return _fieldName;
+      }
+    }
+    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      metaDataMap = Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(getIndex_args.class, metaDataMap);
+    }
+
+    public getIndex_args() {
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public getIndex_args(getIndex_args other) {
+    }
+
+    public getIndex_args deepCopy() {
+      return new getIndex_args(this);
+    }
+
+    @Override
+    public void clear() {
+    }
+
+    public void setFieldValue(_Fields field, Object value) {
+      switch (field) {
+      }
+    }
+
+    public Object getFieldValue(_Fields field) {
+      switch (field) {
+      }
+      throw new IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new IllegalArgumentException();
+      }
+
+      switch (field) {
+      }
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof getIndex_args)
+        return this.equals((getIndex_args)that);
+      return false;
+    }
+
+    public boolean equals(getIndex_args that) {
+      if (that == null)
+        return false;
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+
+    @Override
+    public int compareTo(getIndex_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      schemes.get(iprot.getScheme()).getScheme().read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      schemes.get(oprot.getScheme()).getScheme().write(oprot, this);
+    }
+
+    @Override
+    public String toString() {
+      StringBuilder sb = new StringBuilder("getIndex_args(");
+      boolean first = true;
+
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class getIndex_argsStandardSchemeFactory implements SchemeFactory {
+      public getIndex_argsStandardScheme getScheme() {
+        return new getIndex_argsStandardScheme();
+      }
+    }
+
+    private static class getIndex_argsStandardScheme extends StandardScheme<getIndex_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, getIndex_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, getIndex_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class getIndex_argsTupleSchemeFactory implements SchemeFactory {
+      public getIndex_argsTupleScheme getScheme() {
+        return new getIndex_argsTupleScheme();
+      }
+    }
+
+    private static class getIndex_argsTupleScheme extends TupleScheme<getIndex_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, getIndex_args struct) throws org.apache.thrift.TException {
+        TTupleProtocol oprot = (TTupleProtocol) prot;
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, getIndex_args struct) throws org.apache.thrift.TException {
+        TTupleProtocol iprot = (TTupleProtocol) prot;
+      }
+    }
+
+  }
+
+  public static class getIndex_result implements org.apache.thrift.TBase<getIndex_result, getIndex_result._Fields>, java.io.Serializable, Cloneable, Comparable<getIndex_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getIndex_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRING, (short)0);
+
+    private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
+    static {
+      schemes.put(StandardScheme.class, new getIndex_resultStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new getIndex_resultTupleSchemeFactory());
+    }
+
+    public String success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+
+      static {
+        for (_Fields field : EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final String _fieldName;
+
+      _Fields(short thriftId, String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      metaDataMap = Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(getIndex_result.class, metaDataMap);
+    }
+
+    public getIndex_result() {
+    }
+
+    public getIndex_result(
+      String success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public getIndex_result(getIndex_result other) {
+      if (other.isSetSuccess()) {
+        this.success = other.success;
+      }
+    }
+
+    public getIndex_result deepCopy() {
+      return new getIndex_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public String getSuccess() {
+      return this.success;
+    }
+
+    public getIndex_result setSuccess(String success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((String)value);
+        }
+        break;
+
+      }
+    }
+
+    public Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof getIndex_result)
+        return this.equals((getIndex_result)that);
+      return false;
+    }
+
+    public boolean equals(getIndex_result that) {
+      if (that == null)
+        return false;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+
+    @Override
+    public int compareTo(getIndex_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      schemes.get(iprot.getScheme()).getScheme().read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      schemes.get(oprot.getScheme()).getScheme().write(oprot, this);
+      }
+
+    @Override
+    public String toString() {
+      StringBuilder sb = new StringBuilder("getIndex_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class getIndex_resultStandardSchemeFactory implements SchemeFactory {
+      public getIndex_resultStandardScheme getScheme() {
+        return new getIndex_resultStandardScheme();
+      }
+    }
+
+    private static class getIndex_resultStandardScheme extends StandardScheme<getIndex_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, getIndex_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.success = iprot.readString();
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, getIndex_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          oprot.writeString(struct.success);
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class getIndex_resultTupleSchemeFactory implements SchemeFactory {
+      public getIndex_resultTupleScheme getScheme() {
+        return new getIndex_resultTupleScheme();
+      }
+    }
+
+    private static class getIndex_resultTupleScheme extends TupleScheme<getIndex_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, getIndex_result struct) throws org.apache.thrift.TException {
+        TTupleProtocol oprot = (TTupleProtocol) prot;
+        BitSet optionals = new BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          oprot.writeString(struct.success);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, getIndex_result struct) throws org.apache.thrift.TException {
+        TTupleProtocol iprot = (TTupleProtocol) prot;
+        BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          struct.success = iprot.readString();
+          struct.setSuccessIsSet(true);
+        }
       }
     }
 
@@ -2067,6 +2971,1794 @@ public class BlogApi {
 
       @Override
       public void read(org.apache.thrift.protocol.TProtocol prot, getBlogList_result struct) throws org.apache.thrift.TException {
+        TTupleProtocol iprot = (TTupleProtocol) prot;
+        BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          struct.success = iprot.readString();
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+  }
+
+  public static class getBlogIndex_args implements org.apache.thrift.TBase<getBlogIndex_args, getBlogIndex_args._Fields>, java.io.Serializable, Cloneable, Comparable<getBlogIndex_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getBlogIndex_args");
+
+    private static final org.apache.thrift.protocol.TField USER_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("userId", org.apache.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.thrift.protocol.TField BLOG_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("blogId", org.apache.thrift.protocol.TType.STRING, (short)2);
+    private static final org.apache.thrift.protocol.TField KEY_WORD_FIELD_DESC = new org.apache.thrift.protocol.TField("keyWord", org.apache.thrift.protocol.TType.STRING, (short)3);
+    private static final org.apache.thrift.protocol.TField CREATE_TYPE_FIELD_DESC = new org.apache.thrift.protocol.TField("createType", org.apache.thrift.protocol.TType.STRING, (short)4);
+    private static final org.apache.thrift.protocol.TField CREATE_SCOPE_FIELD_DESC = new org.apache.thrift.protocol.TField("createScope", org.apache.thrift.protocol.TType.STRING, (short)5);
+    private static final org.apache.thrift.protocol.TField CUSTOM_SCOPE_FIELD_DESC = new org.apache.thrift.protocol.TField("customScope", org.apache.thrift.protocol.TType.STRING, (short)6);
+    private static final org.apache.thrift.protocol.TField START_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("startDate", org.apache.thrift.protocol.TType.STRING, (short)7);
+    private static final org.apache.thrift.protocol.TField END_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("endDate", org.apache.thrift.protocol.TType.STRING, (short)8);
+    private static final org.apache.thrift.protocol.TField IS_PUBLIC_FIELD_DESC = new org.apache.thrift.protocol.TField("isPublic", org.apache.thrift.protocol.TType.BOOL, (short)9);
+    private static final org.apache.thrift.protocol.TField IS_DELETE_FIELD_DESC = new org.apache.thrift.protocol.TField("isDelete", org.apache.thrift.protocol.TType.BOOL, (short)10);
+    private static final org.apache.thrift.protocol.TField PAGE_FIELD_DESC = new org.apache.thrift.protocol.TField("page", org.apache.thrift.protocol.TType.I32, (short)11);
+    private static final org.apache.thrift.protocol.TField LIMIT_FIELD_DESC = new org.apache.thrift.protocol.TField("limit", org.apache.thrift.protocol.TType.I32, (short)12);
+
+    private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
+    static {
+      schemes.put(StandardScheme.class, new getBlogIndex_argsStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new getBlogIndex_argsTupleSchemeFactory());
+    }
+
+    public String userId; // required
+    public String blogId; // required
+    public String keyWord; // required
+    public String createType; // required
+    public String createScope; // required
+    public String customScope; // required
+    public String startDate; // required
+    public String endDate; // required
+    public boolean isPublic; // required
+    public boolean isDelete; // required
+    public int page; // required
+    public int limit; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      USER_ID((short)1, "userId"),
+      BLOG_ID((short)2, "blogId"),
+      KEY_WORD((short)3, "keyWord"),
+      CREATE_TYPE((short)4, "createType"),
+      CREATE_SCOPE((short)5, "createScope"),
+      CUSTOM_SCOPE((short)6, "customScope"),
+      START_DATE((short)7, "startDate"),
+      END_DATE((short)8, "endDate"),
+      IS_PUBLIC((short)9, "isPublic"),
+      IS_DELETE((short)10, "isDelete"),
+      PAGE((short)11, "page"),
+      LIMIT((short)12, "limit");
+
+      private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+
+      static {
+        for (_Fields field : EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // USER_ID
+            return USER_ID;
+          case 2: // BLOG_ID
+            return BLOG_ID;
+          case 3: // KEY_WORD
+            return KEY_WORD;
+          case 4: // CREATE_TYPE
+            return CREATE_TYPE;
+          case 5: // CREATE_SCOPE
+            return CREATE_SCOPE;
+          case 6: // CUSTOM_SCOPE
+            return CUSTOM_SCOPE;
+          case 7: // START_DATE
+            return START_DATE;
+          case 8: // END_DATE
+            return END_DATE;
+          case 9: // IS_PUBLIC
+            return IS_PUBLIC;
+          case 10: // IS_DELETE
+            return IS_DELETE;
+          case 11: // PAGE
+            return PAGE;
+          case 12: // LIMIT
+            return LIMIT;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final String _fieldName;
+
+      _Fields(short thriftId, String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    private static final int __ISPUBLIC_ISSET_ID = 0;
+    private static final int __ISDELETE_ISSET_ID = 1;
+    private static final int __PAGE_ISSET_ID = 2;
+    private static final int __LIMIT_ISSET_ID = 3;
+    private byte __isset_bitfield = 0;
+    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.USER_ID, new org.apache.thrift.meta_data.FieldMetaData("userId", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.BLOG_ID, new org.apache.thrift.meta_data.FieldMetaData("blogId", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.KEY_WORD, new org.apache.thrift.meta_data.FieldMetaData("keyWord", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.CREATE_TYPE, new org.apache.thrift.meta_data.FieldMetaData("createType", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.CREATE_SCOPE, new org.apache.thrift.meta_data.FieldMetaData("createScope", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.CUSTOM_SCOPE, new org.apache.thrift.meta_data.FieldMetaData("customScope", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.START_DATE, new org.apache.thrift.meta_data.FieldMetaData("startDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.END_DATE, new org.apache.thrift.meta_data.FieldMetaData("endDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.IS_PUBLIC, new org.apache.thrift.meta_data.FieldMetaData("isPublic", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+      tmpMap.put(_Fields.IS_DELETE, new org.apache.thrift.meta_data.FieldMetaData("isDelete", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
+      tmpMap.put(_Fields.PAGE, new org.apache.thrift.meta_data.FieldMetaData("page", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+      tmpMap.put(_Fields.LIMIT, new org.apache.thrift.meta_data.FieldMetaData("limit", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+      metaDataMap = Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(getBlogIndex_args.class, metaDataMap);
+    }
+
+    public getBlogIndex_args() {
+    }
+
+    public getBlogIndex_args(
+      String userId,
+      String blogId,
+      String keyWord,
+      String createType,
+      String createScope,
+      String customScope,
+      String startDate,
+      String endDate,
+      boolean isPublic,
+      boolean isDelete,
+      int page,
+      int limit)
+    {
+      this();
+      this.userId = userId;
+      this.blogId = blogId;
+      this.keyWord = keyWord;
+      this.createType = createType;
+      this.createScope = createScope;
+      this.customScope = customScope;
+      this.startDate = startDate;
+      this.endDate = endDate;
+      this.isPublic = isPublic;
+      setIsPublicIsSet(true);
+      this.isDelete = isDelete;
+      setIsDeleteIsSet(true);
+      this.page = page;
+      setPageIsSet(true);
+      this.limit = limit;
+      setLimitIsSet(true);
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public getBlogIndex_args(getBlogIndex_args other) {
+      __isset_bitfield = other.__isset_bitfield;
+      if (other.isSetUserId()) {
+        this.userId = other.userId;
+      }
+      if (other.isSetBlogId()) {
+        this.blogId = other.blogId;
+      }
+      if (other.isSetKeyWord()) {
+        this.keyWord = other.keyWord;
+      }
+      if (other.isSetCreateType()) {
+        this.createType = other.createType;
+      }
+      if (other.isSetCreateScope()) {
+        this.createScope = other.createScope;
+      }
+      if (other.isSetCustomScope()) {
+        this.customScope = other.customScope;
+      }
+      if (other.isSetStartDate()) {
+        this.startDate = other.startDate;
+      }
+      if (other.isSetEndDate()) {
+        this.endDate = other.endDate;
+      }
+      this.isPublic = other.isPublic;
+      this.isDelete = other.isDelete;
+      this.page = other.page;
+      this.limit = other.limit;
+    }
+
+    public getBlogIndex_args deepCopy() {
+      return new getBlogIndex_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.userId = null;
+      this.blogId = null;
+      this.keyWord = null;
+      this.createType = null;
+      this.createScope = null;
+      this.customScope = null;
+      this.startDate = null;
+      this.endDate = null;
+      setIsPublicIsSet(false);
+      this.isPublic = false;
+      setIsDeleteIsSet(false);
+      this.isDelete = false;
+      setPageIsSet(false);
+      this.page = 0;
+      setLimitIsSet(false);
+      this.limit = 0;
+    }
+
+    public String getUserId() {
+      return this.userId;
+    }
+
+    public getBlogIndex_args setUserId(String userId) {
+      this.userId = userId;
+      return this;
+    }
+
+    public void unsetUserId() {
+      this.userId = null;
+    }
+
+    /** Returns true if field userId is set (has been assigned a value) and false otherwise */
+    public boolean isSetUserId() {
+      return this.userId != null;
+    }
+
+    public void setUserIdIsSet(boolean value) {
+      if (!value) {
+        this.userId = null;
+      }
+    }
+
+    public String getBlogId() {
+      return this.blogId;
+    }
+
+    public getBlogIndex_args setBlogId(String blogId) {
+      this.blogId = blogId;
+      return this;
+    }
+
+    public void unsetBlogId() {
+      this.blogId = null;
+    }
+
+    /** Returns true if field blogId is set (has been assigned a value) and false otherwise */
+    public boolean isSetBlogId() {
+      return this.blogId != null;
+    }
+
+    public void setBlogIdIsSet(boolean value) {
+      if (!value) {
+        this.blogId = null;
+      }
+    }
+
+    public String getKeyWord() {
+      return this.keyWord;
+    }
+
+    public getBlogIndex_args setKeyWord(String keyWord) {
+      this.keyWord = keyWord;
+      return this;
+    }
+
+    public void unsetKeyWord() {
+      this.keyWord = null;
+    }
+
+    /** Returns true if field keyWord is set (has been assigned a value) and false otherwise */
+    public boolean isSetKeyWord() {
+      return this.keyWord != null;
+    }
+
+    public void setKeyWordIsSet(boolean value) {
+      if (!value) {
+        this.keyWord = null;
+      }
+    }
+
+    public String getCreateType() {
+      return this.createType;
+    }
+
+    public getBlogIndex_args setCreateType(String createType) {
+      this.createType = createType;
+      return this;
+    }
+
+    public void unsetCreateType() {
+      this.createType = null;
+    }
+
+    /** Returns true if field createType is set (has been assigned a value) and false otherwise */
+    public boolean isSetCreateType() {
+      return this.createType != null;
+    }
+
+    public void setCreateTypeIsSet(boolean value) {
+      if (!value) {
+        this.createType = null;
+      }
+    }
+
+    public String getCreateScope() {
+      return this.createScope;
+    }
+
+    public getBlogIndex_args setCreateScope(String createScope) {
+      this.createScope = createScope;
+      return this;
+    }
+
+    public void unsetCreateScope() {
+      this.createScope = null;
+    }
+
+    /** Returns true if field createScope is set (has been assigned a value) and false otherwise */
+    public boolean isSetCreateScope() {
+      return this.createScope != null;
+    }
+
+    public void setCreateScopeIsSet(boolean value) {
+      if (!value) {
+        this.createScope = null;
+      }
+    }
+
+    public String getCustomScope() {
+      return this.customScope;
+    }
+
+    public getBlogIndex_args setCustomScope(String customScope) {
+      this.customScope = customScope;
+      return this;
+    }
+
+    public void unsetCustomScope() {
+      this.customScope = null;
+    }
+
+    /** Returns true if field customScope is set (has been assigned a value) and false otherwise */
+    public boolean isSetCustomScope() {
+      return this.customScope != null;
+    }
+
+    public void setCustomScopeIsSet(boolean value) {
+      if (!value) {
+        this.customScope = null;
+      }
+    }
+
+    public String getStartDate() {
+      return this.startDate;
+    }
+
+    public getBlogIndex_args setStartDate(String startDate) {
+      this.startDate = startDate;
+      return this;
+    }
+
+    public void unsetStartDate() {
+      this.startDate = null;
+    }
+
+    /** Returns true if field startDate is set (has been assigned a value) and false otherwise */
+    public boolean isSetStartDate() {
+      return this.startDate != null;
+    }
+
+    public void setStartDateIsSet(boolean value) {
+      if (!value) {
+        this.startDate = null;
+      }
+    }
+
+    public String getEndDate() {
+      return this.endDate;
+    }
+
+    public getBlogIndex_args setEndDate(String endDate) {
+      this.endDate = endDate;
+      return this;
+    }
+
+    public void unsetEndDate() {
+      this.endDate = null;
+    }
+
+    /** Returns true if field endDate is set (has been assigned a value) and false otherwise */
+    public boolean isSetEndDate() {
+      return this.endDate != null;
+    }
+
+    public void setEndDateIsSet(boolean value) {
+      if (!value) {
+        this.endDate = null;
+      }
+    }
+
+    public boolean isIsPublic() {
+      return this.isPublic;
+    }
+
+    public getBlogIndex_args setIsPublic(boolean isPublic) {
+      this.isPublic = isPublic;
+      setIsPublicIsSet(true);
+      return this;
+    }
+
+    public void unsetIsPublic() {
+      __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __ISPUBLIC_ISSET_ID);
+    }
+
+    /** Returns true if field isPublic is set (has been assigned a value) and false otherwise */
+    public boolean isSetIsPublic() {
+      return EncodingUtils.testBit(__isset_bitfield, __ISPUBLIC_ISSET_ID);
+    }
+
+    public void setIsPublicIsSet(boolean value) {
+      __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __ISPUBLIC_ISSET_ID, value);
+    }
+
+    public boolean isIsDelete() {
+      return this.isDelete;
+    }
+
+    public getBlogIndex_args setIsDelete(boolean isDelete) {
+      this.isDelete = isDelete;
+      setIsDeleteIsSet(true);
+      return this;
+    }
+
+    public void unsetIsDelete() {
+      __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __ISDELETE_ISSET_ID);
+    }
+
+    /** Returns true if field isDelete is set (has been assigned a value) and false otherwise */
+    public boolean isSetIsDelete() {
+      return EncodingUtils.testBit(__isset_bitfield, __ISDELETE_ISSET_ID);
+    }
+
+    public void setIsDeleteIsSet(boolean value) {
+      __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __ISDELETE_ISSET_ID, value);
+    }
+
+    public int getPage() {
+      return this.page;
+    }
+
+    public getBlogIndex_args setPage(int page) {
+      this.page = page;
+      setPageIsSet(true);
+      return this;
+    }
+
+    public void unsetPage() {
+      __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __PAGE_ISSET_ID);
+    }
+
+    /** Returns true if field page is set (has been assigned a value) and false otherwise */
+    public boolean isSetPage() {
+      return EncodingUtils.testBit(__isset_bitfield, __PAGE_ISSET_ID);
+    }
+
+    public void setPageIsSet(boolean value) {
+      __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __PAGE_ISSET_ID, value);
+    }
+
+    public int getLimit() {
+      return this.limit;
+    }
+
+    public getBlogIndex_args setLimit(int limit) {
+      this.limit = limit;
+      setLimitIsSet(true);
+      return this;
+    }
+
+    public void unsetLimit() {
+      __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __LIMIT_ISSET_ID);
+    }
+
+    /** Returns true if field limit is set (has been assigned a value) and false otherwise */
+    public boolean isSetLimit() {
+      return EncodingUtils.testBit(__isset_bitfield, __LIMIT_ISSET_ID);
+    }
+
+    public void setLimitIsSet(boolean value) {
+      __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __LIMIT_ISSET_ID, value);
+    }
+
+    public void setFieldValue(_Fields field, Object value) {
+      switch (field) {
+      case USER_ID:
+        if (value == null) {
+          unsetUserId();
+        } else {
+          setUserId((String)value);
+        }
+        break;
+
+      case BLOG_ID:
+        if (value == null) {
+          unsetBlogId();
+        } else {
+          setBlogId((String)value);
+        }
+        break;
+
+      case KEY_WORD:
+        if (value == null) {
+          unsetKeyWord();
+        } else {
+          setKeyWord((String)value);
+        }
+        break;
+
+      case CREATE_TYPE:
+        if (value == null) {
+          unsetCreateType();
+        } else {
+          setCreateType((String)value);
+        }
+        break;
+
+      case CREATE_SCOPE:
+        if (value == null) {
+          unsetCreateScope();
+        } else {
+          setCreateScope((String)value);
+        }
+        break;
+
+      case CUSTOM_SCOPE:
+        if (value == null) {
+          unsetCustomScope();
+        } else {
+          setCustomScope((String)value);
+        }
+        break;
+
+      case START_DATE:
+        if (value == null) {
+          unsetStartDate();
+        } else {
+          setStartDate((String)value);
+        }
+        break;
+
+      case END_DATE:
+        if (value == null) {
+          unsetEndDate();
+        } else {
+          setEndDate((String)value);
+        }
+        break;
+
+      case IS_PUBLIC:
+        if (value == null) {
+          unsetIsPublic();
+        } else {
+          setIsPublic((Boolean)value);
+        }
+        break;
+
+      case IS_DELETE:
+        if (value == null) {
+          unsetIsDelete();
+        } else {
+          setIsDelete((Boolean)value);
+        }
+        break;
+
+      case PAGE:
+        if (value == null) {
+          unsetPage();
+        } else {
+          setPage((Integer)value);
+        }
+        break;
+
+      case LIMIT:
+        if (value == null) {
+          unsetLimit();
+        } else {
+          setLimit((Integer)value);
+        }
+        break;
+
+      }
+    }
+
+    public Object getFieldValue(_Fields field) {
+      switch (field) {
+      case USER_ID:
+        return getUserId();
+
+      case BLOG_ID:
+        return getBlogId();
+
+      case KEY_WORD:
+        return getKeyWord();
+
+      case CREATE_TYPE:
+        return getCreateType();
+
+      case CREATE_SCOPE:
+        return getCreateScope();
+
+      case CUSTOM_SCOPE:
+        return getCustomScope();
+
+      case START_DATE:
+        return getStartDate();
+
+      case END_DATE:
+        return getEndDate();
+
+      case IS_PUBLIC:
+        return Boolean.valueOf(isIsPublic());
+
+      case IS_DELETE:
+        return Boolean.valueOf(isIsDelete());
+
+      case PAGE:
+        return Integer.valueOf(getPage());
+
+      case LIMIT:
+        return Integer.valueOf(getLimit());
+
+      }
+      throw new IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new IllegalArgumentException();
+      }
+
+      switch (field) {
+      case USER_ID:
+        return isSetUserId();
+      case BLOG_ID:
+        return isSetBlogId();
+      case KEY_WORD:
+        return isSetKeyWord();
+      case CREATE_TYPE:
+        return isSetCreateType();
+      case CREATE_SCOPE:
+        return isSetCreateScope();
+      case CUSTOM_SCOPE:
+        return isSetCustomScope();
+      case START_DATE:
+        return isSetStartDate();
+      case END_DATE:
+        return isSetEndDate();
+      case IS_PUBLIC:
+        return isSetIsPublic();
+      case IS_DELETE:
+        return isSetIsDelete();
+      case PAGE:
+        return isSetPage();
+      case LIMIT:
+        return isSetLimit();
+      }
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof getBlogIndex_args)
+        return this.equals((getBlogIndex_args)that);
+      return false;
+    }
+
+    public boolean equals(getBlogIndex_args that) {
+      if (that == null)
+        return false;
+
+      boolean this_present_userId = true && this.isSetUserId();
+      boolean that_present_userId = true && that.isSetUserId();
+      if (this_present_userId || that_present_userId) {
+        if (!(this_present_userId && that_present_userId))
+          return false;
+        if (!this.userId.equals(that.userId))
+          return false;
+      }
+
+      boolean this_present_blogId = true && this.isSetBlogId();
+      boolean that_present_blogId = true && that.isSetBlogId();
+      if (this_present_blogId || that_present_blogId) {
+        if (!(this_present_blogId && that_present_blogId))
+          return false;
+        if (!this.blogId.equals(that.blogId))
+          return false;
+      }
+
+      boolean this_present_keyWord = true && this.isSetKeyWord();
+      boolean that_present_keyWord = true && that.isSetKeyWord();
+      if (this_present_keyWord || that_present_keyWord) {
+        if (!(this_present_keyWord && that_present_keyWord))
+          return false;
+        if (!this.keyWord.equals(that.keyWord))
+          return false;
+      }
+
+      boolean this_present_createType = true && this.isSetCreateType();
+      boolean that_present_createType = true && that.isSetCreateType();
+      if (this_present_createType || that_present_createType) {
+        if (!(this_present_createType && that_present_createType))
+          return false;
+        if (!this.createType.equals(that.createType))
+          return false;
+      }
+
+      boolean this_present_createScope = true && this.isSetCreateScope();
+      boolean that_present_createScope = true && that.isSetCreateScope();
+      if (this_present_createScope || that_present_createScope) {
+        if (!(this_present_createScope && that_present_createScope))
+          return false;
+        if (!this.createScope.equals(that.createScope))
+          return false;
+      }
+
+      boolean this_present_customScope = true && this.isSetCustomScope();
+      boolean that_present_customScope = true && that.isSetCustomScope();
+      if (this_present_customScope || that_present_customScope) {
+        if (!(this_present_customScope && that_present_customScope))
+          return false;
+        if (!this.customScope.equals(that.customScope))
+          return false;
+      }
+
+      boolean this_present_startDate = true && this.isSetStartDate();
+      boolean that_present_startDate = true && that.isSetStartDate();
+      if (this_present_startDate || that_present_startDate) {
+        if (!(this_present_startDate && that_present_startDate))
+          return false;
+        if (!this.startDate.equals(that.startDate))
+          return false;
+      }
+
+      boolean this_present_endDate = true && this.isSetEndDate();
+      boolean that_present_endDate = true && that.isSetEndDate();
+      if (this_present_endDate || that_present_endDate) {
+        if (!(this_present_endDate && that_present_endDate))
+          return false;
+        if (!this.endDate.equals(that.endDate))
+          return false;
+      }
+
+      boolean this_present_isPublic = true;
+      boolean that_present_isPublic = true;
+      if (this_present_isPublic || that_present_isPublic) {
+        if (!(this_present_isPublic && that_present_isPublic))
+          return false;
+        if (this.isPublic != that.isPublic)
+          return false;
+      }
+
+      boolean this_present_isDelete = true;
+      boolean that_present_isDelete = true;
+      if (this_present_isDelete || that_present_isDelete) {
+        if (!(this_present_isDelete && that_present_isDelete))
+          return false;
+        if (this.isDelete != that.isDelete)
+          return false;
+      }
+
+      boolean this_present_page = true;
+      boolean that_present_page = true;
+      if (this_present_page || that_present_page) {
+        if (!(this_present_page && that_present_page))
+          return false;
+        if (this.page != that.page)
+          return false;
+      }
+
+      boolean this_present_limit = true;
+      boolean that_present_limit = true;
+      if (this_present_limit || that_present_limit) {
+        if (!(this_present_limit && that_present_limit))
+          return false;
+        if (this.limit != that.limit)
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+
+    @Override
+    public int compareTo(getBlogIndex_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = Boolean.valueOf(isSetUserId()).compareTo(other.isSetUserId());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetUserId()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.userId, other.userId);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetBlogId()).compareTo(other.isSetBlogId());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetBlogId()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.blogId, other.blogId);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetKeyWord()).compareTo(other.isSetKeyWord());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetKeyWord()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.keyWord, other.keyWord);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetCreateType()).compareTo(other.isSetCreateType());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetCreateType()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.createType, other.createType);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetCreateScope()).compareTo(other.isSetCreateScope());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetCreateScope()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.createScope, other.createScope);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetCustomScope()).compareTo(other.isSetCustomScope());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetCustomScope()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.customScope, other.customScope);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetStartDate()).compareTo(other.isSetStartDate());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetStartDate()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.startDate, other.startDate);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetEndDate()).compareTo(other.isSetEndDate());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetEndDate()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.endDate, other.endDate);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetIsPublic()).compareTo(other.isSetIsPublic());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetIsPublic()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.isPublic, other.isPublic);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetIsDelete()).compareTo(other.isSetIsDelete());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetIsDelete()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.isDelete, other.isDelete);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetPage()).compareTo(other.isSetPage());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetPage()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.page, other.page);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetLimit()).compareTo(other.isSetLimit());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetLimit()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.limit, other.limit);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      schemes.get(iprot.getScheme()).getScheme().read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      schemes.get(oprot.getScheme()).getScheme().write(oprot, this);
+    }
+
+    @Override
+    public String toString() {
+      StringBuilder sb = new StringBuilder("getBlogIndex_args(");
+      boolean first = true;
+
+      sb.append("userId:");
+      if (this.userId == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.userId);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("blogId:");
+      if (this.blogId == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.blogId);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("keyWord:");
+      if (this.keyWord == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.keyWord);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("createType:");
+      if (this.createType == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.createType);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("createScope:");
+      if (this.createScope == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.createScope);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("customScope:");
+      if (this.customScope == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.customScope);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("startDate:");
+      if (this.startDate == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.startDate);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("endDate:");
+      if (this.endDate == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.endDate);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("isPublic:");
+      sb.append(this.isPublic);
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("isDelete:");
+      sb.append(this.isDelete);
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("page:");
+      sb.append(this.page);
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("limit:");
+      sb.append(this.limit);
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+      try {
+        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+        __isset_bitfield = 0;
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class getBlogIndex_argsStandardSchemeFactory implements SchemeFactory {
+      public getBlogIndex_argsStandardScheme getScheme() {
+        return new getBlogIndex_argsStandardScheme();
+      }
+    }
+
+    private static class getBlogIndex_argsStandardScheme extends StandardScheme<getBlogIndex_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, getBlogIndex_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // USER_ID
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.userId = iprot.readString();
+                struct.setUserIdIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // BLOG_ID
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.blogId = iprot.readString();
+                struct.setBlogIdIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 3: // KEY_WORD
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.keyWord = iprot.readString();
+                struct.setKeyWordIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 4: // CREATE_TYPE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.createType = iprot.readString();
+                struct.setCreateTypeIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 5: // CREATE_SCOPE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.createScope = iprot.readString();
+                struct.setCreateScopeIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 6: // CUSTOM_SCOPE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.customScope = iprot.readString();
+                struct.setCustomScopeIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 7: // START_DATE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.startDate = iprot.readString();
+                struct.setStartDateIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 8: // END_DATE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.endDate = iprot.readString();
+                struct.setEndDateIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 9: // IS_PUBLIC
+              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
+                struct.isPublic = iprot.readBool();
+                struct.setIsPublicIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 10: // IS_DELETE
+              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
+                struct.isDelete = iprot.readBool();
+                struct.setIsDeleteIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 11: // PAGE
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.page = iprot.readI32();
+                struct.setPageIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 12: // LIMIT
+              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
+                struct.limit = iprot.readI32();
+                struct.setLimitIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, getBlogIndex_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.userId != null) {
+          oprot.writeFieldBegin(USER_ID_FIELD_DESC);
+          oprot.writeString(struct.userId);
+          oprot.writeFieldEnd();
+        }
+        if (struct.blogId != null) {
+          oprot.writeFieldBegin(BLOG_ID_FIELD_DESC);
+          oprot.writeString(struct.blogId);
+          oprot.writeFieldEnd();
+        }
+        if (struct.keyWord != null) {
+          oprot.writeFieldBegin(KEY_WORD_FIELD_DESC);
+          oprot.writeString(struct.keyWord);
+          oprot.writeFieldEnd();
+        }
+        if (struct.createType != null) {
+          oprot.writeFieldBegin(CREATE_TYPE_FIELD_DESC);
+          oprot.writeString(struct.createType);
+          oprot.writeFieldEnd();
+        }
+        if (struct.createScope != null) {
+          oprot.writeFieldBegin(CREATE_SCOPE_FIELD_DESC);
+          oprot.writeString(struct.createScope);
+          oprot.writeFieldEnd();
+        }
+        if (struct.customScope != null) {
+          oprot.writeFieldBegin(CUSTOM_SCOPE_FIELD_DESC);
+          oprot.writeString(struct.customScope);
+          oprot.writeFieldEnd();
+        }
+        if (struct.startDate != null) {
+          oprot.writeFieldBegin(START_DATE_FIELD_DESC);
+          oprot.writeString(struct.startDate);
+          oprot.writeFieldEnd();
+        }
+        if (struct.endDate != null) {
+          oprot.writeFieldBegin(END_DATE_FIELD_DESC);
+          oprot.writeString(struct.endDate);
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldBegin(IS_PUBLIC_FIELD_DESC);
+        oprot.writeBool(struct.isPublic);
+        oprot.writeFieldEnd();
+        oprot.writeFieldBegin(IS_DELETE_FIELD_DESC);
+        oprot.writeBool(struct.isDelete);
+        oprot.writeFieldEnd();
+        oprot.writeFieldBegin(PAGE_FIELD_DESC);
+        oprot.writeI32(struct.page);
+        oprot.writeFieldEnd();
+        oprot.writeFieldBegin(LIMIT_FIELD_DESC);
+        oprot.writeI32(struct.limit);
+        oprot.writeFieldEnd();
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class getBlogIndex_argsTupleSchemeFactory implements SchemeFactory {
+      public getBlogIndex_argsTupleScheme getScheme() {
+        return new getBlogIndex_argsTupleScheme();
+      }
+    }
+
+    private static class getBlogIndex_argsTupleScheme extends TupleScheme<getBlogIndex_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, getBlogIndex_args struct) throws org.apache.thrift.TException {
+        TTupleProtocol oprot = (TTupleProtocol) prot;
+        BitSet optionals = new BitSet();
+        if (struct.isSetUserId()) {
+          optionals.set(0);
+        }
+        if (struct.isSetBlogId()) {
+          optionals.set(1);
+        }
+        if (struct.isSetKeyWord()) {
+          optionals.set(2);
+        }
+        if (struct.isSetCreateType()) {
+          optionals.set(3);
+        }
+        if (struct.isSetCreateScope()) {
+          optionals.set(4);
+        }
+        if (struct.isSetCustomScope()) {
+          optionals.set(5);
+        }
+        if (struct.isSetStartDate()) {
+          optionals.set(6);
+        }
+        if (struct.isSetEndDate()) {
+          optionals.set(7);
+        }
+        if (struct.isSetIsPublic()) {
+          optionals.set(8);
+        }
+        if (struct.isSetIsDelete()) {
+          optionals.set(9);
+        }
+        if (struct.isSetPage()) {
+          optionals.set(10);
+        }
+        if (struct.isSetLimit()) {
+          optionals.set(11);
+        }
+        oprot.writeBitSet(optionals, 12);
+        if (struct.isSetUserId()) {
+          oprot.writeString(struct.userId);
+        }
+        if (struct.isSetBlogId()) {
+          oprot.writeString(struct.blogId);
+        }
+        if (struct.isSetKeyWord()) {
+          oprot.writeString(struct.keyWord);
+        }
+        if (struct.isSetCreateType()) {
+          oprot.writeString(struct.createType);
+        }
+        if (struct.isSetCreateScope()) {
+          oprot.writeString(struct.createScope);
+        }
+        if (struct.isSetCustomScope()) {
+          oprot.writeString(struct.customScope);
+        }
+        if (struct.isSetStartDate()) {
+          oprot.writeString(struct.startDate);
+        }
+        if (struct.isSetEndDate()) {
+          oprot.writeString(struct.endDate);
+        }
+        if (struct.isSetIsPublic()) {
+          oprot.writeBool(struct.isPublic);
+        }
+        if (struct.isSetIsDelete()) {
+          oprot.writeBool(struct.isDelete);
+        }
+        if (struct.isSetPage()) {
+          oprot.writeI32(struct.page);
+        }
+        if (struct.isSetLimit()) {
+          oprot.writeI32(struct.limit);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, getBlogIndex_args struct) throws org.apache.thrift.TException {
+        TTupleProtocol iprot = (TTupleProtocol) prot;
+        BitSet incoming = iprot.readBitSet(12);
+        if (incoming.get(0)) {
+          struct.userId = iprot.readString();
+          struct.setUserIdIsSet(true);
+        }
+        if (incoming.get(1)) {
+          struct.blogId = iprot.readString();
+          struct.setBlogIdIsSet(true);
+        }
+        if (incoming.get(2)) {
+          struct.keyWord = iprot.readString();
+          struct.setKeyWordIsSet(true);
+        }
+        if (incoming.get(3)) {
+          struct.createType = iprot.readString();
+          struct.setCreateTypeIsSet(true);
+        }
+        if (incoming.get(4)) {
+          struct.createScope = iprot.readString();
+          struct.setCreateScopeIsSet(true);
+        }
+        if (incoming.get(5)) {
+          struct.customScope = iprot.readString();
+          struct.setCustomScopeIsSet(true);
+        }
+        if (incoming.get(6)) {
+          struct.startDate = iprot.readString();
+          struct.setStartDateIsSet(true);
+        }
+        if (incoming.get(7)) {
+          struct.endDate = iprot.readString();
+          struct.setEndDateIsSet(true);
+        }
+        if (incoming.get(8)) {
+          struct.isPublic = iprot.readBool();
+          struct.setIsPublicIsSet(true);
+        }
+        if (incoming.get(9)) {
+          struct.isDelete = iprot.readBool();
+          struct.setIsDeleteIsSet(true);
+        }
+        if (incoming.get(10)) {
+          struct.page = iprot.readI32();
+          struct.setPageIsSet(true);
+        }
+        if (incoming.get(11)) {
+          struct.limit = iprot.readI32();
+          struct.setLimitIsSet(true);
+        }
+      }
+    }
+
+  }
+
+  public static class getBlogIndex_result implements org.apache.thrift.TBase<getBlogIndex_result, getBlogIndex_result._Fields>, java.io.Serializable, Cloneable, Comparable<getBlogIndex_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getBlogIndex_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRING, (short)0);
+
+    private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
+    static {
+      schemes.put(StandardScheme.class, new getBlogIndex_resultStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new getBlogIndex_resultTupleSchemeFactory());
+    }
+
+    public String success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+
+      static {
+        for (_Fields field : EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final String _fieldName;
+
+      _Fields(short thriftId, String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      metaDataMap = Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(getBlogIndex_result.class, metaDataMap);
+    }
+
+    public getBlogIndex_result() {
+    }
+
+    public getBlogIndex_result(
+      String success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public getBlogIndex_result(getBlogIndex_result other) {
+      if (other.isSetSuccess()) {
+        this.success = other.success;
+      }
+    }
+
+    public getBlogIndex_result deepCopy() {
+      return new getBlogIndex_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public String getSuccess() {
+      return this.success;
+    }
+
+    public getBlogIndex_result setSuccess(String success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((String)value);
+        }
+        break;
+
+      }
+    }
+
+    public Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof getBlogIndex_result)
+        return this.equals((getBlogIndex_result)that);
+      return false;
+    }
+
+    public boolean equals(getBlogIndex_result that) {
+      if (that == null)
+        return false;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+
+    @Override
+    public int compareTo(getBlogIndex_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      schemes.get(iprot.getScheme()).getScheme().read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      schemes.get(oprot.getScheme()).getScheme().write(oprot, this);
+      }
+
+    @Override
+    public String toString() {
+      StringBuilder sb = new StringBuilder("getBlogIndex_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class getBlogIndex_resultStandardSchemeFactory implements SchemeFactory {
+      public getBlogIndex_resultStandardScheme getScheme() {
+        return new getBlogIndex_resultStandardScheme();
+      }
+    }
+
+    private static class getBlogIndex_resultStandardScheme extends StandardScheme<getBlogIndex_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, getBlogIndex_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.success = iprot.readString();
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, getBlogIndex_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          oprot.writeString(struct.success);
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class getBlogIndex_resultTupleSchemeFactory implements SchemeFactory {
+      public getBlogIndex_resultTupleScheme getScheme() {
+        return new getBlogIndex_resultTupleScheme();
+      }
+    }
+
+    private static class getBlogIndex_resultTupleScheme extends TupleScheme<getBlogIndex_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, getBlogIndex_result struct) throws org.apache.thrift.TException {
+        TTupleProtocol oprot = (TTupleProtocol) prot;
+        BitSet optionals = new BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          oprot.writeString(struct.success);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, getBlogIndex_result struct) throws org.apache.thrift.TException {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {

@@ -66,5 +66,14 @@ public class StudyApiImpl implements StudyApi.Iface
         }
         return result;
     }
+
+    @Override
+    public String getStudyIndex(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
+            throws TException
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
     
 }

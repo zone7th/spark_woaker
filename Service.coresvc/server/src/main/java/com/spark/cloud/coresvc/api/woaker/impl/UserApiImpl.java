@@ -15,15 +15,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.fastjson.JSONObject;
 import com.spark.cloud.coresvc.api.woaker.UserApi;
-import com.spark.cloud.coresvc.pojo.woaker.StudyPlan;
 import com.spark.cloud.coresvc.pojo.woaker.UserInfo;
 import com.spark.cloud.coresvc.service.woaker.UserService;
 import com.spark.cloud.coresvc.utils.CoresvcUtils;
 import com.spark.cloud.coresvc.utils.ResultType;
 import com.spark.cloud.coresvc.utils.StringUtils;
 import com.spark.cloud.coresvc.utils.logger.LogUtil;
+
 /**
- * <b>类   名：</b>UserApiImpl<br/>
+ * <b>类 名：</b>UserApiImpl<br/>
  * <b>类描述：</b>描述这个类的功能<br/>
  * <b>创建人：</b>rlliu<br/>
  * <b>创建时间：</b>2016年2月1日 下午3:37:27<br/>
@@ -38,13 +38,13 @@ public class UserApiImpl implements UserApi.Iface
 {
     @Autowired
     private UserService userService;
-    
+
     @Override
     public String getUserList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
             throws TException
     {
-        LogUtil.info("woaker获取用户列表方法开始...方法名:getConfig,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate + ", endDate:" + endDate
-                + ", isDelete:" + isDelete + ", page:" + page + ", limit:" + limit + "]");
+        LogUtil.info("woaker获取用户列表方法开始...方法名:getConfig,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate + ", endDate:"
+                + endDate + ", isDelete:" + isDelete + ", page:" + page + ", limit:" + limit + "]");
         // 接口最终返回结果
         JSONObject jsonObject = new JSONObject();
         String result = StringUtils.EMPTY_STRING;
@@ -64,5 +64,5 @@ public class UserApiImpl implements UserApi.Iface
         }
         return result;
     }
-    
+
 }

@@ -24,7 +24,7 @@ import com.spark.cloud.coresvc.utils.StringUtils;
 import com.spark.cloud.coresvc.utils.logger.LogUtil;
 
 /**
- * <b>类   名：</b>WorkApiImpl<br/>
+ * <b>类 名：</b>WorkApiImpl<br/>
  * <b>类描述：</b>工作计划接口<br/>
  * <b>创建人：</b>rlliu<br/>
  * <b>创建时间：</b>2016年1月30日 下午5:12:56<br/>
@@ -40,13 +40,13 @@ public class WorkApiImpl implements WorkApi.Iface
 {
     @Autowired
     private WorkService workService;
-    
+
     @Override
     public String getWorkLogList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
             throws TException
     {
-        LogUtil.info("woaker获取工作日志方法开始...方法名:getConfig,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate + ", endDate:" + endDate
-                + ", isDelete:" + isDelete + ", page:" + page + ", limit:" + limit + "]");
+        LogUtil.info("woaker获取工作日志方法开始...方法名:getConfig,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate + ", endDate:"
+                + endDate + ", isDelete:" + isDelete + ", page:" + page + ", limit:" + limit + "]");
         // 接口最终返回结果
         JSONObject jsonObject = new JSONObject();
         String result = StringUtils.EMPTY_STRING;
@@ -66,5 +66,13 @@ public class WorkApiImpl implements WorkApi.Iface
         }
         return result;
     }
-    
+
+    @Override
+    public String getWorkIndex(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
+            throws TException
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }

@@ -32,7 +32,7 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Demo0Api {
+public class DemoApi {
 
   public interface Iface {
 
