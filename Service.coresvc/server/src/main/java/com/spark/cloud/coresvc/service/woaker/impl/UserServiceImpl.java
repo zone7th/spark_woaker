@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.spark.cloud.coresvc.dao.woaker.UserDao;
 import com.spark.cloud.coresvc.pojo.woaker.UserInfo;
-import com.spark.cloud.coresvc.pojo.woaker.WorkPlan;
+import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
 import com.spark.cloud.coresvc.service.woaker.UserService;
 
 /**

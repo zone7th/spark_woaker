@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.spark.cloud.coresvc.api.woaker.WorkApi;
-import com.spark.cloud.coresvc.pojo.woaker.WorkPlan;
+import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
 import com.spark.cloud.coresvc.service.woaker.WorkService;
 import com.spark.cloud.coresvc.utils.CoresvcUtils;
 import com.spark.cloud.coresvc.utils.ResultType;
@@ -45,14 +45,14 @@ public class WorkApiImpl implements WorkApi.Iface
     public String getWorkLogList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
             throws TException
     {
-        LogUtil.info("woaker获取工作日志方法开始...方法名:getConfig,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate + ", endDate:"
+        LogUtil.info("woaker获取工作日志方法开始...方法名:getWorkLogList,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate + ", endDate:"
                 + endDate + ", isDelete:" + isDelete + ", page:" + page + ", limit:" + limit + "]");
         // 接口最终返回结果
         JSONObject jsonObject = new JSONObject();
         String result = StringUtils.EMPTY_STRING;
         try
         {
-            List<WorkPlan> workPlanList = workService.getWorkLogList(userId, keyWord, startDate, endDate, isDelete, page, limit);
+            List<WorkInfo> workPlanList = workService.getWorkInfoList(userId, keyWord, startDate, endDate, isDelete, page, limit);
             jsonObject.put("workPlanList", workPlanList);
             result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.SUCCESS, jsonObject).toJSONString();
             LogUtil.info("woaker获取工作日志方法正常结束");
@@ -71,8 +71,25 @@ public class WorkApiImpl implements WorkApi.Iface
     public String getWorkIndex(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
             throws TException
     {
-        // TODO Auto-generated method stub
-        return null;
+        LogUtil.info("woaker获取工作首页方法开始...方法名:getWorkIndex,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate + ", endDate:"
+                + endDate + ", isDelete:" + isDelete + ", page:" + page + ", limit:" + limit + "]");
+        // 接口最终返回结果
+        JSONObject jsonObject = new JSONObject();
+        String result = StringUtils.EMPTY_STRING;
+        try
+        {   
+            jsonObject = workService.getWorkIndex(userId);
+            result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.SUCCESS, jsonObject).toJSONString();
+            LogUtil.info("woaker获取工作日志方法正常结束");
+            LogUtil.debug("woaker获取工作日志方法返回结果:" + result);
+        }
+        catch (Exception e)
+        {
+            result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.OPERATE_ERROR).toJSONString();
+            LogUtil.info("woaker获取工作日志方法异常结束...返回结果:" + result);
+            e.printStackTrace();
+        }
+        return result;
     }
 
 }

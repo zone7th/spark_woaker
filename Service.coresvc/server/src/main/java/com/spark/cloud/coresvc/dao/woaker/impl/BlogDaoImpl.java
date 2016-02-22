@@ -68,10 +68,74 @@ public class BlogDaoImpl extends DataSourceSupport implements BlogDao
         List<BlogInfo> blogInfoList = (List<BlogInfo>) this.queryForList(sql.toString(), paramMap, getBlogInfoPo());
         return blogInfoList;
     }
+    
+    /* (non-Javadoc)
+     * @see com.spark.cloud.coresvc.dao.woaker.BlogDao#getBlogListOrderByDate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, boolean, int, int)
+     */
+    @Override
+    public List<BlogInfo> getBlogListOrderByDate(String userId, String blogId, String keyWord, String createType, String createScope,
+            String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit)
+    {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("user_id", userId);
+        paramMap.put("blog_id", blogId);
+        paramMap.put("title", keyWord);
+        paramMap.put("create_type", createType);
+        paramMap.put("create_type", createScope);
+        paramMap.put("create_type", customScope);
+        paramMap.put("start_date", startDate);
+        paramMap.put("end_date", endDate);
+        paramMap.put("is_public", isPublic);
+        paramMap.put("is_delete", isDelete);
+        paramMap.put("page", page);
+        paramMap.put("limit", limit);
+        StringBuilder sql = new StringBuilder();
+        sql.append(" SELECT bi.id, bi.user_id, bi.title, bi.create_type, bi.create_scope, bi.custom_scope, bi.create_date, bi.reprint_url, bi.content, bi.picture_url, bi.upvote_count, bi.view_count, bi.collection_count, bi.is_public, bi.is_delete");
+        sql.append(" FROM blog_info bi");
+        sql.append(" WHERE is_public = :is_public");
+        sql.append(" AND is_delete = :is_delete");
+        sql.append(" ORDER BY bi.create_date");
+        sql.append(" LIMIT :limit, :page");
+        @SuppressWarnings("unchecked")
+        List<BlogInfo> blogInfoList = (List<BlogInfo>) this.queryForList(sql.toString(), paramMap, getBlogInfoPo());
+        return blogInfoList;
+    }
+    
+    /* (non-Javadoc)
+     * @see com.spark.cloud.coresvc.dao.woaker.BlogDao#getBlogListOrderByViewCount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, boolean, int, int)
+     */
+    @Override
+    public List<BlogInfo> getBlogListOrderByViewCount(String userId, String blogId, String keyWord, String createType, String createScope,
+            String customScope, String startDate, String endDate, boolean isPublic, boolean isDelete, int page, int limit)
+    {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("user_id", userId);
+        paramMap.put("blog_id", blogId);
+        paramMap.put("title", keyWord);
+        paramMap.put("create_type", createType);
+        paramMap.put("create_type", createScope);
+        paramMap.put("create_type", customScope);
+        paramMap.put("start_date", startDate);
+        paramMap.put("end_date", endDate);
+        paramMap.put("is_public", isPublic);
+        paramMap.put("is_delete", isDelete);
+        paramMap.put("page", page);
+        paramMap.put("limit", limit);
+        StringBuilder sql = new StringBuilder();
+        sql.append(" SELECT bi.id, bi.user_id, bi.title, bi.create_type, bi.create_scope, bi.custom_scope, bi.create_date, bi.reprint_url, bi.content, bi.picture_url, bi.upvote_count, bi.view_count, bi.collection_count, bi.is_public, bi.is_delete");
+        sql.append(" FROM blog_info bi");
+        sql.append(" WHERE is_public = :is_public");
+        sql.append(" AND is_delete = :is_delete");
+        sql.append(" ORDER BY bi.view_count");
+        sql.append(" LIMIT :limit, :page");
+        @SuppressWarnings("unchecked")
+        List<BlogInfo> blogInfoList = (List<BlogInfo>) this.queryForList(sql.toString(), paramMap, getBlogInfoPo());
+        return blogInfoList;
+    }
 
     /**
      * 
-     * getRowMapperPo(获取博客信息)
+     * getBlogInfoPo(获取博客信息)
      * 
      * @return
      * @exception

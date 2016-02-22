@@ -19,8 +19,8 @@ import org.springframework.stereotype.Repository;
 
 import com.spark.cloud.coresvc.base.dao.DataSourceSupport;
 import com.spark.cloud.coresvc.dao.woaker.WorkDao;
-import com.spark.cloud.coresvc.pojo.woaker.WorkPlan;
-import com.spark.cloud.coresvc.pojo.woaker.WorkPlan;
+import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
+import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
 
 /**
  * <b>类   名：</b>WorkDaoImpl<br/>
@@ -42,7 +42,7 @@ public class WorkDaoImpl extends DataSourceSupport implements WorkDao
      * @see com.spark.cloud.coresvc.dao.woaker.WorkDao#getWorkLogList(java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, int, int)
      */
     @Override
-    public List<WorkPlan> getWorkLogList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
+    public List<WorkInfo> getWorkInfoList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
     {
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("user_id", userId);
@@ -53,12 +53,31 @@ public class WorkDaoImpl extends DataSourceSupport implements WorkDao
         paramMap.put("page", page);
         paramMap.put("limit", limit);
         StringBuilder sql = new StringBuilder();
-        sql.append(" SELECT wp.id, wp.user_id, wp.title, wp.content, wp.create_date, wp.is_delete");
-        sql.append(" FROM work_plan wp");
+        sql.append(" SELECT wi.id, wi.user_id, wi.title, wi.plan_content, wi.log_content, wi.plan_create_date, wi.log_create_date, wi.create_date, wi.is_delete");
+        sql.append(" FROM work_info wi");
         sql.append(" WHERE ");
         @SuppressWarnings("unchecked")
-        List<WorkPlan> workPlanInfoList = (List<WorkPlan>) this.queryForList(sql.toString(), paramMap, getWorkPlanPo());
+        List<WorkInfo> workPlanInfoList = (List<WorkInfo>) this.queryForList(sql.toString(), paramMap, getWorkInfoPo());
         return workPlanInfoList;
+    }
+    
+    /* (non-Javadoc)
+     * @see com.spark.cloud.coresvc.dao.woaker.WorkDao#getWorkInfo(java.lang.String, java.lang.String, java.lang.String, boolean)
+     */
+    @Override
+    public WorkInfo getWorkInfo(String userId, String workInfoId, String createDate, boolean isDelete)
+    {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("user_id", userId);
+        paramMap.put("workInfoId", workInfoId);
+        paramMap.put("createDate", createDate);
+        paramMap.put("is_delete", isDelete);
+        StringBuilder sql = new StringBuilder();
+        sql.append(" SELECT wi.id, wi.user_id, wi.title, wi.plan_content, wi.log_content, wi.plan_create_date, wi.log_create_date, wi.create_date, wi.is_delete");
+        sql.append(" FROM work_info wi");
+        sql.append(" WHERE wi.createDate = :createDate");
+        WorkInfo workPlanInfo = (WorkInfo) this.queryForObject(sql.toString(), paramMap, getWorkInfoPo());
+        return workPlanInfo;
     }
 
     /**
@@ -70,21 +89,24 @@ public class WorkDaoImpl extends DataSourceSupport implements WorkDao
      * @since 1.0
      * @author rlliu
      */
-    private RowMapper<WorkPlan> getWorkPlanPo()
+    private RowMapper<WorkInfo> getWorkInfoPo()
     {
-        return new RowMapper<WorkPlan>()
+        return new RowMapper<WorkInfo>()
         {
             @Override
-            public WorkPlan mapRow(ResultSet rs, int rowNum) throws SQLException
+            public WorkInfo mapRow(ResultSet rs, int rowNum) throws SQLException
             {
-                WorkPlan workPlan = new WorkPlan();
-                workPlan.setId(rs.getInt("id"));
-                workPlan.setUser_id(rs.getString("user_id"));
-                workPlan.setTitle(rs.getString("title"));
-                workPlan.setCreate_date(rs.getString("create_date"));
-                workPlan.setContent(rs.getString("content"));
-                workPlan.setIs_delete(rs.getBoolean("is_delete"));
-                return workPlan;
+                WorkInfo workInfo = new WorkInfo();
+                workInfo.setId(rs.getInt("id"));
+                workInfo.setUser_id(rs.getString("user_id"));
+                workInfo.setTitle(rs.getString("title"));
+                workInfo.setCreate_date(rs.getString("create_date"));
+                workInfo.setPlan_content(rs.getString("plan_content"));
+                workInfo.setLog_content(rs.getString("log_content"));
+                workInfo.setPlan_create_date(rs.getString("plan_create_date"));
+                workInfo.setLog_create_date(rs.getString("log_create_date"));
+                workInfo.setIs_delete(rs.getBoolean("is_delete"));
+                return workInfo;
             }
         };
     }

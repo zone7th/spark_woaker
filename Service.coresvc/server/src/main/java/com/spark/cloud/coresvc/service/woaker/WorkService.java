@@ -10,7 +10,8 @@ package com.spark.cloud.coresvc.service.woaker;
 
 import java.util.List;
 
-import com.spark.cloud.coresvc.pojo.woaker.WorkPlan;
+import com.alibaba.fastjson.JSONObject;
+import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
 
 /**
  * <b>类   名：</b>WorkService<br/>
@@ -42,5 +43,17 @@ public interface WorkService
      * @since 1.0
      * @author rlliu
      */
-    public List<WorkPlan> getWorkLogList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit);
+    public List<WorkInfo> getWorkInfoList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit);
+    
+    /**
+     * 
+     * getWorkIndex(获取工作计划首页)
+     * 
+     * @param userId    用户ID
+     * @return 
+     * @exception 
+     * @since 1.0
+     * @author rlliu
+     */
+    public JSONObject getWorkIndex(String userId);
 }

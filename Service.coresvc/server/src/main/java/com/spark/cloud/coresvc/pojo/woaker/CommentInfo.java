@@ -72,82 +72,156 @@ public class CommentInfo implements Serializable
     /**
      * 是否删除
      */
-    String is_delete;
+    boolean is_delete;
 
+    /**
+     * 取得 id
+     *
+     * @return id
+     */
     public Integer getId()
     {
         return id;
     }
 
+    /**
+     * 设置 id
+     *
+     * @param id
+     */
     public void setId(Integer id)
     {
         this.id = id;
     }
 
+    /**
+     * 取得 blog_id
+     *
+     * @return blog_id
+     */
     public String getBlog_id()
     {
         return blog_id;
     }
 
+    /**
+     * 设置 blog_id
+     *
+     * @param blog_id
+     */
     public void setBlog_id(String blog_id)
     {
         this.blog_id = blog_id;
     }
 
+    /**
+     * 取得 title
+     *
+     * @return title
+     */
     public String getTitle()
     {
         return title;
     }
 
+    /**
+     * 设置 title
+     *
+     * @param title
+     */
     public void setTitle(String title)
     {
         this.title = title;
     }
 
+    /**
+     * 取得 commentator_id
+     *
+     * @return commentator_id
+     */
     public String getCommentator_id()
     {
         return commentator_id;
     }
 
+    /**
+     * 设置 commentator_id
+     *
+     * @param commentator_id
+     */
     public void setCommentator_id(String commentator_id)
     {
         this.commentator_id = commentator_id;
     }
 
+    /**
+     * 取得 content
+     *
+     * @return content
+     */
     public String getContent()
     {
         return content;
     }
 
+    /**
+     * 设置 content
+     *
+     * @param content
+     */
     public void setContent(String content)
     {
         this.content = content;
     }
 
+    /**
+     * 取得 create_date
+     *
+     * @return create_date
+     */
     public String getCreate_date()
     {
         return create_date;
     }
 
+    /**
+     * 设置 create_date
+     *
+     * @param create_date
+     */
     public void setCreate_date(String create_date)
     {
         this.create_date = create_date;
     }
 
-    public String getIs_delete()
+    /**
+     * 取得 is_delete
+     *
+     * @return is_delete
+     */
+    public boolean isIs_delete()
     {
         return is_delete;
     }
 
-    public void setIs_delete(String is_delete)
+    /**
+     * 设置 is_delete
+     *
+     * @param is_delete
+     */
+    public void setIs_delete(boolean is_delete)
     {
         this.is_delete = is_delete;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString()
     {
         return "CommentInfo [id=" + id + ", blog_id=" + blog_id + ", title=" + title + ", commentator_id=" + commentator_id + ", content=" + content
                 + ", create_date=" + create_date + ", is_delete=" + is_delete + "]";
     }
+
 }

@@ -10,7 +10,7 @@ package com.spark.cloud.coresvc.dao.woaker;
 
 import java.util.List;
 
-import com.spark.cloud.coresvc.pojo.woaker.WorkPlan;
+import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
 
 /**
  * <b>类   名：</b>WorkDao<br/>
@@ -42,5 +42,21 @@ public interface WorkDao
      * @since 1.0
      * @author rlliu
      */
-    public List<WorkPlan> getWorkLogList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit);
+    public List<WorkInfo> getWorkInfoList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit);
+    
+    /**
+     * 
+     * getWorkInfo(这里用一句话描述这个方法的作用)
+     * 
+     * @param userId        用户ID
+     * @param workInfoId    工作信息ID
+     * @param createDate    工作信息创建时间
+     * @param isDelete      是否删除
+     * @return 
+     * @exception 
+     * @since 1.0
+     * @author rlliu
+     */
+    public WorkInfo getWorkInfo(String userId, String workInfoId, String createDate, boolean isDelete);
+    
 }
