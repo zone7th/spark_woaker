@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.apache.thrift.TException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.spark.cloud.coresvc.api.woaker.UserApi;
@@ -34,6 +35,7 @@ import com.spark.cloud.coresvc.utils.logger.LogUtil;
  * @version 1.0<br/>
  * 
  */
+@Service
 public class UserApiImpl implements UserApi.Iface
 {
     @Autowired

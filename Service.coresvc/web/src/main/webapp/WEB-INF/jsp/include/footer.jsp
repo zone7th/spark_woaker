@@ -5,7 +5,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="navbar-inner navbar-content-center">
             <p class="text-muted credit" style="text-align: center;margin-top:15px;">
-                蜗壳
+                阿道夫·L·威兹曼
             </p>
         </div>
     </nav>

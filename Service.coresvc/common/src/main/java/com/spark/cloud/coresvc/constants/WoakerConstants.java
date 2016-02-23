@@ -48,13 +48,13 @@ public class WoakerConstants
     public static final String WOAKER_REPLY_INFO = "woaker_reply_info";
     
     /**
-     * Woaker系统用户工作日志表名称
+     * Woaker系统学习计划表名称
      */
-    public static final String WOAKER_WORK_LOG = "woaker_work_log";
+    public static final String WOAKER_STUDY_PLAN = "woaker_study_plan";
     
     /**
-     * Woaker系统用户工作计划表名称
+     * Woaker系统用户工作信息表名称
      */
-    public static final String WOAKER_WORK_PLAN = "woaker_work_plan";
+    public static final String WOAKER_WORK_INFO = "woaker_work_info";
     
 }

@@ -14,10 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alibaba.fastjson.JSONObject;
-import com.iflytek.epdcloud.epsp.client.EpspSafetyClientFactory;
-import com.iflytek.epdcloud.epsp.constants.SafetyCons;
-import com.iflytek.epdcloud.epsp.utils.StringUtils;
 import com.spark.cloud.coresvc.client.WoakerClientFactory;
+import com.spark.cloud.coresvc.constants.WoakerConstants;
 
 /**
  * <b>类 名：</b>IndexController<br/>
@@ -35,46 +33,55 @@ import com.spark.cloud.coresvc.client.WoakerClientFactory;
 @RequestMapping("index")
 public class IndexController
 {
-    //String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate,  boolean isPublic, boolean isDelete, int page, int limit
-    //userId, blogId, keyWord, createType, createScope, customScope, startDate, endDate, isPublic, isDelete, page, limit
+    // String userId, String blogId, String keyWord, String createType, String createScope, String customScope, String startDate, String endDate,
+    // boolean isPublic, boolean isDelete, int page, int limit
+    // userId, blogId, keyWord, createType, createScope, customScope, startDate, endDate, isPublic, isDelete, page, limit
     @RequestMapping("/index")
     public String index(Model model)
-    {
-        try
+    {   
+        model.addAttribute("current",WoakerConstants.INDEX);
+        /*try
         {
             String resultJson = WoakerClientFactory.createBlogApi().getIndex();
             JSONObject jsonObject = JSONObject.parseObject(resultJson);
             if (jsonObject.getIntValue("Code") == 0)
             {
                 JSONObject json = jsonObject.getJSONObject("Data");
+                model.addAllAttributes(json);
             }
         }
         catch (TException e)
         {
             e.printStackTrace();
-        }
+        }*/
         return "index/index";
     }
 
     @RequestMapping("/register")
     public String register()
     {
-        //跳转到注册页面
+        // 跳转到注册页面
         return "index/register";
     }
 
     @RequestMapping("/login")
     public String login()
     {
-        //跳转到登陆页面
+        // 跳转到登陆页面
         return "index/login";
+    }
+    
+    @RequestMapping("/logininto")
+    public String logininto()
+    {
+        // 登陆成功跳转到主界面
+        return "index/index.do";
     }
 
     @RequestMapping("/logout")
     public String logout()
     {
-        //清除session退出系统
+        // 清除session退出系统
         return "index/logout";
     }
-
 }

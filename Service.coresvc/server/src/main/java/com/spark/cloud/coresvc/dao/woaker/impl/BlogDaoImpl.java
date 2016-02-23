@@ -17,7 +17,6 @@ import java.util.Map;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.alibaba.fastjson.JSONObject;
 import com.spark.cloud.coresvc.base.dao.DataSourceSupport;
 import com.spark.cloud.coresvc.dao.woaker.BlogDao;
 import com.spark.cloud.coresvc.pojo.woaker.BlogInfo;
@@ -68,9 +67,12 @@ public class BlogDaoImpl extends DataSourceSupport implements BlogDao
         List<BlogInfo> blogInfoList = (List<BlogInfo>) this.queryForList(sql.toString(), paramMap, getBlogInfoPo());
         return blogInfoList;
     }
-    
-    /* (non-Javadoc)
-     * @see com.spark.cloud.coresvc.dao.woaker.BlogDao#getBlogListOrderByDate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, boolean, int, int)
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.spark.cloud.coresvc.dao.woaker.BlogDao#getBlogListOrderByDate(java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+     * java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, boolean, int, int)
      */
     @Override
     public List<BlogInfo> getBlogListOrderByDate(String userId, String blogId, String keyWord, String createType, String createScope,
@@ -100,9 +102,12 @@ public class BlogDaoImpl extends DataSourceSupport implements BlogDao
         List<BlogInfo> blogInfoList = (List<BlogInfo>) this.queryForList(sql.toString(), paramMap, getBlogInfoPo());
         return blogInfoList;
     }
-    
-    /* (non-Javadoc)
-     * @see com.spark.cloud.coresvc.dao.woaker.BlogDao#getBlogListOrderByViewCount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, boolean, int, int)
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.spark.cloud.coresvc.dao.woaker.BlogDao#getBlogListOrderByViewCount(java.lang.String, java.lang.String, java.lang.String,
+     * java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, boolean, int, int)
      */
     @Override
     public List<BlogInfo> getBlogListOrderByViewCount(String userId, String blogId, String keyWord, String createType, String createScope,

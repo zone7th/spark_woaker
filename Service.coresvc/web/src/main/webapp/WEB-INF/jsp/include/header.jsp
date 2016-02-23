@@ -45,12 +45,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
-                <li><a href="#about">我的博客</a></li>
-                <li><a href="#about">工作日志</a></li>
-                <li><a href="#contact">学习计划</a></li>
+                <li <c:if test="${current  == '01'}">class='active'</c:if>><a href="<c:url value='../index/index.do'/>">首页</a></li>
+                <li <c:if test="${current  == '02'}">class='active'</c:if>><a href="<c:url value='../blog/blogIndex.do'/>">我的博客</a></li>
+                <li <c:if test="${current  == '03'}">class='active'</c:if>><a href="<c:url value='../work/workIndex.do'/>">工作日志</a></li>
+                <li <c:if test="${current  == '04'}">class='active'</c:if>><a href="<c:url value='../study/studyIndex.do'/>">学习计划</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    <a href="<c:url value='../index/index.do'/>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">更多<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">更多1</a></li>

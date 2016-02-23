@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import com.alibaba.fastjson.JSONObject;
 import com.spark.cloud.coresvc.base.dao.DataSourceSupport;
@@ -23,7 +24,7 @@ import com.spark.cloud.coresvc.dao.woaker.CommentDao;
 import com.spark.cloud.coresvc.pojo.woaker.CommentInfo;
 
 /**
- * <b>类   名：</b>CommentDaoImpl<br/>
+ * <b>类 名：</b>CommentDaoImpl<br/>
  * <b>类描述：</b>描述这个类的功能<br/>
  * <b>创建人：</b>rlliu<br/>
  * <b>创建时间：</b>2016年2月22日 下午3:28:07<br/>
@@ -34,23 +35,27 @@ import com.spark.cloud.coresvc.pojo.woaker.CommentInfo;
  * @version 1.0<br/>
  * 
  */
+@Repository
 public class CommentDaoImpl extends DataSourceSupport implements CommentDao
 {
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.spark.cloud.coresvc.dao.woaker.CommentDao#getCommentRank()
      */
     @Override
     public List<CommentInfo> getCommentRank(String userId)
     {
         Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("user_id", userId);
         paramMap.put("page", NumberConstants.ZERO);
         paramMap.put("limit", NumberConstants.FIVE);
         paramMap.put("is_delete", false);
         StringBuilder sql = new StringBuilder();
         sql.append(" SELECT count(distinct(ci.blog_id)) AS comment_count, ci.id, ci.blog_id, ci.title");
         sql.append(" FROM comment_info ci");
-        sql.append(" WHERE userId = :userId");
+        sql.append(" WHERE user_id = :user_id");
         sql.append(" AND is_delete = :is_delete");
         sql.append(" ORDER BY ci.comment_count");
         sql.append(" LIMIT :limit, :page");
@@ -58,7 +63,7 @@ public class CommentDaoImpl extends DataSourceSupport implements CommentDao
         List<CommentInfo> commentRankList = (List<CommentInfo>) this.queryForList(sql.toString(), paramMap, getCommentRankPo());
         return commentRankList;
     }
-    
+
     /**
      * 
      * getCommentInfoPo(获取评论列表排行信息)
@@ -79,16 +84,16 @@ public class CommentDaoImpl extends DataSourceSupport implements CommentDao
                 commentRank.put("id", rs.getInt("id"));
                 commentRank.put("blog_id", rs.getString("blog_id"));
                 commentRank.put("title", rs.getString("title"));
-//                commentRank.put("commentator_id", rs.getString("commentator_id"));
-//                commentRank.put("content", rs.getString("content"));
-//                commentRank.put("create_date", rs.getString("create_date"));
-//                commentRank.put("is_delete", rs.getBoolean("is_delete"));
+                // commentRank.put("commentator_id", rs.getString("commentator_id"));
+                // commentRank.put("content", rs.getString("content"));
+                // commentRank.put("create_date", rs.getString("create_date"));
+                // commentRank.put("is_delete", rs.getBoolean("is_delete"));
                 commentRank.put("comment_count", rs.getInt("comment_count"));
                 return commentRank;
             }
         };
     }
-    
+
     /**
      * 
      * getCommentInfoPo(获取评论信息)

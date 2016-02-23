@@ -20,10 +20,9 @@ import org.springframework.stereotype.Repository;
 import com.spark.cloud.coresvc.base.dao.DataSourceSupport;
 import com.spark.cloud.coresvc.dao.woaker.UserDao;
 import com.spark.cloud.coresvc.pojo.woaker.UserInfo;
-import com.spark.cloud.coresvc.pojo.woaker.UserInfo;
 
 /**
- * <b>类   名：</b>UserDaoImpl<br/>
+ * <b>类 名：</b>UserDaoImpl<br/>
  * <b>类描述：</b>用户Dao层接口实现<br/>
  * <b>创建人：</b>rlliu<br/>
  * <b>创建时间：</b>2016年2月1日 上午9:42:08<br/>
@@ -37,9 +36,12 @@ import com.spark.cloud.coresvc.pojo.woaker.UserInfo;
 @Repository
 public class UserDaoImpl extends DataSourceSupport implements UserDao
 {
-    
-    /* (non-Javadoc)
-     * @see com.spark.cloud.coresvc.dao.woaker.UserDao#getUserList(java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, int, int)
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.spark.cloud.coresvc.dao.woaker.UserDao#getUserList(java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean,
+     * int, int)
      */
     @Override
     public List<UserInfo> getUserList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)

@@ -45,8 +45,8 @@ public class WorkApiImpl implements WorkApi.Iface
     public String getWorkLogList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
             throws TException
     {
-        LogUtil.info("woaker获取工作日志方法开始...方法名:getWorkLogList,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate + ", endDate:"
-                + endDate + ", isDelete:" + isDelete + ", page:" + page + ", limit:" + limit + "]");
+        LogUtil.info("woaker获取工作日志方法开始...方法名:getWorkLogList,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate
+                + ", endDate:" + endDate + ", isDelete:" + isDelete + ", page:" + page + ", limit:" + limit + "]");
         // 接口最终返回结果
         JSONObject jsonObject = new JSONObject();
         String result = StringUtils.EMPTY_STRING;
@@ -68,16 +68,14 @@ public class WorkApiImpl implements WorkApi.Iface
     }
 
     @Override
-    public String getWorkIndex(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
-            throws TException
+    public String getWorkIndex(String userId) throws TException
     {
-        LogUtil.info("woaker获取工作首页方法开始...方法名:getWorkIndex,方法参数:[userId:" + userId + ", keyWord:" + keyWord + ", startDate:" + startDate + ", endDate:"
-                + endDate + ", isDelete:" + isDelete + ", page:" + page + ", limit:" + limit + "]");
+        LogUtil.info("woaker获取工作首页方法开始...方法名:getWorkIndex,方法参数:[userId:" + userId + "]");
         // 接口最终返回结果
         JSONObject jsonObject = new JSONObject();
         String result = StringUtils.EMPTY_STRING;
         try
-        {   
+        {
             jsonObject = workService.getWorkIndex(userId);
             result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.SUCCESS, jsonObject).toJSONString();
             LogUtil.info("woaker获取工作日志方法正常结束");
@@ -87,6 +85,70 @@ public class WorkApiImpl implements WorkApi.Iface
         {
             result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.OPERATE_ERROR).toJSONString();
             LogUtil.info("woaker获取工作日志方法异常结束...返回结果:" + result);
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.spark.cloud.coresvc.api.woaker.WorkApi.Iface#createWorkInfo(java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+     * java.lang.String, java.lang.String, java.lang.String)
+     */
+    @Override
+    public String createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate,
+            String createDate) throws TException
+    {
+        LogUtil.info("woaker创建工作信息方法开始...方法名:createWorkInfo,方法参数:[userId:" + userId + ", title:" + title + ", planContent:" + planContent
+                + ", logContent:" + logContent + ", planCreateDate:" + planCreateDate + ", logCreateDate:" + logCreateDate + ", createDate:"
+                + createDate + "]");
+        // 接口最终返回结果
+        JSONObject jsonObject = new JSONObject();
+        String result = StringUtils.EMPTY_STRING;
+        try
+        {
+            jsonObject = workService.createWorkInfo(userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
+            result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.SUCCESS, jsonObject).toJSONString();
+            LogUtil.info("woaker创建工作信息方法正常结束");
+            LogUtil.debug("woaker创建工作信息方法返回结果:" + result);
+        }
+        catch (Exception e)
+        {
+            result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.OPERATE_ERROR).toJSONString();
+            LogUtil.info("woaker创建工作信息方法异常结束...返回结果:" + result);
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.spark.cloud.coresvc.api.woaker.WorkApi.Iface#updateWorkInfo(java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+     * java.lang.String, java.lang.String, java.lang.String)
+     */
+    @Override
+    public String updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate,
+            String logCreateDate, String createDate) throws TException
+    {
+        LogUtil.info("woaker更新工作信息方法开始...方法名:createWorkInfo,方法参数:[id:" + id + ", userId:" + userId + ", title:" + title + ", planContent:"
+                + planContent + ", logContent:" + logContent + ", planCreateDate:" + planCreateDate + ", logCreateDate:" + logCreateDate
+                + ", createDate:" + createDate + "]");
+        // 接口最终返回结果
+        JSONObject jsonObject = new JSONObject();
+        String result = StringUtils.EMPTY_STRING;
+        try
+        {
+            jsonObject = workService.updateWorkInfo(id, userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
+            result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.SUCCESS, jsonObject).toJSONString();
+            LogUtil.info("woaker更新工作信息方法正常结束");
+            LogUtil.debug("woaker更新工作信息方法返回结果:" + result);
+        }
+        catch (Exception e)
+        {
+            result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.OPERATE_ERROR).toJSONString();
+            LogUtil.info("woaker更新工作信息方法异常结束...返回结果:" + result);
             e.printStackTrace();
         }
         return result;

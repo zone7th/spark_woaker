@@ -37,7 +37,7 @@ public class StudyPlan implements Serializable
     /**
      * 表名称
      */
-    public static final String TABLE_NAME = WoakerConstants.WOAKER_WORK_PLAN;
+    public static final String TABLE_NAME = WoakerConstants.WOAKER_STUDY_PLAN;
 
     /**
      * 主键

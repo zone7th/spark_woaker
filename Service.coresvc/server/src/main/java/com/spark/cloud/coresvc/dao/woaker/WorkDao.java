@@ -59,4 +59,42 @@ public interface WorkDao
      */
     public WorkInfo getWorkInfo(String userId, String workInfoId, String createDate, boolean isDelete);
     
+    /**
+     * 
+     * createWorkInfo(创建工作信息)
+     * 
+     * @param userId 用户ID
+     * @param title 标题
+     * @param planContent 计划内容
+     * @param logContent 日志内容
+     * @param planCreateDate 计划时间
+     * @param logCreateDate 日志时间
+     * @param createDate 创建时间
+     * @return
+     * @exception
+     * @since 1.0
+     * @author rlliu
+     */
+    public int createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate,
+            String createDate);
+
+    /**
+     * 
+     * updateWorkInfo(更新工作信息)
+     * 
+     * @param userId 用户ID
+     * @param title 标题
+     * @param planContent 计划内容
+     * @param logContent 日志内容
+     * @param planCreateDate 计划时间
+     * @param logCreateDate 日志时间
+     * @param createDate 创建时间
+     * @return
+     * @exception
+     * @since 1.0
+     * @author rlliu
+     */
+    public int updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate,
+            String createDate);
+    
 }

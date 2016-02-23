@@ -36,17 +36,25 @@ public class WorkApi {
 
   public interface Iface {
 
-    public String getWorkIndex(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit) throws org.apache.thrift.TException;
+    public String getWorkIndex(String userId) throws org.apache.thrift.TException;
 
     public String getWorkLogList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit) throws org.apache.thrift.TException;
+
+    public String createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate) throws org.apache.thrift.TException;
+
+    public String updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate) throws org.apache.thrift.TException;
 
   }
 
   public interface AsyncIface {
 
-    public void getWorkIndex(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+    public void getWorkIndex(String userId, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
     public void getWorkLogList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+
+    public void createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
+
+    public void updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException;
 
   }
 
@@ -70,22 +78,16 @@ public class WorkApi {
       super(iprot, oprot);
     }
 
-    public String getWorkIndex(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit) throws org.apache.thrift.TException
+    public String getWorkIndex(String userId) throws org.apache.thrift.TException
     {
-      send_getWorkIndex(userId, keyWord, startDate, endDate, isDelete, page, limit);
+      send_getWorkIndex(userId);
       return recv_getWorkIndex();
     }
 
-    public void send_getWorkIndex(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit) throws org.apache.thrift.TException
+    public void send_getWorkIndex(String userId) throws org.apache.thrift.TException
     {
       getWorkIndex_args args = new getWorkIndex_args();
       args.setUserId(userId);
-      args.setKeyWord(keyWord);
-      args.setStartDate(startDate);
-      args.setEndDate(endDate);
-      args.setIsDelete(isDelete);
-      args.setPage(page);
-      args.setLimit(limit);
       sendBase("getWorkIndex", args);
     }
 
@@ -128,6 +130,65 @@ public class WorkApi {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "getWorkLogList failed: unknown result");
     }
 
+    public String createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate) throws org.apache.thrift.TException
+    {
+      send_createWorkInfo(userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
+      return recv_createWorkInfo();
+    }
+
+    public void send_createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate) throws org.apache.thrift.TException
+    {
+      createWorkInfo_args args = new createWorkInfo_args();
+      args.setUserId(userId);
+      args.setTitle(title);
+      args.setPlanContent(planContent);
+      args.setLogContent(logContent);
+      args.setPlanCreateDate(planCreateDate);
+      args.setLogCreateDate(logCreateDate);
+      args.setCreateDate(createDate);
+      sendBase("createWorkInfo", args);
+    }
+
+    public String recv_createWorkInfo() throws org.apache.thrift.TException
+    {
+      createWorkInfo_result result = new createWorkInfo_result();
+      receiveBase(result, "createWorkInfo");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "createWorkInfo failed: unknown result");
+    }
+
+    public String updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate) throws org.apache.thrift.TException
+    {
+      send_updateWorkInfo(id, userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
+      return recv_updateWorkInfo();
+    }
+
+    public void send_updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate) throws org.apache.thrift.TException
+    {
+      updateWorkInfo_args args = new updateWorkInfo_args();
+      args.setId(id);
+      args.setUserId(userId);
+      args.setTitle(title);
+      args.setPlanContent(planContent);
+      args.setLogContent(logContent);
+      args.setPlanCreateDate(planCreateDate);
+      args.setLogCreateDate(logCreateDate);
+      args.setCreateDate(createDate);
+      sendBase("updateWorkInfo", args);
+    }
+
+    public String recv_updateWorkInfo() throws org.apache.thrift.TException
+    {
+      updateWorkInfo_result result = new updateWorkInfo_result();
+      receiveBase(result, "updateWorkInfo");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "updateWorkInfo failed: unknown result");
+    }
+
   }
   public static class AsyncClient extends org.apache.thrift.async.TAsyncClient implements AsyncIface {
     public static class Factory implements org.apache.thrift.async.TAsyncClientFactory<AsyncClient> {
@@ -146,42 +207,24 @@ public class WorkApi {
       super(protocolFactory, clientManager, transport);
     }
 
-    public void getWorkIndex(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+    public void getWorkIndex(String userId, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
       checkReady();
-      getWorkIndex_call method_call = new getWorkIndex_call(userId, keyWord, startDate, endDate, isDelete, page, limit, resultHandler, this, ___protocolFactory, ___transport);
+      getWorkIndex_call method_call = new getWorkIndex_call(userId, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
     public static class getWorkIndex_call extends org.apache.thrift.async.TAsyncMethodCall {
       private String userId;
-      private String keyWord;
-      private String startDate;
-      private String endDate;
-      private boolean isDelete;
-      private int page;
-      private int limit;
-      public getWorkIndex_call(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public getWorkIndex_call(String userId, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.userId = userId;
-        this.keyWord = keyWord;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.isDelete = isDelete;
-        this.page = page;
-        this.limit = limit;
       }
 
       public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
         prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("getWorkIndex", org.apache.thrift.protocol.TMessageType.CALL, 0));
         getWorkIndex_args args = new getWorkIndex_args();
         args.setUserId(userId);
-        args.setKeyWord(keyWord);
-        args.setStartDate(startDate);
-        args.setEndDate(endDate);
-        args.setIsDelete(isDelete);
-        args.setPage(page);
-        args.setLimit(limit);
         args.write(prot);
         prot.writeMessageEnd();
       }
@@ -246,6 +289,109 @@ public class WorkApi {
       }
     }
 
+    public void createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      createWorkInfo_call method_call = new createWorkInfo_call(userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class createWorkInfo_call extends org.apache.thrift.async.TAsyncMethodCall {
+      private String userId;
+      private String title;
+      private String planContent;
+      private String logContent;
+      private String planCreateDate;
+      private String logCreateDate;
+      private String createDate;
+      public createWorkInfo_call(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.userId = userId;
+        this.title = title;
+        this.planContent = planContent;
+        this.logContent = logContent;
+        this.planCreateDate = planCreateDate;
+        this.logCreateDate = logCreateDate;
+        this.createDate = createDate;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("createWorkInfo", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        createWorkInfo_args args = new createWorkInfo_args();
+        args.setUserId(userId);
+        args.setTitle(title);
+        args.setPlanContent(planContent);
+        args.setLogContent(logContent);
+        args.setPlanCreateDate(planCreateDate);
+        args.setLogCreateDate(logCreateDate);
+        args.setCreateDate(createDate);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public String getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_createWorkInfo();
+      }
+    }
+
+    public void updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate, org.apache.thrift.async.AsyncMethodCallback resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      updateWorkInfo_call method_call = new updateWorkInfo_call(id, userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class updateWorkInfo_call extends org.apache.thrift.async.TAsyncMethodCall {
+      private String id;
+      private String userId;
+      private String title;
+      private String planContent;
+      private String logContent;
+      private String planCreateDate;
+      private String logCreateDate;
+      private String createDate;
+      public updateWorkInfo_call(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate, org.apache.thrift.async.AsyncMethodCallback resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.planContent = planContent;
+        this.logContent = logContent;
+        this.planCreateDate = planCreateDate;
+        this.logCreateDate = logCreateDate;
+        this.createDate = createDate;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("updateWorkInfo", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        updateWorkInfo_args args = new updateWorkInfo_args();
+        args.setId(id);
+        args.setUserId(userId);
+        args.setTitle(title);
+        args.setPlanContent(planContent);
+        args.setLogContent(logContent);
+        args.setPlanCreateDate(planCreateDate);
+        args.setLogCreateDate(logCreateDate);
+        args.setCreateDate(createDate);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public String getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_updateWorkInfo();
+      }
+    }
+
   }
 
   public static class Processor<I extends Iface> extends org.apache.thrift.TBaseProcessor<I> implements org.apache.thrift.TProcessor {
@@ -261,6 +407,8 @@ public class WorkApi {
     private static <I extends Iface> Map<String,  org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> getProcessMap(Map<String,  org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> processMap) {
       processMap.put("getWorkIndex", new getWorkIndex());
       processMap.put("getWorkLogList", new getWorkLogList());
+      processMap.put("createWorkInfo", new createWorkInfo());
+      processMap.put("updateWorkInfo", new updateWorkInfo());
       return processMap;
     }
 
@@ -279,7 +427,7 @@ public class WorkApi {
 
       public getWorkIndex_result getResult(I iface, getWorkIndex_args args) throws org.apache.thrift.TException {
         getWorkIndex_result result = new getWorkIndex_result();
-        result.success = iface.getWorkIndex(args.userId, args.keyWord, args.startDate, args.endDate, args.isDelete, args.page, args.limit);
+        result.success = iface.getWorkIndex(args.userId);
         return result;
       }
     }
@@ -304,6 +452,46 @@ public class WorkApi {
       }
     }
 
+    public static class createWorkInfo<I extends Iface> extends org.apache.thrift.ProcessFunction<I, createWorkInfo_args> {
+      public createWorkInfo() {
+        super("createWorkInfo");
+      }
+
+      public createWorkInfo_args getEmptyArgsInstance() {
+        return new createWorkInfo_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public createWorkInfo_result getResult(I iface, createWorkInfo_args args) throws org.apache.thrift.TException {
+        createWorkInfo_result result = new createWorkInfo_result();
+        result.success = iface.createWorkInfo(args.userId, args.title, args.planContent, args.logContent, args.planCreateDate, args.logCreateDate, args.createDate);
+        return result;
+      }
+    }
+
+    public static class updateWorkInfo<I extends Iface> extends org.apache.thrift.ProcessFunction<I, updateWorkInfo_args> {
+      public updateWorkInfo() {
+        super("updateWorkInfo");
+      }
+
+      public updateWorkInfo_args getEmptyArgsInstance() {
+        return new updateWorkInfo_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public updateWorkInfo_result getResult(I iface, updateWorkInfo_args args) throws org.apache.thrift.TException {
+        updateWorkInfo_result result = new updateWorkInfo_result();
+        result.success = iface.updateWorkInfo(args.id, args.userId, args.title, args.planContent, args.logContent, args.planCreateDate, args.logCreateDate, args.createDate);
+        return result;
+      }
+    }
+
   }
 
   public static class AsyncProcessor<I extends AsyncIface> extends org.apache.thrift.TBaseAsyncProcessor<I> {
@@ -319,6 +507,8 @@ public class WorkApi {
     private static <I extends AsyncIface> Map<String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase,?>> getProcessMap(Map<String,  org.apache.thrift.AsyncProcessFunction<I, ? extends  org.apache.thrift.TBase, ?>> processMap) {
       processMap.put("getWorkIndex", new getWorkIndex());
       processMap.put("getWorkLogList", new getWorkLogList());
+      processMap.put("createWorkInfo", new createWorkInfo());
+      processMap.put("updateWorkInfo", new updateWorkInfo());
       return processMap;
     }
 
@@ -369,7 +559,7 @@ public class WorkApi {
       }
 
       public void start(I iface, getWorkIndex_args args, org.apache.thrift.async.AsyncMethodCallback<String> resultHandler) throws TException {
-        iface.getWorkIndex(args.userId, args.keyWord, args.startDate, args.endDate, args.isDelete, args.page, args.limit,resultHandler);
+        iface.getWorkIndex(args.userId,resultHandler);
       }
     }
 
@@ -424,18 +614,114 @@ public class WorkApi {
       }
     }
 
+    public static class createWorkInfo<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, createWorkInfo_args, String> {
+      public createWorkInfo() {
+        super("createWorkInfo");
+      }
+
+      public createWorkInfo_args getEmptyArgsInstance() {
+        return new createWorkInfo_args();
+      }
+
+      public AsyncMethodCallback<String> getResultHandler(final AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new AsyncMethodCallback<String>() { 
+          public void onComplete(String o) {
+            createWorkInfo_result result = new createWorkInfo_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb,result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+              return;
+            } catch (Exception e) {
+              LOGGER.error("Exception writing to internal frame buffer", e);
+            }
+            fb.close();
+          }
+          public void onError(Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TBase msg;
+            createWorkInfo_result result = new createWorkInfo_result();
+            {
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TBase)new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+              return;
+            } catch (Exception ex) {
+              LOGGER.error("Exception writing to internal frame buffer", ex);
+            }
+            fb.close();
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, createWorkInfo_args args, org.apache.thrift.async.AsyncMethodCallback<String> resultHandler) throws TException {
+        iface.createWorkInfo(args.userId, args.title, args.planContent, args.logContent, args.planCreateDate, args.logCreateDate, args.createDate,resultHandler);
+      }
+    }
+
+    public static class updateWorkInfo<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, updateWorkInfo_args, String> {
+      public updateWorkInfo() {
+        super("updateWorkInfo");
+      }
+
+      public updateWorkInfo_args getEmptyArgsInstance() {
+        return new updateWorkInfo_args();
+      }
+
+      public AsyncMethodCallback<String> getResultHandler(final AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new AsyncMethodCallback<String>() { 
+          public void onComplete(String o) {
+            updateWorkInfo_result result = new updateWorkInfo_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb,result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+              return;
+            } catch (Exception e) {
+              LOGGER.error("Exception writing to internal frame buffer", e);
+            }
+            fb.close();
+          }
+          public void onError(Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TBase msg;
+            updateWorkInfo_result result = new updateWorkInfo_result();
+            {
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TBase)new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+              return;
+            } catch (Exception ex) {
+              LOGGER.error("Exception writing to internal frame buffer", ex);
+            }
+            fb.close();
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, updateWorkInfo_args args, org.apache.thrift.async.AsyncMethodCallback<String> resultHandler) throws TException {
+        iface.updateWorkInfo(args.id, args.userId, args.title, args.planContent, args.logContent, args.planCreateDate, args.logCreateDate, args.createDate,resultHandler);
+      }
+    }
+
   }
 
   public static class getWorkIndex_args implements org.apache.thrift.TBase<getWorkIndex_args, getWorkIndex_args._Fields>, java.io.Serializable, Cloneable, Comparable<getWorkIndex_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("getWorkIndex_args");
 
     private static final org.apache.thrift.protocol.TField USER_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("userId", org.apache.thrift.protocol.TType.STRING, (short)1);
-    private static final org.apache.thrift.protocol.TField KEY_WORD_FIELD_DESC = new org.apache.thrift.protocol.TField("keyWord", org.apache.thrift.protocol.TType.STRING, (short)2);
-    private static final org.apache.thrift.protocol.TField START_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("startDate", org.apache.thrift.protocol.TType.STRING, (short)3);
-    private static final org.apache.thrift.protocol.TField END_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("endDate", org.apache.thrift.protocol.TType.STRING, (short)4);
-    private static final org.apache.thrift.protocol.TField IS_DELETE_FIELD_DESC = new org.apache.thrift.protocol.TField("isDelete", org.apache.thrift.protocol.TType.BOOL, (short)5);
-    private static final org.apache.thrift.protocol.TField PAGE_FIELD_DESC = new org.apache.thrift.protocol.TField("page", org.apache.thrift.protocol.TType.I32, (short)6);
-    private static final org.apache.thrift.protocol.TField LIMIT_FIELD_DESC = new org.apache.thrift.protocol.TField("limit", org.apache.thrift.protocol.TType.I32, (short)7);
 
     private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
     static {
@@ -444,22 +730,10 @@ public class WorkApi {
     }
 
     public String userId; // required
-    public String keyWord; // required
-    public String startDate; // required
-    public String endDate; // required
-    public boolean isDelete; // required
-    public int page; // required
-    public int limit; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-      USER_ID((short)1, "userId"),
-      KEY_WORD((short)2, "keyWord"),
-      START_DATE((short)3, "startDate"),
-      END_DATE((short)4, "endDate"),
-      IS_DELETE((short)5, "isDelete"),
-      PAGE((short)6, "page"),
-      LIMIT((short)7, "limit");
+      USER_ID((short)1, "userId");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
 
@@ -476,18 +750,6 @@ public class WorkApi {
         switch(fieldId) {
           case 1: // USER_ID
             return USER_ID;
-          case 2: // KEY_WORD
-            return KEY_WORD;
-          case 3: // START_DATE
-            return START_DATE;
-          case 4: // END_DATE
-            return END_DATE;
-          case 5: // IS_DELETE
-            return IS_DELETE;
-          case 6: // PAGE
-            return PAGE;
-          case 7: // LIMIT
-            return LIMIT;
           default:
             return null;
         }
@@ -528,27 +790,11 @@ public class WorkApi {
     }
 
     // isset id assignments
-    private static final int __ISDELETE_ISSET_ID = 0;
-    private static final int __PAGE_ISSET_ID = 1;
-    private static final int __LIMIT_ISSET_ID = 2;
-    private byte __isset_bitfield = 0;
     public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.USER_ID, new org.apache.thrift.meta_data.FieldMetaData("userId", org.apache.thrift.TFieldRequirementType.DEFAULT, 
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.KEY_WORD, new org.apache.thrift.meta_data.FieldMetaData("keyWord", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.START_DATE, new org.apache.thrift.meta_data.FieldMetaData("startDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.END_DATE, new org.apache.thrift.meta_data.FieldMetaData("endDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.IS_DELETE, new org.apache.thrift.meta_data.FieldMetaData("isDelete", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
-      tmpMap.put(_Fields.PAGE, new org.apache.thrift.meta_data.FieldMetaData("page", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-      tmpMap.put(_Fields.LIMIT, new org.apache.thrift.meta_data.FieldMetaData("limit", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(getWorkIndex_args.class, metaDataMap);
     }
@@ -557,47 +803,19 @@ public class WorkApi {
     }
 
     public getWorkIndex_args(
-      String userId,
-      String keyWord,
-      String startDate,
-      String endDate,
-      boolean isDelete,
-      int page,
-      int limit)
+      String userId)
     {
       this();
       this.userId = userId;
-      this.keyWord = keyWord;
-      this.startDate = startDate;
-      this.endDate = endDate;
-      this.isDelete = isDelete;
-      setIsDeleteIsSet(true);
-      this.page = page;
-      setPageIsSet(true);
-      this.limit = limit;
-      setLimitIsSet(true);
     }
 
     /**
      * Performs a deep copy on <i>other</i>.
      */
     public getWorkIndex_args(getWorkIndex_args other) {
-      __isset_bitfield = other.__isset_bitfield;
       if (other.isSetUserId()) {
         this.userId = other.userId;
       }
-      if (other.isSetKeyWord()) {
-        this.keyWord = other.keyWord;
-      }
-      if (other.isSetStartDate()) {
-        this.startDate = other.startDate;
-      }
-      if (other.isSetEndDate()) {
-        this.endDate = other.endDate;
-      }
-      this.isDelete = other.isDelete;
-      this.page = other.page;
-      this.limit = other.limit;
     }
 
     public getWorkIndex_args deepCopy() {
@@ -607,15 +825,6 @@ public class WorkApi {
     @Override
     public void clear() {
       this.userId = null;
-      this.keyWord = null;
-      this.startDate = null;
-      this.endDate = null;
-      setIsDeleteIsSet(false);
-      this.isDelete = false;
-      setPageIsSet(false);
-      this.page = 0;
-      setLimitIsSet(false);
-      this.limit = 0;
     }
 
     public String getUserId() {
@@ -642,147 +851,6 @@ public class WorkApi {
       }
     }
 
-    public String getKeyWord() {
-      return this.keyWord;
-    }
-
-    public getWorkIndex_args setKeyWord(String keyWord) {
-      this.keyWord = keyWord;
-      return this;
-    }
-
-    public void unsetKeyWord() {
-      this.keyWord = null;
-    }
-
-    /** Returns true if field keyWord is set (has been assigned a value) and false otherwise */
-    public boolean isSetKeyWord() {
-      return this.keyWord != null;
-    }
-
-    public void setKeyWordIsSet(boolean value) {
-      if (!value) {
-        this.keyWord = null;
-      }
-    }
-
-    public String getStartDate() {
-      return this.startDate;
-    }
-
-    public getWorkIndex_args setStartDate(String startDate) {
-      this.startDate = startDate;
-      return this;
-    }
-
-    public void unsetStartDate() {
-      this.startDate = null;
-    }
-
-    /** Returns true if field startDate is set (has been assigned a value) and false otherwise */
-    public boolean isSetStartDate() {
-      return this.startDate != null;
-    }
-
-    public void setStartDateIsSet(boolean value) {
-      if (!value) {
-        this.startDate = null;
-      }
-    }
-
-    public String getEndDate() {
-      return this.endDate;
-    }
-
-    public getWorkIndex_args setEndDate(String endDate) {
-      this.endDate = endDate;
-      return this;
-    }
-
-    public void unsetEndDate() {
-      this.endDate = null;
-    }
-
-    /** Returns true if field endDate is set (has been assigned a value) and false otherwise */
-    public boolean isSetEndDate() {
-      return this.endDate != null;
-    }
-
-    public void setEndDateIsSet(boolean value) {
-      if (!value) {
-        this.endDate = null;
-      }
-    }
-
-    public boolean isIsDelete() {
-      return this.isDelete;
-    }
-
-    public getWorkIndex_args setIsDelete(boolean isDelete) {
-      this.isDelete = isDelete;
-      setIsDeleteIsSet(true);
-      return this;
-    }
-
-    public void unsetIsDelete() {
-      __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __ISDELETE_ISSET_ID);
-    }
-
-    /** Returns true if field isDelete is set (has been assigned a value) and false otherwise */
-    public boolean isSetIsDelete() {
-      return EncodingUtils.testBit(__isset_bitfield, __ISDELETE_ISSET_ID);
-    }
-
-    public void setIsDeleteIsSet(boolean value) {
-      __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __ISDELETE_ISSET_ID, value);
-    }
-
-    public int getPage() {
-      return this.page;
-    }
-
-    public getWorkIndex_args setPage(int page) {
-      this.page = page;
-      setPageIsSet(true);
-      return this;
-    }
-
-    public void unsetPage() {
-      __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __PAGE_ISSET_ID);
-    }
-
-    /** Returns true if field page is set (has been assigned a value) and false otherwise */
-    public boolean isSetPage() {
-      return EncodingUtils.testBit(__isset_bitfield, __PAGE_ISSET_ID);
-    }
-
-    public void setPageIsSet(boolean value) {
-      __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __PAGE_ISSET_ID, value);
-    }
-
-    public int getLimit() {
-      return this.limit;
-    }
-
-    public getWorkIndex_args setLimit(int limit) {
-      this.limit = limit;
-      setLimitIsSet(true);
-      return this;
-    }
-
-    public void unsetLimit() {
-      __isset_bitfield = EncodingUtils.clearBit(__isset_bitfield, __LIMIT_ISSET_ID);
-    }
-
-    /** Returns true if field limit is set (has been assigned a value) and false otherwise */
-    public boolean isSetLimit() {
-      return EncodingUtils.testBit(__isset_bitfield, __LIMIT_ISSET_ID);
-    }
-
-    public void setLimitIsSet(boolean value) {
-      __isset_bitfield = EncodingUtils.setBit(__isset_bitfield, __LIMIT_ISSET_ID, value);
-    }
-
     public void setFieldValue(_Fields field, Object value) {
       switch (field) {
       case USER_ID:
@@ -793,54 +861,6 @@ public class WorkApi {
         }
         break;
 
-      case KEY_WORD:
-        if (value == null) {
-          unsetKeyWord();
-        } else {
-          setKeyWord((String)value);
-        }
-        break;
-
-      case START_DATE:
-        if (value == null) {
-          unsetStartDate();
-        } else {
-          setStartDate((String)value);
-        }
-        break;
-
-      case END_DATE:
-        if (value == null) {
-          unsetEndDate();
-        } else {
-          setEndDate((String)value);
-        }
-        break;
-
-      case IS_DELETE:
-        if (value == null) {
-          unsetIsDelete();
-        } else {
-          setIsDelete((Boolean)value);
-        }
-        break;
-
-      case PAGE:
-        if (value == null) {
-          unsetPage();
-        } else {
-          setPage((Integer)value);
-        }
-        break;
-
-      case LIMIT:
-        if (value == null) {
-          unsetLimit();
-        } else {
-          setLimit((Integer)value);
-        }
-        break;
-
       }
     }
 
@@ -848,24 +868,6 @@ public class WorkApi {
       switch (field) {
       case USER_ID:
         return getUserId();
-
-      case KEY_WORD:
-        return getKeyWord();
-
-      case START_DATE:
-        return getStartDate();
-
-      case END_DATE:
-        return getEndDate();
-
-      case IS_DELETE:
-        return Boolean.valueOf(isIsDelete());
-
-      case PAGE:
-        return Integer.valueOf(getPage());
-
-      case LIMIT:
-        return Integer.valueOf(getLimit());
 
       }
       throw new IllegalStateException();
@@ -880,18 +882,6 @@ public class WorkApi {
       switch (field) {
       case USER_ID:
         return isSetUserId();
-      case KEY_WORD:
-        return isSetKeyWord();
-      case START_DATE:
-        return isSetStartDate();
-      case END_DATE:
-        return isSetEndDate();
-      case IS_DELETE:
-        return isSetIsDelete();
-      case PAGE:
-        return isSetPage();
-      case LIMIT:
-        return isSetLimit();
       }
       throw new IllegalStateException();
     }
@@ -918,60 +908,6 @@ public class WorkApi {
           return false;
       }
 
-      boolean this_present_keyWord = true && this.isSetKeyWord();
-      boolean that_present_keyWord = true && that.isSetKeyWord();
-      if (this_present_keyWord || that_present_keyWord) {
-        if (!(this_present_keyWord && that_present_keyWord))
-          return false;
-        if (!this.keyWord.equals(that.keyWord))
-          return false;
-      }
-
-      boolean this_present_startDate = true && this.isSetStartDate();
-      boolean that_present_startDate = true && that.isSetStartDate();
-      if (this_present_startDate || that_present_startDate) {
-        if (!(this_present_startDate && that_present_startDate))
-          return false;
-        if (!this.startDate.equals(that.startDate))
-          return false;
-      }
-
-      boolean this_present_endDate = true && this.isSetEndDate();
-      boolean that_present_endDate = true && that.isSetEndDate();
-      if (this_present_endDate || that_present_endDate) {
-        if (!(this_present_endDate && that_present_endDate))
-          return false;
-        if (!this.endDate.equals(that.endDate))
-          return false;
-      }
-
-      boolean this_present_isDelete = true;
-      boolean that_present_isDelete = true;
-      if (this_present_isDelete || that_present_isDelete) {
-        if (!(this_present_isDelete && that_present_isDelete))
-          return false;
-        if (this.isDelete != that.isDelete)
-          return false;
-      }
-
-      boolean this_present_page = true;
-      boolean that_present_page = true;
-      if (this_present_page || that_present_page) {
-        if (!(this_present_page && that_present_page))
-          return false;
-        if (this.page != that.page)
-          return false;
-      }
-
-      boolean this_present_limit = true;
-      boolean that_present_limit = true;
-      if (this_present_limit || that_present_limit) {
-        if (!(this_present_limit && that_present_limit))
-          return false;
-        if (this.limit != that.limit)
-          return false;
-      }
-
       return true;
     }
 
@@ -994,66 +930,6 @@ public class WorkApi {
       }
       if (isSetUserId()) {
         lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.userId, other.userId);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = Boolean.valueOf(isSetKeyWord()).compareTo(other.isSetKeyWord());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetKeyWord()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.keyWord, other.keyWord);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = Boolean.valueOf(isSetStartDate()).compareTo(other.isSetStartDate());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetStartDate()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.startDate, other.startDate);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = Boolean.valueOf(isSetEndDate()).compareTo(other.isSetEndDate());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetEndDate()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.endDate, other.endDate);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = Boolean.valueOf(isSetIsDelete()).compareTo(other.isSetIsDelete());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetIsDelete()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.isDelete, other.isDelete);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = Boolean.valueOf(isSetPage()).compareTo(other.isSetPage());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetPage()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.page, other.page);
-        if (lastComparison != 0) {
-          return lastComparison;
-        }
-      }
-      lastComparison = Boolean.valueOf(isSetLimit()).compareTo(other.isSetLimit());
-      if (lastComparison != 0) {
-        return lastComparison;
-      }
-      if (isSetLimit()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.limit, other.limit);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -1085,42 +961,6 @@ public class WorkApi {
         sb.append(this.userId);
       }
       first = false;
-      if (!first) sb.append(", ");
-      sb.append("keyWord:");
-      if (this.keyWord == null) {
-        sb.append("null");
-      } else {
-        sb.append(this.keyWord);
-      }
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("startDate:");
-      if (this.startDate == null) {
-        sb.append("null");
-      } else {
-        sb.append(this.startDate);
-      }
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("endDate:");
-      if (this.endDate == null) {
-        sb.append("null");
-      } else {
-        sb.append(this.endDate);
-      }
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("isDelete:");
-      sb.append(this.isDelete);
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("page:");
-      sb.append(this.page);
-      first = false;
-      if (!first) sb.append(", ");
-      sb.append("limit:");
-      sb.append(this.limit);
-      first = false;
       sb.append(")");
       return sb.toString();
     }
@@ -1140,8 +980,6 @@ public class WorkApi {
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
-        __isset_bitfield = 0;
         read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
       } catch (org.apache.thrift.TException te) {
         throw new java.io.IOException(te);
@@ -1174,54 +1012,6 @@ public class WorkApi {
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
-            case 2: // KEY_WORD
-              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-                struct.keyWord = iprot.readString();
-                struct.setKeyWordIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 3: // START_DATE
-              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-                struct.startDate = iprot.readString();
-                struct.setStartDateIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 4: // END_DATE
-              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
-                struct.endDate = iprot.readString();
-                struct.setEndDateIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 5: // IS_DELETE
-              if (schemeField.type == org.apache.thrift.protocol.TType.BOOL) {
-                struct.isDelete = iprot.readBool();
-                struct.setIsDeleteIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 6: // PAGE
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.page = iprot.readI32();
-                struct.setPageIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
-            case 7: // LIMIT
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.limit = iprot.readI32();
-                struct.setLimitIsSet(true);
-              } else { 
-                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
-              }
-              break;
             default:
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
           }
@@ -1242,30 +1032,6 @@ public class WorkApi {
           oprot.writeString(struct.userId);
           oprot.writeFieldEnd();
         }
-        if (struct.keyWord != null) {
-          oprot.writeFieldBegin(KEY_WORD_FIELD_DESC);
-          oprot.writeString(struct.keyWord);
-          oprot.writeFieldEnd();
-        }
-        if (struct.startDate != null) {
-          oprot.writeFieldBegin(START_DATE_FIELD_DESC);
-          oprot.writeString(struct.startDate);
-          oprot.writeFieldEnd();
-        }
-        if (struct.endDate != null) {
-          oprot.writeFieldBegin(END_DATE_FIELD_DESC);
-          oprot.writeString(struct.endDate);
-          oprot.writeFieldEnd();
-        }
-        oprot.writeFieldBegin(IS_DELETE_FIELD_DESC);
-        oprot.writeBool(struct.isDelete);
-        oprot.writeFieldEnd();
-        oprot.writeFieldBegin(PAGE_FIELD_DESC);
-        oprot.writeI32(struct.page);
-        oprot.writeFieldEnd();
-        oprot.writeFieldBegin(LIMIT_FIELD_DESC);
-        oprot.writeI32(struct.limit);
-        oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
       }
@@ -1287,79 +1053,19 @@ public class WorkApi {
         if (struct.isSetUserId()) {
           optionals.set(0);
         }
-        if (struct.isSetKeyWord()) {
-          optionals.set(1);
-        }
-        if (struct.isSetStartDate()) {
-          optionals.set(2);
-        }
-        if (struct.isSetEndDate()) {
-          optionals.set(3);
-        }
-        if (struct.isSetIsDelete()) {
-          optionals.set(4);
-        }
-        if (struct.isSetPage()) {
-          optionals.set(5);
-        }
-        if (struct.isSetLimit()) {
-          optionals.set(6);
-        }
-        oprot.writeBitSet(optionals, 7);
+        oprot.writeBitSet(optionals, 1);
         if (struct.isSetUserId()) {
           oprot.writeString(struct.userId);
-        }
-        if (struct.isSetKeyWord()) {
-          oprot.writeString(struct.keyWord);
-        }
-        if (struct.isSetStartDate()) {
-          oprot.writeString(struct.startDate);
-        }
-        if (struct.isSetEndDate()) {
-          oprot.writeString(struct.endDate);
-        }
-        if (struct.isSetIsDelete()) {
-          oprot.writeBool(struct.isDelete);
-        }
-        if (struct.isSetPage()) {
-          oprot.writeI32(struct.page);
-        }
-        if (struct.isSetLimit()) {
-          oprot.writeI32(struct.limit);
         }
       }
 
       @Override
       public void read(org.apache.thrift.protocol.TProtocol prot, getWorkIndex_args struct) throws org.apache.thrift.TException {
         TTupleProtocol iprot = (TTupleProtocol) prot;
-        BitSet incoming = iprot.readBitSet(7);
+        BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
           struct.userId = iprot.readString();
           struct.setUserIdIsSet(true);
-        }
-        if (incoming.get(1)) {
-          struct.keyWord = iprot.readString();
-          struct.setKeyWordIsSet(true);
-        }
-        if (incoming.get(2)) {
-          struct.startDate = iprot.readString();
-          struct.setStartDateIsSet(true);
-        }
-        if (incoming.get(3)) {
-          struct.endDate = iprot.readString();
-          struct.setEndDateIsSet(true);
-        }
-        if (incoming.get(4)) {
-          struct.isDelete = iprot.readBool();
-          struct.setIsDeleteIsSet(true);
-        }
-        if (incoming.get(5)) {
-          struct.page = iprot.readI32();
-          struct.setPageIsSet(true);
-        }
-        if (incoming.get(6)) {
-          struct.limit = iprot.readI32();
-          struct.setLimitIsSet(true);
         }
       }
     }
@@ -3003,6 +2709,2722 @@ public class WorkApi {
 
       @Override
       public void read(org.apache.thrift.protocol.TProtocol prot, getWorkLogList_result struct) throws org.apache.thrift.TException {
+        TTupleProtocol iprot = (TTupleProtocol) prot;
+        BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          struct.success = iprot.readString();
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+  }
+
+  public static class createWorkInfo_args implements org.apache.thrift.TBase<createWorkInfo_args, createWorkInfo_args._Fields>, java.io.Serializable, Cloneable, Comparable<createWorkInfo_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("createWorkInfo_args");
+
+    private static final org.apache.thrift.protocol.TField USER_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("userId", org.apache.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.thrift.protocol.TField TITLE_FIELD_DESC = new org.apache.thrift.protocol.TField("title", org.apache.thrift.protocol.TType.STRING, (short)2);
+    private static final org.apache.thrift.protocol.TField PLAN_CONTENT_FIELD_DESC = new org.apache.thrift.protocol.TField("planContent", org.apache.thrift.protocol.TType.STRING, (short)3);
+    private static final org.apache.thrift.protocol.TField LOG_CONTENT_FIELD_DESC = new org.apache.thrift.protocol.TField("logContent", org.apache.thrift.protocol.TType.STRING, (short)4);
+    private static final org.apache.thrift.protocol.TField PLAN_CREATE_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("planCreateDate", org.apache.thrift.protocol.TType.STRING, (short)5);
+    private static final org.apache.thrift.protocol.TField LOG_CREATE_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("logCreateDate", org.apache.thrift.protocol.TType.STRING, (short)6);
+    private static final org.apache.thrift.protocol.TField CREATE_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("createDate", org.apache.thrift.protocol.TType.STRING, (short)7);
+
+    private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
+    static {
+      schemes.put(StandardScheme.class, new createWorkInfo_argsStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new createWorkInfo_argsTupleSchemeFactory());
+    }
+
+    public String userId; // required
+    public String title; // required
+    public String planContent; // required
+    public String logContent; // required
+    public String planCreateDate; // required
+    public String logCreateDate; // required
+    public String createDate; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      USER_ID((short)1, "userId"),
+      TITLE((short)2, "title"),
+      PLAN_CONTENT((short)3, "planContent"),
+      LOG_CONTENT((short)4, "logContent"),
+      PLAN_CREATE_DATE((short)5, "planCreateDate"),
+      LOG_CREATE_DATE((short)6, "logCreateDate"),
+      CREATE_DATE((short)7, "createDate");
+
+      private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+
+      static {
+        for (_Fields field : EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // USER_ID
+            return USER_ID;
+          case 2: // TITLE
+            return TITLE;
+          case 3: // PLAN_CONTENT
+            return PLAN_CONTENT;
+          case 4: // LOG_CONTENT
+            return LOG_CONTENT;
+          case 5: // PLAN_CREATE_DATE
+            return PLAN_CREATE_DATE;
+          case 6: // LOG_CREATE_DATE
+            return LOG_CREATE_DATE;
+          case 7: // CREATE_DATE
+            return CREATE_DATE;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final String _fieldName;
+
+      _Fields(short thriftId, String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.USER_ID, new org.apache.thrift.meta_data.FieldMetaData("userId", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.TITLE, new org.apache.thrift.meta_data.FieldMetaData("title", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.PLAN_CONTENT, new org.apache.thrift.meta_data.FieldMetaData("planContent", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.LOG_CONTENT, new org.apache.thrift.meta_data.FieldMetaData("logContent", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.PLAN_CREATE_DATE, new org.apache.thrift.meta_data.FieldMetaData("planCreateDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.LOG_CREATE_DATE, new org.apache.thrift.meta_data.FieldMetaData("logCreateDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.CREATE_DATE, new org.apache.thrift.meta_data.FieldMetaData("createDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      metaDataMap = Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(createWorkInfo_args.class, metaDataMap);
+    }
+
+    public createWorkInfo_args() {
+    }
+
+    public createWorkInfo_args(
+      String userId,
+      String title,
+      String planContent,
+      String logContent,
+      String planCreateDate,
+      String logCreateDate,
+      String createDate)
+    {
+      this();
+      this.userId = userId;
+      this.title = title;
+      this.planContent = planContent;
+      this.logContent = logContent;
+      this.planCreateDate = planCreateDate;
+      this.logCreateDate = logCreateDate;
+      this.createDate = createDate;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public createWorkInfo_args(createWorkInfo_args other) {
+      if (other.isSetUserId()) {
+        this.userId = other.userId;
+      }
+      if (other.isSetTitle()) {
+        this.title = other.title;
+      }
+      if (other.isSetPlanContent()) {
+        this.planContent = other.planContent;
+      }
+      if (other.isSetLogContent()) {
+        this.logContent = other.logContent;
+      }
+      if (other.isSetPlanCreateDate()) {
+        this.planCreateDate = other.planCreateDate;
+      }
+      if (other.isSetLogCreateDate()) {
+        this.logCreateDate = other.logCreateDate;
+      }
+      if (other.isSetCreateDate()) {
+        this.createDate = other.createDate;
+      }
+    }
+
+    public createWorkInfo_args deepCopy() {
+      return new createWorkInfo_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.userId = null;
+      this.title = null;
+      this.planContent = null;
+      this.logContent = null;
+      this.planCreateDate = null;
+      this.logCreateDate = null;
+      this.createDate = null;
+    }
+
+    public String getUserId() {
+      return this.userId;
+    }
+
+    public createWorkInfo_args setUserId(String userId) {
+      this.userId = userId;
+      return this;
+    }
+
+    public void unsetUserId() {
+      this.userId = null;
+    }
+
+    /** Returns true if field userId is set (has been assigned a value) and false otherwise */
+    public boolean isSetUserId() {
+      return this.userId != null;
+    }
+
+    public void setUserIdIsSet(boolean value) {
+      if (!value) {
+        this.userId = null;
+      }
+    }
+
+    public String getTitle() {
+      return this.title;
+    }
+
+    public createWorkInfo_args setTitle(String title) {
+      this.title = title;
+      return this;
+    }
+
+    public void unsetTitle() {
+      this.title = null;
+    }
+
+    /** Returns true if field title is set (has been assigned a value) and false otherwise */
+    public boolean isSetTitle() {
+      return this.title != null;
+    }
+
+    public void setTitleIsSet(boolean value) {
+      if (!value) {
+        this.title = null;
+      }
+    }
+
+    public String getPlanContent() {
+      return this.planContent;
+    }
+
+    public createWorkInfo_args setPlanContent(String planContent) {
+      this.planContent = planContent;
+      return this;
+    }
+
+    public void unsetPlanContent() {
+      this.planContent = null;
+    }
+
+    /** Returns true if field planContent is set (has been assigned a value) and false otherwise */
+    public boolean isSetPlanContent() {
+      return this.planContent != null;
+    }
+
+    public void setPlanContentIsSet(boolean value) {
+      if (!value) {
+        this.planContent = null;
+      }
+    }
+
+    public String getLogContent() {
+      return this.logContent;
+    }
+
+    public createWorkInfo_args setLogContent(String logContent) {
+      this.logContent = logContent;
+      return this;
+    }
+
+    public void unsetLogContent() {
+      this.logContent = null;
+    }
+
+    /** Returns true if field logContent is set (has been assigned a value) and false otherwise */
+    public boolean isSetLogContent() {
+      return this.logContent != null;
+    }
+
+    public void setLogContentIsSet(boolean value) {
+      if (!value) {
+        this.logContent = null;
+      }
+    }
+
+    public String getPlanCreateDate() {
+      return this.planCreateDate;
+    }
+
+    public createWorkInfo_args setPlanCreateDate(String planCreateDate) {
+      this.planCreateDate = planCreateDate;
+      return this;
+    }
+
+    public void unsetPlanCreateDate() {
+      this.planCreateDate = null;
+    }
+
+    /** Returns true if field planCreateDate is set (has been assigned a value) and false otherwise */
+    public boolean isSetPlanCreateDate() {
+      return this.planCreateDate != null;
+    }
+
+    public void setPlanCreateDateIsSet(boolean value) {
+      if (!value) {
+        this.planCreateDate = null;
+      }
+    }
+
+    public String getLogCreateDate() {
+      return this.logCreateDate;
+    }
+
+    public createWorkInfo_args setLogCreateDate(String logCreateDate) {
+      this.logCreateDate = logCreateDate;
+      return this;
+    }
+
+    public void unsetLogCreateDate() {
+      this.logCreateDate = null;
+    }
+
+    /** Returns true if field logCreateDate is set (has been assigned a value) and false otherwise */
+    public boolean isSetLogCreateDate() {
+      return this.logCreateDate != null;
+    }
+
+    public void setLogCreateDateIsSet(boolean value) {
+      if (!value) {
+        this.logCreateDate = null;
+      }
+    }
+
+    public String getCreateDate() {
+      return this.createDate;
+    }
+
+    public createWorkInfo_args setCreateDate(String createDate) {
+      this.createDate = createDate;
+      return this;
+    }
+
+    public void unsetCreateDate() {
+      this.createDate = null;
+    }
+
+    /** Returns true if field createDate is set (has been assigned a value) and false otherwise */
+    public boolean isSetCreateDate() {
+      return this.createDate != null;
+    }
+
+    public void setCreateDateIsSet(boolean value) {
+      if (!value) {
+        this.createDate = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, Object value) {
+      switch (field) {
+      case USER_ID:
+        if (value == null) {
+          unsetUserId();
+        } else {
+          setUserId((String)value);
+        }
+        break;
+
+      case TITLE:
+        if (value == null) {
+          unsetTitle();
+        } else {
+          setTitle((String)value);
+        }
+        break;
+
+      case PLAN_CONTENT:
+        if (value == null) {
+          unsetPlanContent();
+        } else {
+          setPlanContent((String)value);
+        }
+        break;
+
+      case LOG_CONTENT:
+        if (value == null) {
+          unsetLogContent();
+        } else {
+          setLogContent((String)value);
+        }
+        break;
+
+      case PLAN_CREATE_DATE:
+        if (value == null) {
+          unsetPlanCreateDate();
+        } else {
+          setPlanCreateDate((String)value);
+        }
+        break;
+
+      case LOG_CREATE_DATE:
+        if (value == null) {
+          unsetLogCreateDate();
+        } else {
+          setLogCreateDate((String)value);
+        }
+        break;
+
+      case CREATE_DATE:
+        if (value == null) {
+          unsetCreateDate();
+        } else {
+          setCreateDate((String)value);
+        }
+        break;
+
+      }
+    }
+
+    public Object getFieldValue(_Fields field) {
+      switch (field) {
+      case USER_ID:
+        return getUserId();
+
+      case TITLE:
+        return getTitle();
+
+      case PLAN_CONTENT:
+        return getPlanContent();
+
+      case LOG_CONTENT:
+        return getLogContent();
+
+      case PLAN_CREATE_DATE:
+        return getPlanCreateDate();
+
+      case LOG_CREATE_DATE:
+        return getLogCreateDate();
+
+      case CREATE_DATE:
+        return getCreateDate();
+
+      }
+      throw new IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new IllegalArgumentException();
+      }
+
+      switch (field) {
+      case USER_ID:
+        return isSetUserId();
+      case TITLE:
+        return isSetTitle();
+      case PLAN_CONTENT:
+        return isSetPlanContent();
+      case LOG_CONTENT:
+        return isSetLogContent();
+      case PLAN_CREATE_DATE:
+        return isSetPlanCreateDate();
+      case LOG_CREATE_DATE:
+        return isSetLogCreateDate();
+      case CREATE_DATE:
+        return isSetCreateDate();
+      }
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof createWorkInfo_args)
+        return this.equals((createWorkInfo_args)that);
+      return false;
+    }
+
+    public boolean equals(createWorkInfo_args that) {
+      if (that == null)
+        return false;
+
+      boolean this_present_userId = true && this.isSetUserId();
+      boolean that_present_userId = true && that.isSetUserId();
+      if (this_present_userId || that_present_userId) {
+        if (!(this_present_userId && that_present_userId))
+          return false;
+        if (!this.userId.equals(that.userId))
+          return false;
+      }
+
+      boolean this_present_title = true && this.isSetTitle();
+      boolean that_present_title = true && that.isSetTitle();
+      if (this_present_title || that_present_title) {
+        if (!(this_present_title && that_present_title))
+          return false;
+        if (!this.title.equals(that.title))
+          return false;
+      }
+
+      boolean this_present_planContent = true && this.isSetPlanContent();
+      boolean that_present_planContent = true && that.isSetPlanContent();
+      if (this_present_planContent || that_present_planContent) {
+        if (!(this_present_planContent && that_present_planContent))
+          return false;
+        if (!this.planContent.equals(that.planContent))
+          return false;
+      }
+
+      boolean this_present_logContent = true && this.isSetLogContent();
+      boolean that_present_logContent = true && that.isSetLogContent();
+      if (this_present_logContent || that_present_logContent) {
+        if (!(this_present_logContent && that_present_logContent))
+          return false;
+        if (!this.logContent.equals(that.logContent))
+          return false;
+      }
+
+      boolean this_present_planCreateDate = true && this.isSetPlanCreateDate();
+      boolean that_present_planCreateDate = true && that.isSetPlanCreateDate();
+      if (this_present_planCreateDate || that_present_planCreateDate) {
+        if (!(this_present_planCreateDate && that_present_planCreateDate))
+          return false;
+        if (!this.planCreateDate.equals(that.planCreateDate))
+          return false;
+      }
+
+      boolean this_present_logCreateDate = true && this.isSetLogCreateDate();
+      boolean that_present_logCreateDate = true && that.isSetLogCreateDate();
+      if (this_present_logCreateDate || that_present_logCreateDate) {
+        if (!(this_present_logCreateDate && that_present_logCreateDate))
+          return false;
+        if (!this.logCreateDate.equals(that.logCreateDate))
+          return false;
+      }
+
+      boolean this_present_createDate = true && this.isSetCreateDate();
+      boolean that_present_createDate = true && that.isSetCreateDate();
+      if (this_present_createDate || that_present_createDate) {
+        if (!(this_present_createDate && that_present_createDate))
+          return false;
+        if (!this.createDate.equals(that.createDate))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+
+    @Override
+    public int compareTo(createWorkInfo_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = Boolean.valueOf(isSetUserId()).compareTo(other.isSetUserId());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetUserId()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.userId, other.userId);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetTitle()).compareTo(other.isSetTitle());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetTitle()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.title, other.title);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetPlanContent()).compareTo(other.isSetPlanContent());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetPlanContent()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.planContent, other.planContent);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetLogContent()).compareTo(other.isSetLogContent());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetLogContent()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.logContent, other.logContent);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetPlanCreateDate()).compareTo(other.isSetPlanCreateDate());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetPlanCreateDate()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.planCreateDate, other.planCreateDate);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetLogCreateDate()).compareTo(other.isSetLogCreateDate());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetLogCreateDate()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.logCreateDate, other.logCreateDate);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetCreateDate()).compareTo(other.isSetCreateDate());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetCreateDate()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.createDate, other.createDate);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      schemes.get(iprot.getScheme()).getScheme().read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      schemes.get(oprot.getScheme()).getScheme().write(oprot, this);
+    }
+
+    @Override
+    public String toString() {
+      StringBuilder sb = new StringBuilder("createWorkInfo_args(");
+      boolean first = true;
+
+      sb.append("userId:");
+      if (this.userId == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.userId);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("title:");
+      if (this.title == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.title);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("planContent:");
+      if (this.planContent == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.planContent);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("logContent:");
+      if (this.logContent == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.logContent);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("planCreateDate:");
+      if (this.planCreateDate == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.planCreateDate);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("logCreateDate:");
+      if (this.logCreateDate == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.logCreateDate);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("createDate:");
+      if (this.createDate == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.createDate);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class createWorkInfo_argsStandardSchemeFactory implements SchemeFactory {
+      public createWorkInfo_argsStandardScheme getScheme() {
+        return new createWorkInfo_argsStandardScheme();
+      }
+    }
+
+    private static class createWorkInfo_argsStandardScheme extends StandardScheme<createWorkInfo_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, createWorkInfo_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // USER_ID
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.userId = iprot.readString();
+                struct.setUserIdIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // TITLE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.title = iprot.readString();
+                struct.setTitleIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 3: // PLAN_CONTENT
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.planContent = iprot.readString();
+                struct.setPlanContentIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 4: // LOG_CONTENT
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.logContent = iprot.readString();
+                struct.setLogContentIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 5: // PLAN_CREATE_DATE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.planCreateDate = iprot.readString();
+                struct.setPlanCreateDateIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 6: // LOG_CREATE_DATE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.logCreateDate = iprot.readString();
+                struct.setLogCreateDateIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 7: // CREATE_DATE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.createDate = iprot.readString();
+                struct.setCreateDateIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, createWorkInfo_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.userId != null) {
+          oprot.writeFieldBegin(USER_ID_FIELD_DESC);
+          oprot.writeString(struct.userId);
+          oprot.writeFieldEnd();
+        }
+        if (struct.title != null) {
+          oprot.writeFieldBegin(TITLE_FIELD_DESC);
+          oprot.writeString(struct.title);
+          oprot.writeFieldEnd();
+        }
+        if (struct.planContent != null) {
+          oprot.writeFieldBegin(PLAN_CONTENT_FIELD_DESC);
+          oprot.writeString(struct.planContent);
+          oprot.writeFieldEnd();
+        }
+        if (struct.logContent != null) {
+          oprot.writeFieldBegin(LOG_CONTENT_FIELD_DESC);
+          oprot.writeString(struct.logContent);
+          oprot.writeFieldEnd();
+        }
+        if (struct.planCreateDate != null) {
+          oprot.writeFieldBegin(PLAN_CREATE_DATE_FIELD_DESC);
+          oprot.writeString(struct.planCreateDate);
+          oprot.writeFieldEnd();
+        }
+        if (struct.logCreateDate != null) {
+          oprot.writeFieldBegin(LOG_CREATE_DATE_FIELD_DESC);
+          oprot.writeString(struct.logCreateDate);
+          oprot.writeFieldEnd();
+        }
+        if (struct.createDate != null) {
+          oprot.writeFieldBegin(CREATE_DATE_FIELD_DESC);
+          oprot.writeString(struct.createDate);
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class createWorkInfo_argsTupleSchemeFactory implements SchemeFactory {
+      public createWorkInfo_argsTupleScheme getScheme() {
+        return new createWorkInfo_argsTupleScheme();
+      }
+    }
+
+    private static class createWorkInfo_argsTupleScheme extends TupleScheme<createWorkInfo_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, createWorkInfo_args struct) throws org.apache.thrift.TException {
+        TTupleProtocol oprot = (TTupleProtocol) prot;
+        BitSet optionals = new BitSet();
+        if (struct.isSetUserId()) {
+          optionals.set(0);
+        }
+        if (struct.isSetTitle()) {
+          optionals.set(1);
+        }
+        if (struct.isSetPlanContent()) {
+          optionals.set(2);
+        }
+        if (struct.isSetLogContent()) {
+          optionals.set(3);
+        }
+        if (struct.isSetPlanCreateDate()) {
+          optionals.set(4);
+        }
+        if (struct.isSetLogCreateDate()) {
+          optionals.set(5);
+        }
+        if (struct.isSetCreateDate()) {
+          optionals.set(6);
+        }
+        oprot.writeBitSet(optionals, 7);
+        if (struct.isSetUserId()) {
+          oprot.writeString(struct.userId);
+        }
+        if (struct.isSetTitle()) {
+          oprot.writeString(struct.title);
+        }
+        if (struct.isSetPlanContent()) {
+          oprot.writeString(struct.planContent);
+        }
+        if (struct.isSetLogContent()) {
+          oprot.writeString(struct.logContent);
+        }
+        if (struct.isSetPlanCreateDate()) {
+          oprot.writeString(struct.planCreateDate);
+        }
+        if (struct.isSetLogCreateDate()) {
+          oprot.writeString(struct.logCreateDate);
+        }
+        if (struct.isSetCreateDate()) {
+          oprot.writeString(struct.createDate);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, createWorkInfo_args struct) throws org.apache.thrift.TException {
+        TTupleProtocol iprot = (TTupleProtocol) prot;
+        BitSet incoming = iprot.readBitSet(7);
+        if (incoming.get(0)) {
+          struct.userId = iprot.readString();
+          struct.setUserIdIsSet(true);
+        }
+        if (incoming.get(1)) {
+          struct.title = iprot.readString();
+          struct.setTitleIsSet(true);
+        }
+        if (incoming.get(2)) {
+          struct.planContent = iprot.readString();
+          struct.setPlanContentIsSet(true);
+        }
+        if (incoming.get(3)) {
+          struct.logContent = iprot.readString();
+          struct.setLogContentIsSet(true);
+        }
+        if (incoming.get(4)) {
+          struct.planCreateDate = iprot.readString();
+          struct.setPlanCreateDateIsSet(true);
+        }
+        if (incoming.get(5)) {
+          struct.logCreateDate = iprot.readString();
+          struct.setLogCreateDateIsSet(true);
+        }
+        if (incoming.get(6)) {
+          struct.createDate = iprot.readString();
+          struct.setCreateDateIsSet(true);
+        }
+      }
+    }
+
+  }
+
+  public static class createWorkInfo_result implements org.apache.thrift.TBase<createWorkInfo_result, createWorkInfo_result._Fields>, java.io.Serializable, Cloneable, Comparable<createWorkInfo_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("createWorkInfo_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRING, (short)0);
+
+    private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
+    static {
+      schemes.put(StandardScheme.class, new createWorkInfo_resultStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new createWorkInfo_resultTupleSchemeFactory());
+    }
+
+    public String success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+
+      static {
+        for (_Fields field : EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final String _fieldName;
+
+      _Fields(short thriftId, String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      metaDataMap = Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(createWorkInfo_result.class, metaDataMap);
+    }
+
+    public createWorkInfo_result() {
+    }
+
+    public createWorkInfo_result(
+      String success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public createWorkInfo_result(createWorkInfo_result other) {
+      if (other.isSetSuccess()) {
+        this.success = other.success;
+      }
+    }
+
+    public createWorkInfo_result deepCopy() {
+      return new createWorkInfo_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public String getSuccess() {
+      return this.success;
+    }
+
+    public createWorkInfo_result setSuccess(String success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((String)value);
+        }
+        break;
+
+      }
+    }
+
+    public Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof createWorkInfo_result)
+        return this.equals((createWorkInfo_result)that);
+      return false;
+    }
+
+    public boolean equals(createWorkInfo_result that) {
+      if (that == null)
+        return false;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+
+    @Override
+    public int compareTo(createWorkInfo_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      schemes.get(iprot.getScheme()).getScheme().read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      schemes.get(oprot.getScheme()).getScheme().write(oprot, this);
+      }
+
+    @Override
+    public String toString() {
+      StringBuilder sb = new StringBuilder("createWorkInfo_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class createWorkInfo_resultStandardSchemeFactory implements SchemeFactory {
+      public createWorkInfo_resultStandardScheme getScheme() {
+        return new createWorkInfo_resultStandardScheme();
+      }
+    }
+
+    private static class createWorkInfo_resultStandardScheme extends StandardScheme<createWorkInfo_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, createWorkInfo_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.success = iprot.readString();
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, createWorkInfo_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          oprot.writeString(struct.success);
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class createWorkInfo_resultTupleSchemeFactory implements SchemeFactory {
+      public createWorkInfo_resultTupleScheme getScheme() {
+        return new createWorkInfo_resultTupleScheme();
+      }
+    }
+
+    private static class createWorkInfo_resultTupleScheme extends TupleScheme<createWorkInfo_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, createWorkInfo_result struct) throws org.apache.thrift.TException {
+        TTupleProtocol oprot = (TTupleProtocol) prot;
+        BitSet optionals = new BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          oprot.writeString(struct.success);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, createWorkInfo_result struct) throws org.apache.thrift.TException {
+        TTupleProtocol iprot = (TTupleProtocol) prot;
+        BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          struct.success = iprot.readString();
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+  }
+
+  public static class updateWorkInfo_args implements org.apache.thrift.TBase<updateWorkInfo_args, updateWorkInfo_args._Fields>, java.io.Serializable, Cloneable, Comparable<updateWorkInfo_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("updateWorkInfo_args");
+
+    private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.thrift.protocol.TField USER_ID_FIELD_DESC = new org.apache.thrift.protocol.TField("userId", org.apache.thrift.protocol.TType.STRING, (short)2);
+    private static final org.apache.thrift.protocol.TField TITLE_FIELD_DESC = new org.apache.thrift.protocol.TField("title", org.apache.thrift.protocol.TType.STRING, (short)3);
+    private static final org.apache.thrift.protocol.TField PLAN_CONTENT_FIELD_DESC = new org.apache.thrift.protocol.TField("planContent", org.apache.thrift.protocol.TType.STRING, (short)4);
+    private static final org.apache.thrift.protocol.TField LOG_CONTENT_FIELD_DESC = new org.apache.thrift.protocol.TField("logContent", org.apache.thrift.protocol.TType.STRING, (short)5);
+    private static final org.apache.thrift.protocol.TField PLAN_CREATE_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("planCreateDate", org.apache.thrift.protocol.TType.STRING, (short)6);
+    private static final org.apache.thrift.protocol.TField LOG_CREATE_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("logCreateDate", org.apache.thrift.protocol.TType.STRING, (short)7);
+    private static final org.apache.thrift.protocol.TField CREATE_DATE_FIELD_DESC = new org.apache.thrift.protocol.TField("createDate", org.apache.thrift.protocol.TType.STRING, (short)8);
+
+    private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
+    static {
+      schemes.put(StandardScheme.class, new updateWorkInfo_argsStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new updateWorkInfo_argsTupleSchemeFactory());
+    }
+
+    public String id; // required
+    public String userId; // required
+    public String title; // required
+    public String planContent; // required
+    public String logContent; // required
+    public String planCreateDate; // required
+    public String logCreateDate; // required
+    public String createDate; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      ID((short)1, "id"),
+      USER_ID((short)2, "userId"),
+      TITLE((short)3, "title"),
+      PLAN_CONTENT((short)4, "planContent"),
+      LOG_CONTENT((short)5, "logContent"),
+      PLAN_CREATE_DATE((short)6, "planCreateDate"),
+      LOG_CREATE_DATE((short)7, "logCreateDate"),
+      CREATE_DATE((short)8, "createDate");
+
+      private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+
+      static {
+        for (_Fields field : EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // ID
+            return ID;
+          case 2: // USER_ID
+            return USER_ID;
+          case 3: // TITLE
+            return TITLE;
+          case 4: // PLAN_CONTENT
+            return PLAN_CONTENT;
+          case 5: // LOG_CONTENT
+            return LOG_CONTENT;
+          case 6: // PLAN_CREATE_DATE
+            return PLAN_CREATE_DATE;
+          case 7: // LOG_CREATE_DATE
+            return LOG_CREATE_DATE;
+          case 8: // CREATE_DATE
+            return CREATE_DATE;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final String _fieldName;
+
+      _Fields(short thriftId, String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.USER_ID, new org.apache.thrift.meta_data.FieldMetaData("userId", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.TITLE, new org.apache.thrift.meta_data.FieldMetaData("title", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.PLAN_CONTENT, new org.apache.thrift.meta_data.FieldMetaData("planContent", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.LOG_CONTENT, new org.apache.thrift.meta_data.FieldMetaData("logContent", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.PLAN_CREATE_DATE, new org.apache.thrift.meta_data.FieldMetaData("planCreateDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.LOG_CREATE_DATE, new org.apache.thrift.meta_data.FieldMetaData("logCreateDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.CREATE_DATE, new org.apache.thrift.meta_data.FieldMetaData("createDate", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      metaDataMap = Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(updateWorkInfo_args.class, metaDataMap);
+    }
+
+    public updateWorkInfo_args() {
+    }
+
+    public updateWorkInfo_args(
+      String id,
+      String userId,
+      String title,
+      String planContent,
+      String logContent,
+      String planCreateDate,
+      String logCreateDate,
+      String createDate)
+    {
+      this();
+      this.id = id;
+      this.userId = userId;
+      this.title = title;
+      this.planContent = planContent;
+      this.logContent = logContent;
+      this.planCreateDate = planCreateDate;
+      this.logCreateDate = logCreateDate;
+      this.createDate = createDate;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public updateWorkInfo_args(updateWorkInfo_args other) {
+      if (other.isSetId()) {
+        this.id = other.id;
+      }
+      if (other.isSetUserId()) {
+        this.userId = other.userId;
+      }
+      if (other.isSetTitle()) {
+        this.title = other.title;
+      }
+      if (other.isSetPlanContent()) {
+        this.planContent = other.planContent;
+      }
+      if (other.isSetLogContent()) {
+        this.logContent = other.logContent;
+      }
+      if (other.isSetPlanCreateDate()) {
+        this.planCreateDate = other.planCreateDate;
+      }
+      if (other.isSetLogCreateDate()) {
+        this.logCreateDate = other.logCreateDate;
+      }
+      if (other.isSetCreateDate()) {
+        this.createDate = other.createDate;
+      }
+    }
+
+    public updateWorkInfo_args deepCopy() {
+      return new updateWorkInfo_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.id = null;
+      this.userId = null;
+      this.title = null;
+      this.planContent = null;
+      this.logContent = null;
+      this.planCreateDate = null;
+      this.logCreateDate = null;
+      this.createDate = null;
+    }
+
+    public String getId() {
+      return this.id;
+    }
+
+    public updateWorkInfo_args setId(String id) {
+      this.id = id;
+      return this;
+    }
+
+    public void unsetId() {
+      this.id = null;
+    }
+
+    /** Returns true if field id is set (has been assigned a value) and false otherwise */
+    public boolean isSetId() {
+      return this.id != null;
+    }
+
+    public void setIdIsSet(boolean value) {
+      if (!value) {
+        this.id = null;
+      }
+    }
+
+    public String getUserId() {
+      return this.userId;
+    }
+
+    public updateWorkInfo_args setUserId(String userId) {
+      this.userId = userId;
+      return this;
+    }
+
+    public void unsetUserId() {
+      this.userId = null;
+    }
+
+    /** Returns true if field userId is set (has been assigned a value) and false otherwise */
+    public boolean isSetUserId() {
+      return this.userId != null;
+    }
+
+    public void setUserIdIsSet(boolean value) {
+      if (!value) {
+        this.userId = null;
+      }
+    }
+
+    public String getTitle() {
+      return this.title;
+    }
+
+    public updateWorkInfo_args setTitle(String title) {
+      this.title = title;
+      return this;
+    }
+
+    public void unsetTitle() {
+      this.title = null;
+    }
+
+    /** Returns true if field title is set (has been assigned a value) and false otherwise */
+    public boolean isSetTitle() {
+      return this.title != null;
+    }
+
+    public void setTitleIsSet(boolean value) {
+      if (!value) {
+        this.title = null;
+      }
+    }
+
+    public String getPlanContent() {
+      return this.planContent;
+    }
+
+    public updateWorkInfo_args setPlanContent(String planContent) {
+      this.planContent = planContent;
+      return this;
+    }
+
+    public void unsetPlanContent() {
+      this.planContent = null;
+    }
+
+    /** Returns true if field planContent is set (has been assigned a value) and false otherwise */
+    public boolean isSetPlanContent() {
+      return this.planContent != null;
+    }
+
+    public void setPlanContentIsSet(boolean value) {
+      if (!value) {
+        this.planContent = null;
+      }
+    }
+
+    public String getLogContent() {
+      return this.logContent;
+    }
+
+    public updateWorkInfo_args setLogContent(String logContent) {
+      this.logContent = logContent;
+      return this;
+    }
+
+    public void unsetLogContent() {
+      this.logContent = null;
+    }
+
+    /** Returns true if field logContent is set (has been assigned a value) and false otherwise */
+    public boolean isSetLogContent() {
+      return this.logContent != null;
+    }
+
+    public void setLogContentIsSet(boolean value) {
+      if (!value) {
+        this.logContent = null;
+      }
+    }
+
+    public String getPlanCreateDate() {
+      return this.planCreateDate;
+    }
+
+    public updateWorkInfo_args setPlanCreateDate(String planCreateDate) {
+      this.planCreateDate = planCreateDate;
+      return this;
+    }
+
+    public void unsetPlanCreateDate() {
+      this.planCreateDate = null;
+    }
+
+    /** Returns true if field planCreateDate is set (has been assigned a value) and false otherwise */
+    public boolean isSetPlanCreateDate() {
+      return this.planCreateDate != null;
+    }
+
+    public void setPlanCreateDateIsSet(boolean value) {
+      if (!value) {
+        this.planCreateDate = null;
+      }
+    }
+
+    public String getLogCreateDate() {
+      return this.logCreateDate;
+    }
+
+    public updateWorkInfo_args setLogCreateDate(String logCreateDate) {
+      this.logCreateDate = logCreateDate;
+      return this;
+    }
+
+    public void unsetLogCreateDate() {
+      this.logCreateDate = null;
+    }
+
+    /** Returns true if field logCreateDate is set (has been assigned a value) and false otherwise */
+    public boolean isSetLogCreateDate() {
+      return this.logCreateDate != null;
+    }
+
+    public void setLogCreateDateIsSet(boolean value) {
+      if (!value) {
+        this.logCreateDate = null;
+      }
+    }
+
+    public String getCreateDate() {
+      return this.createDate;
+    }
+
+    public updateWorkInfo_args setCreateDate(String createDate) {
+      this.createDate = createDate;
+      return this;
+    }
+
+    public void unsetCreateDate() {
+      this.createDate = null;
+    }
+
+    /** Returns true if field createDate is set (has been assigned a value) and false otherwise */
+    public boolean isSetCreateDate() {
+      return this.createDate != null;
+    }
+
+    public void setCreateDateIsSet(boolean value) {
+      if (!value) {
+        this.createDate = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, Object value) {
+      switch (field) {
+      case ID:
+        if (value == null) {
+          unsetId();
+        } else {
+          setId((String)value);
+        }
+        break;
+
+      case USER_ID:
+        if (value == null) {
+          unsetUserId();
+        } else {
+          setUserId((String)value);
+        }
+        break;
+
+      case TITLE:
+        if (value == null) {
+          unsetTitle();
+        } else {
+          setTitle((String)value);
+        }
+        break;
+
+      case PLAN_CONTENT:
+        if (value == null) {
+          unsetPlanContent();
+        } else {
+          setPlanContent((String)value);
+        }
+        break;
+
+      case LOG_CONTENT:
+        if (value == null) {
+          unsetLogContent();
+        } else {
+          setLogContent((String)value);
+        }
+        break;
+
+      case PLAN_CREATE_DATE:
+        if (value == null) {
+          unsetPlanCreateDate();
+        } else {
+          setPlanCreateDate((String)value);
+        }
+        break;
+
+      case LOG_CREATE_DATE:
+        if (value == null) {
+          unsetLogCreateDate();
+        } else {
+          setLogCreateDate((String)value);
+        }
+        break;
+
+      case CREATE_DATE:
+        if (value == null) {
+          unsetCreateDate();
+        } else {
+          setCreateDate((String)value);
+        }
+        break;
+
+      }
+    }
+
+    public Object getFieldValue(_Fields field) {
+      switch (field) {
+      case ID:
+        return getId();
+
+      case USER_ID:
+        return getUserId();
+
+      case TITLE:
+        return getTitle();
+
+      case PLAN_CONTENT:
+        return getPlanContent();
+
+      case LOG_CONTENT:
+        return getLogContent();
+
+      case PLAN_CREATE_DATE:
+        return getPlanCreateDate();
+
+      case LOG_CREATE_DATE:
+        return getLogCreateDate();
+
+      case CREATE_DATE:
+        return getCreateDate();
+
+      }
+      throw new IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new IllegalArgumentException();
+      }
+
+      switch (field) {
+      case ID:
+        return isSetId();
+      case USER_ID:
+        return isSetUserId();
+      case TITLE:
+        return isSetTitle();
+      case PLAN_CONTENT:
+        return isSetPlanContent();
+      case LOG_CONTENT:
+        return isSetLogContent();
+      case PLAN_CREATE_DATE:
+        return isSetPlanCreateDate();
+      case LOG_CREATE_DATE:
+        return isSetLogCreateDate();
+      case CREATE_DATE:
+        return isSetCreateDate();
+      }
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof updateWorkInfo_args)
+        return this.equals((updateWorkInfo_args)that);
+      return false;
+    }
+
+    public boolean equals(updateWorkInfo_args that) {
+      if (that == null)
+        return false;
+
+      boolean this_present_id = true && this.isSetId();
+      boolean that_present_id = true && that.isSetId();
+      if (this_present_id || that_present_id) {
+        if (!(this_present_id && that_present_id))
+          return false;
+        if (!this.id.equals(that.id))
+          return false;
+      }
+
+      boolean this_present_userId = true && this.isSetUserId();
+      boolean that_present_userId = true && that.isSetUserId();
+      if (this_present_userId || that_present_userId) {
+        if (!(this_present_userId && that_present_userId))
+          return false;
+        if (!this.userId.equals(that.userId))
+          return false;
+      }
+
+      boolean this_present_title = true && this.isSetTitle();
+      boolean that_present_title = true && that.isSetTitle();
+      if (this_present_title || that_present_title) {
+        if (!(this_present_title && that_present_title))
+          return false;
+        if (!this.title.equals(that.title))
+          return false;
+      }
+
+      boolean this_present_planContent = true && this.isSetPlanContent();
+      boolean that_present_planContent = true && that.isSetPlanContent();
+      if (this_present_planContent || that_present_planContent) {
+        if (!(this_present_planContent && that_present_planContent))
+          return false;
+        if (!this.planContent.equals(that.planContent))
+          return false;
+      }
+
+      boolean this_present_logContent = true && this.isSetLogContent();
+      boolean that_present_logContent = true && that.isSetLogContent();
+      if (this_present_logContent || that_present_logContent) {
+        if (!(this_present_logContent && that_present_logContent))
+          return false;
+        if (!this.logContent.equals(that.logContent))
+          return false;
+      }
+
+      boolean this_present_planCreateDate = true && this.isSetPlanCreateDate();
+      boolean that_present_planCreateDate = true && that.isSetPlanCreateDate();
+      if (this_present_planCreateDate || that_present_planCreateDate) {
+        if (!(this_present_planCreateDate && that_present_planCreateDate))
+          return false;
+        if (!this.planCreateDate.equals(that.planCreateDate))
+          return false;
+      }
+
+      boolean this_present_logCreateDate = true && this.isSetLogCreateDate();
+      boolean that_present_logCreateDate = true && that.isSetLogCreateDate();
+      if (this_present_logCreateDate || that_present_logCreateDate) {
+        if (!(this_present_logCreateDate && that_present_logCreateDate))
+          return false;
+        if (!this.logCreateDate.equals(that.logCreateDate))
+          return false;
+      }
+
+      boolean this_present_createDate = true && this.isSetCreateDate();
+      boolean that_present_createDate = true && that.isSetCreateDate();
+      if (this_present_createDate || that_present_createDate) {
+        if (!(this_present_createDate && that_present_createDate))
+          return false;
+        if (!this.createDate.equals(that.createDate))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+
+    @Override
+    public int compareTo(updateWorkInfo_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = Boolean.valueOf(isSetId()).compareTo(other.isSetId());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetId()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.id, other.id);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetUserId()).compareTo(other.isSetUserId());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetUserId()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.userId, other.userId);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetTitle()).compareTo(other.isSetTitle());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetTitle()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.title, other.title);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetPlanContent()).compareTo(other.isSetPlanContent());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetPlanContent()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.planContent, other.planContent);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetLogContent()).compareTo(other.isSetLogContent());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetLogContent()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.logContent, other.logContent);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetPlanCreateDate()).compareTo(other.isSetPlanCreateDate());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetPlanCreateDate()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.planCreateDate, other.planCreateDate);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetLogCreateDate()).compareTo(other.isSetLogCreateDate());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetLogCreateDate()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.logCreateDate, other.logCreateDate);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = Boolean.valueOf(isSetCreateDate()).compareTo(other.isSetCreateDate());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetCreateDate()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.createDate, other.createDate);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      schemes.get(iprot.getScheme()).getScheme().read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      schemes.get(oprot.getScheme()).getScheme().write(oprot, this);
+    }
+
+    @Override
+    public String toString() {
+      StringBuilder sb = new StringBuilder("updateWorkInfo_args(");
+      boolean first = true;
+
+      sb.append("id:");
+      if (this.id == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.id);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("userId:");
+      if (this.userId == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.userId);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("title:");
+      if (this.title == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.title);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("planContent:");
+      if (this.planContent == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.planContent);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("logContent:");
+      if (this.logContent == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.logContent);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("planCreateDate:");
+      if (this.planCreateDate == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.planCreateDate);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("logCreateDate:");
+      if (this.logCreateDate == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.logCreateDate);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("createDate:");
+      if (this.createDate == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.createDate);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class updateWorkInfo_argsStandardSchemeFactory implements SchemeFactory {
+      public updateWorkInfo_argsStandardScheme getScheme() {
+        return new updateWorkInfo_argsStandardScheme();
+      }
+    }
+
+    private static class updateWorkInfo_argsStandardScheme extends StandardScheme<updateWorkInfo_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, updateWorkInfo_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // ID
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.id = iprot.readString();
+                struct.setIdIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // USER_ID
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.userId = iprot.readString();
+                struct.setUserIdIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 3: // TITLE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.title = iprot.readString();
+                struct.setTitleIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 4: // PLAN_CONTENT
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.planContent = iprot.readString();
+                struct.setPlanContentIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 5: // LOG_CONTENT
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.logContent = iprot.readString();
+                struct.setLogContentIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 6: // PLAN_CREATE_DATE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.planCreateDate = iprot.readString();
+                struct.setPlanCreateDateIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 7: // LOG_CREATE_DATE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.logCreateDate = iprot.readString();
+                struct.setLogCreateDateIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 8: // CREATE_DATE
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.createDate = iprot.readString();
+                struct.setCreateDateIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, updateWorkInfo_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.id != null) {
+          oprot.writeFieldBegin(ID_FIELD_DESC);
+          oprot.writeString(struct.id);
+          oprot.writeFieldEnd();
+        }
+        if (struct.userId != null) {
+          oprot.writeFieldBegin(USER_ID_FIELD_DESC);
+          oprot.writeString(struct.userId);
+          oprot.writeFieldEnd();
+        }
+        if (struct.title != null) {
+          oprot.writeFieldBegin(TITLE_FIELD_DESC);
+          oprot.writeString(struct.title);
+          oprot.writeFieldEnd();
+        }
+        if (struct.planContent != null) {
+          oprot.writeFieldBegin(PLAN_CONTENT_FIELD_DESC);
+          oprot.writeString(struct.planContent);
+          oprot.writeFieldEnd();
+        }
+        if (struct.logContent != null) {
+          oprot.writeFieldBegin(LOG_CONTENT_FIELD_DESC);
+          oprot.writeString(struct.logContent);
+          oprot.writeFieldEnd();
+        }
+        if (struct.planCreateDate != null) {
+          oprot.writeFieldBegin(PLAN_CREATE_DATE_FIELD_DESC);
+          oprot.writeString(struct.planCreateDate);
+          oprot.writeFieldEnd();
+        }
+        if (struct.logCreateDate != null) {
+          oprot.writeFieldBegin(LOG_CREATE_DATE_FIELD_DESC);
+          oprot.writeString(struct.logCreateDate);
+          oprot.writeFieldEnd();
+        }
+        if (struct.createDate != null) {
+          oprot.writeFieldBegin(CREATE_DATE_FIELD_DESC);
+          oprot.writeString(struct.createDate);
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class updateWorkInfo_argsTupleSchemeFactory implements SchemeFactory {
+      public updateWorkInfo_argsTupleScheme getScheme() {
+        return new updateWorkInfo_argsTupleScheme();
+      }
+    }
+
+    private static class updateWorkInfo_argsTupleScheme extends TupleScheme<updateWorkInfo_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, updateWorkInfo_args struct) throws org.apache.thrift.TException {
+        TTupleProtocol oprot = (TTupleProtocol) prot;
+        BitSet optionals = new BitSet();
+        if (struct.isSetId()) {
+          optionals.set(0);
+        }
+        if (struct.isSetUserId()) {
+          optionals.set(1);
+        }
+        if (struct.isSetTitle()) {
+          optionals.set(2);
+        }
+        if (struct.isSetPlanContent()) {
+          optionals.set(3);
+        }
+        if (struct.isSetLogContent()) {
+          optionals.set(4);
+        }
+        if (struct.isSetPlanCreateDate()) {
+          optionals.set(5);
+        }
+        if (struct.isSetLogCreateDate()) {
+          optionals.set(6);
+        }
+        if (struct.isSetCreateDate()) {
+          optionals.set(7);
+        }
+        oprot.writeBitSet(optionals, 8);
+        if (struct.isSetId()) {
+          oprot.writeString(struct.id);
+        }
+        if (struct.isSetUserId()) {
+          oprot.writeString(struct.userId);
+        }
+        if (struct.isSetTitle()) {
+          oprot.writeString(struct.title);
+        }
+        if (struct.isSetPlanContent()) {
+          oprot.writeString(struct.planContent);
+        }
+        if (struct.isSetLogContent()) {
+          oprot.writeString(struct.logContent);
+        }
+        if (struct.isSetPlanCreateDate()) {
+          oprot.writeString(struct.planCreateDate);
+        }
+        if (struct.isSetLogCreateDate()) {
+          oprot.writeString(struct.logCreateDate);
+        }
+        if (struct.isSetCreateDate()) {
+          oprot.writeString(struct.createDate);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, updateWorkInfo_args struct) throws org.apache.thrift.TException {
+        TTupleProtocol iprot = (TTupleProtocol) prot;
+        BitSet incoming = iprot.readBitSet(8);
+        if (incoming.get(0)) {
+          struct.id = iprot.readString();
+          struct.setIdIsSet(true);
+        }
+        if (incoming.get(1)) {
+          struct.userId = iprot.readString();
+          struct.setUserIdIsSet(true);
+        }
+        if (incoming.get(2)) {
+          struct.title = iprot.readString();
+          struct.setTitleIsSet(true);
+        }
+        if (incoming.get(3)) {
+          struct.planContent = iprot.readString();
+          struct.setPlanContentIsSet(true);
+        }
+        if (incoming.get(4)) {
+          struct.logContent = iprot.readString();
+          struct.setLogContentIsSet(true);
+        }
+        if (incoming.get(5)) {
+          struct.planCreateDate = iprot.readString();
+          struct.setPlanCreateDateIsSet(true);
+        }
+        if (incoming.get(6)) {
+          struct.logCreateDate = iprot.readString();
+          struct.setLogCreateDateIsSet(true);
+        }
+        if (incoming.get(7)) {
+          struct.createDate = iprot.readString();
+          struct.setCreateDateIsSet(true);
+        }
+      }
+    }
+
+  }
+
+  public static class updateWorkInfo_result implements org.apache.thrift.TBase<updateWorkInfo_result, updateWorkInfo_result._Fields>, java.io.Serializable, Cloneable, Comparable<updateWorkInfo_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("updateWorkInfo_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRING, (short)0);
+
+    private static final Map<Class<? extends IScheme>, SchemeFactory> schemes = new HashMap<Class<? extends IScheme>, SchemeFactory>();
+    static {
+      schemes.put(StandardScheme.class, new updateWorkInfo_resultStandardSchemeFactory());
+      schemes.put(TupleScheme.class, new updateWorkInfo_resultTupleSchemeFactory());
+    }
+
+    public String success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
+
+      static {
+        for (_Fields field : EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      public static _Fields findByName(String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final String _fieldName;
+
+      _Fields(short thriftId, String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      metaDataMap = Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(updateWorkInfo_result.class, metaDataMap);
+    }
+
+    public updateWorkInfo_result() {
+    }
+
+    public updateWorkInfo_result(
+      String success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public updateWorkInfo_result(updateWorkInfo_result other) {
+      if (other.isSetSuccess()) {
+        this.success = other.success;
+      }
+    }
+
+    public updateWorkInfo_result deepCopy() {
+      return new updateWorkInfo_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public String getSuccess() {
+      return this.success;
+    }
+
+    public updateWorkInfo_result setSuccess(String success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((String)value);
+        }
+        break;
+
+      }
+    }
+
+    public Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      if (that == null)
+        return false;
+      if (that instanceof updateWorkInfo_result)
+        return this.equals((updateWorkInfo_result)that);
+      return false;
+    }
+
+    public boolean equals(updateWorkInfo_result that) {
+      if (that == null)
+        return false;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return 0;
+    }
+
+    @Override
+    public int compareTo(updateWorkInfo_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = Boolean.valueOf(isSetSuccess()).compareTo(other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      schemes.get(iprot.getScheme()).getScheme().read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      schemes.get(oprot.getScheme()).getScheme().write(oprot, this);
+      }
+
+    @Override
+    public String toString() {
+      StringBuilder sb = new StringBuilder("updateWorkInfo_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class updateWorkInfo_resultStandardSchemeFactory implements SchemeFactory {
+      public updateWorkInfo_resultStandardScheme getScheme() {
+        return new updateWorkInfo_resultStandardScheme();
+      }
+    }
+
+    private static class updateWorkInfo_resultStandardScheme extends StandardScheme<updateWorkInfo_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, updateWorkInfo_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
+                struct.success = iprot.readString();
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, updateWorkInfo_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          oprot.writeString(struct.success);
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class updateWorkInfo_resultTupleSchemeFactory implements SchemeFactory {
+      public updateWorkInfo_resultTupleScheme getScheme() {
+        return new updateWorkInfo_resultTupleScheme();
+      }
+    }
+
+    private static class updateWorkInfo_resultTupleScheme extends TupleScheme<updateWorkInfo_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, updateWorkInfo_result struct) throws org.apache.thrift.TException {
+        TTupleProtocol oprot = (TTupleProtocol) prot;
+        BitSet optionals = new BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          oprot.writeString(struct.success);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, updateWorkInfo_result struct) throws org.apache.thrift.TException {
         TTupleProtocol iprot = (TTupleProtocol) prot;
         BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {

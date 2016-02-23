@@ -20,10 +20,10 @@ import org.springframework.stereotype.Repository;
 import com.spark.cloud.coresvc.base.dao.DataSourceSupport;
 import com.spark.cloud.coresvc.dao.woaker.WorkDao;
 import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
-import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
+import com.spark.cloud.coresvc.utils.IdUtils;
 
 /**
- * <b>类   名：</b>WorkDaoImpl<br/>
+ * <b>类 名：</b>WorkDaoImpl<br/>
  * <b>类描述：</b>工作Dao层接口实现<br/>
  * <b>创建人：</b>rlliu<br/>
  * <b>创建时间：</b>2016年2月1日 上午9:42:27<br/>
@@ -38,8 +38,11 @@ import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
 public class WorkDaoImpl extends DataSourceSupport implements WorkDao
 {
 
-    /* (non-Javadoc)
-     * @see com.spark.cloud.coresvc.dao.woaker.WorkDao#getWorkLogList(java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean, int, int)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.spark.cloud.coresvc.dao.woaker.WorkDao#getWorkLogList(java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean,
+     * int, int)
      */
     @Override
     public List<WorkInfo> getWorkInfoList(String userId, String keyWord, String startDate, String endDate, boolean isDelete, int page, int limit)
@@ -60,8 +63,10 @@ public class WorkDaoImpl extends DataSourceSupport implements WorkDao
         List<WorkInfo> workPlanInfoList = (List<WorkInfo>) this.queryForList(sql.toString(), paramMap, getWorkInfoPo());
         return workPlanInfoList;
     }
-    
-    /* (non-Javadoc)
+
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.spark.cloud.coresvc.dao.woaker.WorkDao#getWorkInfo(java.lang.String, java.lang.String, java.lang.String, boolean)
      */
     @Override
@@ -69,15 +74,72 @@ public class WorkDaoImpl extends DataSourceSupport implements WorkDao
     {
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("user_id", userId);
-        paramMap.put("workInfoId", workInfoId);
-        paramMap.put("createDate", createDate);
+        paramMap.put("id", workInfoId);
+        paramMap.put("create_date", createDate);
         paramMap.put("is_delete", isDelete);
         StringBuilder sql = new StringBuilder();
         sql.append(" SELECT wi.id, wi.user_id, wi.title, wi.plan_content, wi.log_content, wi.plan_create_date, wi.log_create_date, wi.create_date, wi.is_delete");
         sql.append(" FROM work_info wi");
-        sql.append(" WHERE wi.createDate = :createDate");
+        sql.append(" WHERE wi.createDate = :create_date");
+        sql.append(" AND wi.id = :id");
+        sql.append(" WHERE wi.user_id = :user_id");
         WorkInfo workPlanInfo = (WorkInfo) this.queryForObject(sql.toString(), paramMap, getWorkInfoPo());
         return workPlanInfo;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.spark.cloud.coresvc.dao.woaker.WorkDao#createWorkInfo(java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+     * java.lang.String, java.lang.String, java.lang.String)
+     */
+    @Override
+    public int createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate,
+            String createDate)
+    {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("id", IdUtils.uuid());
+        paramMap.put("user_id", userId);
+        paramMap.put("title", title);
+        paramMap.put("plan_content", planContent);
+        paramMap.put("log_content", logContent);
+        paramMap.put("plan_create_date", planCreateDate);
+        paramMap.put("log_create_date", logCreateDate);
+        paramMap.put("create_date", createDate);
+        paramMap.put("is_delete", false);
+        StringBuilder sql = new StringBuilder();
+        sql.append(" INSERT INTO work_info wi.id, wi.user_id, wi.title, wi.plan_content, wi.log_content, wi.plan_create_date, wi.log_create_date, wi.create_date, wi.is_delete");
+        sql.append(" VALUES (:id, :user_id, :title, :plan_content, :log_content, :plan_create_date, :log_create_date, :create_date, :is_delete)");
+        int count = this.insert(sql.toString(), paramMap);
+        return count;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.spark.cloud.coresvc.dao.woaker.WorkDao#updateWorkInfo(java.lang.String, java.lang.String, java.lang.String, java.lang.String,
+     * java.lang.String, java.lang.String, java.lang.String)
+     */
+    @Override
+    public int updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate,
+            String createDate)
+    {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("id", id);
+        paramMap.put("user_id", userId);
+        paramMap.put("title", title);
+        paramMap.put("plan_content", planContent);
+        paramMap.put("log_content", logContent);
+        paramMap.put("plan_create_date", planCreateDate);
+        paramMap.put("log_create_date", logCreateDate);
+        paramMap.put("create_date", createDate);
+        StringBuilder sql = new StringBuilder();
+        sql.append(" UPDATE work_info");
+        sql.append(" SET wi.id = :id, wi.user_id = :user_id, wi.title = :title, wi.plan_content = :plan_content, wi.log_content = :log_content, wi.plan_create_date = :plan_create_date, wi.log_create_date = :log_create_date, wi.create_date = :create_date");
+        sql.append(" WHERE wi.id = :id");
+        sql.append(" AND wi.user_id = :user_id");
+        int count = this.update(sql.toString(), paramMap);
+        return count;
     }
 
     /**
