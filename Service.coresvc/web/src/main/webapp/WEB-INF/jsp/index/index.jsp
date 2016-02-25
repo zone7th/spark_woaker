@@ -12,8 +12,7 @@
                         <div class="content_left_line">
                             <a>日期时间</a>
                         </div>
-                        <div class="input-group date form_date col-md-5 date_position" data-date="" data-date-format=""
-                             data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                        <div class="input-group date form_date col-md-5 date_position" data-date="">
                         </div>
                     </div>
                 </div>
@@ -80,7 +79,7 @@
 
             </div>
             <div class="col-xs-7 content_right">
-                <div>
+            	<div>
                     <h2>这是一个标题</h2>
 
                     <p>这是一段内容这是一段内容这是一段内容这是一段内容这是一段内容这是一段内容这是一段内容这是一段内容</p>

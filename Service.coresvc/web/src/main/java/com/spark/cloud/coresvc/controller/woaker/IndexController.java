@@ -8,13 +8,10 @@
  */
 package com.spark.cloud.coresvc.controller.woaker;
 
-import org.apache.thrift.TException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.alibaba.fastjson.JSONObject;
-import com.spark.cloud.coresvc.client.WoakerClientFactory;
 import com.spark.cloud.coresvc.constants.WoakerConstants;
 
 /**

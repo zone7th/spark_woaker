@@ -8,6 +8,7 @@
  */
 package com.spark.cloud.coresvc.service.woaker.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,6 +110,16 @@ public class WorkServiceImpl implements WorkService
             String logCreateDate, String createDate)
     {
         JSONObject jsonObject = new JSONObject();
+        //根据是否有时间和内容，来覆盖原来的时间
+        if(StringUtils.isBlank(planCreateDate)){
+            planCreateDate = (new Date()).toString();
+        }
+        if(StringUtils.isBlank(logCreateDate)){
+            logCreateDate = (new Date()).toString();
+        }
+        if(StringUtils.isBlank(createDate)){
+            createDate = (new Date()).toString();
+        }
         int success = workDao.updateWorkInfo(id, userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
         jsonObject.put("success", success);
         return jsonObject;

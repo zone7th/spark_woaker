@@ -9,6 +9,7 @@ var index = {
 	
 	initDate : function(){
 		$('.form_date').datetimepicker({
+			format : 'yyyy-mm-dd',
 	        language: 'zh-CN', /* 加载日历语言包，可自定义 */
 	        weekStart: 0,
 	        todayBtn: 1,
@@ -20,8 +21,6 @@ var index = {
 	    });
 	    $('.form_date').datetimepicker('show');
 	},
-	
-	
 }
 
 

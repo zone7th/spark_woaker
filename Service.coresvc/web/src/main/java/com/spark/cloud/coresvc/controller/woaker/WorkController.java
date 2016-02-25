@@ -64,7 +64,7 @@ public class WorkController
     public String createWorkInfo(Model model)
     {   
         //从session中取出userID
-        try
+        /*try
         {
             String resultJson = WoakerClientFactory.createWorkApi().getWorkIndex("1234");
             JSONObject jsonObject = JSONObject.parseObject(resultJson);
@@ -78,17 +78,17 @@ public class WorkController
         catch (TException e)
         {
             e.printStackTrace();
-        }
-        return "work/createWorkInfo";
+        }*/
+        return "work/workPlanInfo";
     }
     
     @RequestMapping("/updateWorkInfo")
-    public String updateWorkInfo(Model model)
+    public String updateWorkInfo(Model model,String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate)
     {   
         //从session中取出userID
         try
         {
-            String resultJson = WoakerClientFactory.createWorkApi().getWorkIndex("1234");
+            String resultJson = WoakerClientFactory.createWorkApi().updateWorkInfo(id, userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
             JSONObject jsonObject = JSONObject.parseObject(resultJson);
             if (jsonObject.getIntValue("Code") == 0)
             {
@@ -101,6 +101,28 @@ public class WorkController
         {
             e.printStackTrace();
         }
-        return "work/updateWorkInfo";
+        return "work/workInfo";
+    }
+    
+    @RequestMapping("/getWorkInfo")
+    public String getWorkInfo(Model model)
+    {   
+        //从session中取出userID
+        /*try
+        {
+            String resultJson = WoakerClientFactory.createWorkApi().getWorkIndex("1234");
+            JSONObject jsonObject = JSONObject.parseObject(resultJson);
+            if (jsonObject.getIntValue("Code") == 0)
+            {
+                JSONObject json = jsonObject.getJSONObject("Data");
+                //在model中添加数据源
+                model.addAllAttributes(json);
+            }
+        }
+        catch (TException e)
+        {
+            e.printStackTrace();
+        }*/
+        return "work/workInfo";
     }
 }
