@@ -62,19 +62,14 @@ public interface WorkService
      * createWorkInfo(创建工作信息)
      * 
      * @param userId 用户ID
-     * @param title 标题
      * @param planContent 计划内容
-     * @param logContent 日志内容
      * @param planCreateDate 计划时间
-     * @param logCreateDate 日志时间
-     * @param createDate 创建时间
      * @return
      * @exception
      * @since 1.0
      * @author rlliu
      */
-    public JSONObject createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate,
-            String createDate);
+    public JSONObject createWorkInfo(String userId, String planContent, String planCreateDate);
 
     /**
      * 
@@ -95,4 +90,16 @@ public interface WorkService
      */
     public JSONObject updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate,
             String createDate);
+    
+    /**
+     * 
+     * getWorkInfo(获取工作计划日志信息)
+     * 
+     * @param id 工作信息ID
+     * @return 
+     * @exception 
+     * @since 1.0
+     * @author rlliu
+     */
+    public JSONObject getWorkInfo(String id);
 }

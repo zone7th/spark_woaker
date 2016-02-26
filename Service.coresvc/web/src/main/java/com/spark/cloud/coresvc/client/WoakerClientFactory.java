@@ -93,7 +93,7 @@ public class WoakerClientFactory<T>
      */
     public static DemoApi.Iface createDemoApi()
     {
-        String serverUrl = String.format("%s/demo/demoApi", woakerBaseUri);
+        String serverUrl = String.format("%s/demoApi", woakerBaseUri);
         return createClient(DemoApi.Client.class, serverUrl);
     }
 
@@ -108,7 +108,7 @@ public class WoakerClientFactory<T>
      */
     public static BlogApi.Iface createBlogApi()
     {
-        String serverUrl = String.format("%s/blog/blogApi", woakerBaseUri);
+        String serverUrl = String.format("%s/woaker/blogApi", woakerBaseUri);
         return createClient(BlogApi.Client.class, serverUrl);
     }
 
@@ -123,7 +123,7 @@ public class WoakerClientFactory<T>
      */
     public static StudyApi.Iface createStudyApi()
     {
-        String serverUrl = String.format("%s/study/studyApi", woakerBaseUri);
+        String serverUrl = String.format("%s/woaker/studyApi", woakerBaseUri);
         return createClient(StudyApi.Client.class, serverUrl);
     }
 
@@ -138,7 +138,7 @@ public class WoakerClientFactory<T>
      */
     public static UserApi.Iface createUserApi()
     {
-        String serverUrl = String.format("%s/user/userApi", woakerBaseUri);
+        String serverUrl = String.format("%s/woaker/userApi", woakerBaseUri);
         return createClient(UserApi.Client.class, serverUrl);
     }
 
@@ -153,7 +153,7 @@ public class WoakerClientFactory<T>
      */
     public static WorkApi.Iface createWorkApi()
     {
-        String serverUrl = String.format("%s/work/workApi", woakerBaseUri);
+        String serverUrl = String.format("%s/woaker/workApi", woakerBaseUri);
         return createClient(WorkApi.Client.class, serverUrl);
     }
 

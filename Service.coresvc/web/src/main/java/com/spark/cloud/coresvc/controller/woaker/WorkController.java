@@ -12,6 +12,8 @@ import org.apache.thrift.TException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.spark.cloud.coresvc.client.WoakerClientFactory;
@@ -42,9 +44,9 @@ public class WorkController
     {   
         model.addAttribute("current",WoakerConstants.WORK_INDEX);
         //从session中取出userID
-        /*try
+        try
         {
-            String resultJson = WoakerClientFactory.createWorkApi().getWorkIndex("1234");
+            String resultJson = WoakerClientFactory.createWorkApi().getWorkIndex("111111");
             JSONObject jsonObject = JSONObject.parseObject(resultJson);
             if (jsonObject.getIntValue("Code") == 0)
             {
@@ -56,21 +58,29 @@ public class WorkController
         catch (TException e)
         {
             e.printStackTrace();
-        }*/
+        }
         return "work/workIndex";
     }
     
-    @RequestMapping("/createWorkInfo")
-    public String createWorkInfo(Model model)
+    @RequestMapping("/createWorkPlan")
+    public String createWorkPlan(Model model)
     {   
-        //从session中取出userID
-        /*try
+        return "work/workPlanInfo";
+    }
+    
+    @RequestMapping("/saveWorkPlan")
+    @ResponseBody
+    public JSONObject saveWorkPlan(Model model, String planContent, String planCreateDate)
+    {   
+        JSONObject json = new JSONObject();
+        try
         {
-            String resultJson = WoakerClientFactory.createWorkApi().getWorkIndex("1234");
+            //从session中取出userID
+            String resultJson = WoakerClientFactory.createWorkApi().createWorkInfo("111111", planContent, planCreateDate);
             JSONObject jsonObject = JSONObject.parseObject(resultJson);
             if (jsonObject.getIntValue("Code") == 0)
             {
-                JSONObject json = jsonObject.getJSONObject("Data");
+                json = jsonObject.getJSONObject("Data");
                 //在model中添加数据源
                 model.addAllAttributes(json);
             }
@@ -78,39 +88,39 @@ public class WorkController
         catch (TException e)
         {
             e.printStackTrace();
-        }*/
-        return "work/workPlanInfo";
+        }
+        return json;
     }
     
     @RequestMapping("/updateWorkInfo")
-    public String updateWorkInfo(Model model,String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate)
+    @ResponseBody
+    public JSONObject updateWorkInfo(Model model,String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate, String createDate)
     {   
         //从session中取出userID
+        JSONObject json = new JSONObject();
         try
         {
             String resultJson = WoakerClientFactory.createWorkApi().updateWorkInfo(id, userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
             JSONObject jsonObject = JSONObject.parseObject(resultJson);
             if (jsonObject.getIntValue("Code") == 0)
             {
-                JSONObject json = jsonObject.getJSONObject("Data");
-                //在model中添加数据源
-                model.addAllAttributes(json);
+                json = jsonObject.getJSONObject("Data");
             }
         }
         catch (TException e)
         {
             e.printStackTrace();
         }
-        return "work/workInfo";
+        return json;
     }
     
     @RequestMapping("/getWorkInfo")
-    public String getWorkInfo(Model model)
+    public String getWorkInfo(Model model, String id)
     {   
         //从session中取出userID
-        /*try
+        try
         {
-            String resultJson = WoakerClientFactory.createWorkApi().getWorkIndex("1234");
+            String resultJson = WoakerClientFactory.createWorkApi().getWorkInfo(id);
             JSONObject jsonObject = JSONObject.parseObject(resultJson);
             if (jsonObject.getIntValue("Code") == 0)
             {
@@ -122,7 +132,7 @@ public class WorkController
         catch (TException e)
         {
             e.printStackTrace();
-        }*/
+        }
         return "work/workInfo";
     }
 }

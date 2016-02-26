@@ -36,8 +36,6 @@ import com.spark.cloud.coresvc.utils.StringUtils;
 @Service
 public class WorkServiceImpl implements WorkService
 {
-    public final static String NoString = StringUtils.EMPTY_STRING;
-
     @Autowired
     private WorkDao workDao;
 
@@ -65,20 +63,20 @@ public class WorkServiceImpl implements WorkService
     {
         JSONObject jsonObject = new JSONObject();
         // 获取工作日志列表
-        List<WorkInfo> workInfoList = workDao.getWorkInfoList(userId, NoString, NoString, NoString, false, 0, 10);
+        List<WorkInfo> workInfoList = workDao.getWorkInfoList(userId, null, null, null, false, 0, 20);
         // 获取今日工作
         String today = DateUtils.getDate();
-        WorkInfo todayInfo = workDao.getWorkInfo(userId, NoString, today, false);
+        WorkInfo todayInfo = workDao.getWorkInfo(userId, null, today, false);
         // 明天的任务
-        String tommorrow = DateUtils.nextDay(1).toString();
-        WorkInfo tommorrowInfo = workDao.getWorkInfo(userId, NoString, tommorrow, false);
+        String tomorrow = DateUtils.formatDate(DateUtils.nextDay(1), "yyyy-MM-dd");
+        WorkInfo tomorrowInfo = workDao.getWorkInfo(userId, null, tomorrow, false);
         // 昨天的工作日志
-        String yesterday = DateUtils.nextDay(-1).toString();
-        WorkInfo yesterdayInfo = workDao.getWorkInfo(userId, NoString, yesterday, false);
+        String yesterday = DateUtils.formatDate(DateUtils.nextDay(-1), "yyyy-MM-dd");;
+        WorkInfo yesterdayInfo = workDao.getWorkInfo(userId, null, yesterday, false);
 
         jsonObject.put("workInfoList", workInfoList);
         jsonObject.put("todayInfo", todayInfo);
-        jsonObject.put("tommorrowInfo", tommorrowInfo);
+        jsonObject.put("tomorrowInfo", tomorrowInfo);
         jsonObject.put("yesterdayInfo", yesterdayInfo);
         return jsonObject;
     }
@@ -90,11 +88,18 @@ public class WorkServiceImpl implements WorkService
      * java.lang.String, java.lang.String, java.lang.String)
      */
     @Override
-    public JSONObject createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate,
-            String logCreateDate, String createDate)
+    public JSONObject createWorkInfo(String userId, String planContent, String planCreateDate)
     {
         JSONObject jsonObject = new JSONObject();
-        int success = workDao.createWorkInfo(userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
+        //查询计划是否已经存在
+        int exist = workDao.checkWorkPlanExist(planCreateDate);
+        if(exist > 0){
+          jsonObject.put("exist", 1);
+          jsonObject.put("success", -1);
+          return jsonObject;  
+        }
+        int success = workDao.createWorkInfo(userId, null, planContent, null, planCreateDate, null, DateUtils.getDate());
+        jsonObject.put("exist", 0);
         jsonObject.put("success", success);
         return jsonObject;
     }
@@ -112,17 +117,29 @@ public class WorkServiceImpl implements WorkService
         JSONObject jsonObject = new JSONObject();
         //根据是否有时间和内容，来覆盖原来的时间
         if(StringUtils.isBlank(planCreateDate)){
-            planCreateDate = (new Date()).toString();
+            planCreateDate = DateUtils.formatDate(new Date(), "yyyy-MM-dd");
         }
         if(StringUtils.isBlank(logCreateDate)){
-            logCreateDate = (new Date()).toString();
+            logCreateDate = DateUtils.formatDate(new Date(), "yyyy-MM-dd");
         }
         if(StringUtils.isBlank(createDate)){
-            createDate = (new Date()).toString();
+            createDate = DateUtils.formatDate(new Date(), "yyyy-MM-dd");
         }
         int success = workDao.updateWorkInfo(id, userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
         jsonObject.put("success", success);
         return jsonObject;
     }
 
+    /* (non-Javadoc)
+     * @see com.spark.cloud.coresvc.service.woaker.WorkService#getWorkInfo(java.lang.String)
+     */
+    @Override
+    public JSONObject getWorkInfo(String id)
+    {
+        JSONObject jsonObject = new JSONObject();
+        WorkInfo workInfo = workDao.getWorkInfo(null, id, null, false);
+        jsonObject.put("workInfo", workInfo);
+        return jsonObject;
+    }
+    
 }

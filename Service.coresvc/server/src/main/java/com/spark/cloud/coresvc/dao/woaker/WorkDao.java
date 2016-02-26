@@ -10,6 +10,7 @@ package com.spark.cloud.coresvc.dao.woaker;
 
 import java.util.List;
 
+import com.alibaba.fastjson.JSONObject;
 import com.spark.cloud.coresvc.pojo.woaker.WorkInfo;
 
 /**
@@ -46,18 +47,18 @@ public interface WorkDao
     
     /**
      * 
-     * getWorkInfo(这里用一句话描述这个方法的作用)
+     * getWorkInfo(获取工作信息、不传ID时，仅根据userId、和createDate创建。)
      * 
      * @param userId        用户ID
      * @param workInfoId    工作信息ID
-     * @param createDate    工作信息创建时间
+     * @param planCreateDate    工作信息计划创建时间
      * @param isDelete      是否删除
      * @return 
      * @exception 
      * @since 1.0
      * @author rlliu
      */
-    public WorkInfo getWorkInfo(String userId, String workInfoId, String createDate, boolean isDelete);
+    public WorkInfo getWorkInfo(String userId, String workInfoId, String planCreateDate, boolean isDelete);
     
     /**
      * 
@@ -97,4 +98,15 @@ public interface WorkDao
     public int updateWorkInfo(String id, String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate,
             String createDate);
     
+    /**
+     * 
+     * checkWorkPlanExist(检测计划是否存在)
+     * 
+     * @param planCreateDate 计划的时间
+     * @return 
+     * @exception 
+     * @since 1.0
+     * @author rlliu
+     */
+    public int checkWorkPlanExist(String planCreateDate);
 }

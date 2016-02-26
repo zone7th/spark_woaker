@@ -29,6 +29,12 @@ function getYesterday(){
     return getformat(yesterday);
 }
 
+function getTomorrow(){
+    var curDate = new Date();
+    var tomorrow = new Date(curDate.getTime() + 24*60*60*1000);  //昨天的日期
+    return getformat(tomorrow);
+}
+
 function getLastMonthDate()
 {
     var curDate = new Date();

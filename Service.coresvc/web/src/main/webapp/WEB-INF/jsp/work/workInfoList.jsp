@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:forEach var="workInfo" items="${workInfoList }" varStatus="status">
+	<tr>
+	<td>${status.count}</td>
+	<td><a href="javascript:;" onclick="workIndex.getWorkInfo(${workInfo.id})">${workInfo.plan_create_date}</a></td>
+	<td>${workInfo.user_id}</td>
+	<td>${workInfo.plan_content}</td>
+	<td>${workInfo.log_content}</td>
+	<td>按时填写</td>
+</tr>
+</c:forEach>

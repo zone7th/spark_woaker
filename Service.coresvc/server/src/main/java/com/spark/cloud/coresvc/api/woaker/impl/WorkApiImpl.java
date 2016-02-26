@@ -38,6 +38,8 @@ import com.spark.cloud.coresvc.utils.logger.LogUtil;
 @Service
 public class WorkApiImpl implements WorkApi.Iface
 {
+    public final static String NoString = StringUtils.EMPTY_STRING; 
+    
     @Autowired
     private WorkService workService;
 
@@ -97,18 +99,16 @@ public class WorkApiImpl implements WorkApi.Iface
      * java.lang.String, java.lang.String, java.lang.String)
      */
     @Override
-    public String createWorkInfo(String userId, String title, String planContent, String logContent, String planCreateDate, String logCreateDate,
-            String createDate) throws TException
+    public String createWorkInfo(String userId, String planContent, String planCreateDate) throws TException
     {
-        LogUtil.info("woaker创建工作信息方法开始...方法名:createWorkInfo,方法参数:[userId:" + userId + ", title:" + title + ", planContent:" + planContent
-                + ", logContent:" + logContent + ", planCreateDate:" + planCreateDate + ", logCreateDate:" + logCreateDate + ", createDate:"
-                + createDate + "]");
+        LogUtil.info("woaker创建工作信息方法开始...方法名:createWorkInfo,方法参数:[userId:" + userId + ", planContent:" + planContent + ", planCreateDate:"
+                + planCreateDate + "]");
         // 接口最终返回结果
         JSONObject jsonObject = new JSONObject();
         String result = StringUtils.EMPTY_STRING;
         try
         {
-            jsonObject = workService.createWorkInfo(userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
+            jsonObject = workService.createWorkInfo(userId, planContent, planCreateDate);
             result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.SUCCESS, jsonObject).toJSONString();
             LogUtil.info("woaker创建工作信息方法正常结束");
             LogUtil.debug("woaker创建工作信息方法返回结果:" + result);
@@ -154,4 +154,29 @@ public class WorkApiImpl implements WorkApi.Iface
         return result;
     }
 
+    /* (non-Javadoc)
+     * @see com.spark.cloud.coresvc.api.woaker.WorkApi.Iface#getWorkInfo(java.lang.String)
+     */
+    @Override
+    public String getWorkInfo(String id) throws TException
+    {
+        LogUtil.info("woaker获取工作信息方法开始...方法名:createWorkInfo,方法参数:[id:" + id + "]");
+        // 接口最终返回结果
+        JSONObject jsonObject = new JSONObject();
+        String result = StringUtils.EMPTY_STRING;
+        try
+        {
+            jsonObject = workService.getWorkInfo(id);
+            result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.SUCCESS, jsonObject).toJSONString();
+            LogUtil.info("woaker获取工作信息方法正常结束");
+            LogUtil.debug("woaker获取工作信息方法返回结果:" + result);
+        }
+        catch (Exception e)
+        {
+            result = CoresvcUtils.createResultJson(ResultType.SimpleResultType.OPERATE_ERROR).toJSONString();
+            LogUtil.info("woaker获取工作信息方法异常结束...返回结果:" + result);
+            e.printStackTrace();
+        }
+        return result;
+    }
 }

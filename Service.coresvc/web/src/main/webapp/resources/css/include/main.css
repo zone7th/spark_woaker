@@ -69,7 +69,7 @@ body {
 }
 
 /* workIndex */
-.startDate, .endDate {
+.startDate, .endDate, .planCreateDate{
 	text-align: center;
 }
 

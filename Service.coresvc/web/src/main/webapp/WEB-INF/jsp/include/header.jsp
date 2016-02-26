@@ -5,7 +5,7 @@
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>屌丝之路</title>
-
+	
     <link rel="stylesheet" href="<c:url value="/resources/js/bootstrap/css/bootstrap.css"/>">
     <link rel="stylesheet" href="<c:url value="/resources/js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>">
     <link rel="stylesheet" href="<c:url value="/resources/css/include/main.css"/>">
@@ -15,6 +15,7 @@
 	<script src="<c:url value="/resources/js/bootstrap/js/bootstrap.min.js"/>"></script>
 	<script src="<c:url value="/resources/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"/>"></script>
 	<script src="<c:url value="/resources/js/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"/>"></script>
+	<script src="<c:url value="/resources/js/common/common.js"/>"></script>
 	<script src="<c:url value="/resources/js/index/index.js"/>"></script>
 </head>
 <body>
