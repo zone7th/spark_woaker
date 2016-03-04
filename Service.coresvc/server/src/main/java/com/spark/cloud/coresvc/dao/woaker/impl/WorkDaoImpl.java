@@ -72,8 +72,9 @@ public class WorkDaoImpl extends DataSourceSupport implements WorkDao
      * 
      * @see com.spark.cloud.coresvc.dao.woaker.WorkDao#getWorkInfo(java.lang.String, java.lang.String, java.lang.String, boolean)
      */
+    @SuppressWarnings("unchecked")
     @Override
-    public WorkInfo getWorkInfo(String userId, String workInfoId, String planCreateDate, boolean isDelete)
+    public List<WorkInfo> getWorkInfo(String userId, String workInfoId, String planCreateDate, boolean isDelete)
     {
         Map<String, Object> paramMap = new HashMap<String, Object>();
         if(StringUtils.isNotBlank(workInfoId)){
@@ -92,7 +93,7 @@ public class WorkDaoImpl extends DataSourceSupport implements WorkDao
             sql.append(" WHERE wi.plan_create_date = :plan_create_date");
             sql.append(" AND wi.user_id = :user_id");
         }
-        WorkInfo workPlanInfo = (WorkInfo) this.queryForObject(sql.toString(), paramMap, getWorkInfoPo());
+        List<WorkInfo> workPlanInfo = (List<WorkInfo>) this.queryForList(sql.toString(), paramMap, getWorkInfoPo());
         return workPlanInfo;
     }
 
@@ -154,14 +155,16 @@ public class WorkDaoImpl extends DataSourceSupport implements WorkDao
      * @see com.spark.cloud.coresvc.dao.woaker.WorkDao#checkWorkPlanExist(java.lang.String)
      */
     @Override
-    public int checkWorkPlanExist(String planCreateDate)
+    public int checkWorkPlanExist(String userId, String planCreateDate)
     {
         Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("user_id", userId);
         paramMap.put("plan_create_date", planCreateDate);
         StringBuilder sql = new StringBuilder();
         sql.append(" SELECT count(*) ");
         sql.append(" FROM work_info AS wi");
         sql.append(" WHERE wi.plan_create_date = :plan_create_date");
+        sql.append(" AND wi.user_id = :user_id");
         int count = this.queryForCount(sql.toString(), paramMap);
         return count;
     }

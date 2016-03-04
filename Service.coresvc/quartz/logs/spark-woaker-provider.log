@@ -1,0 +1,677 @@
+2016-03-04 10:41:42,223 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:41:45,318 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'createWorkPlanQuartz': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.util.concurrent.ExecutorService com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz.executorService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [java.util.concurrent.ExecutorService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'createWorkPlanQuartz': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.util.concurrent.ExecutorService com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz.executorService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [java.util.concurrent.ExecutorService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.util.concurrent.ExecutorService com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz.executorService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [java.util.concurrent.ExecutorService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:285)
+	... 15 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [java.util.concurrent.ExecutorService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:986)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:856)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:768)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:486)
+	... 17 more
+2016-03-04 10:45:31,739 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:45:34,165 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'createWorkPlanQuartz': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.util.concurrent.ExecutorService com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz.executorService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [java.util.concurrent.ExecutorService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'createWorkPlanQuartz': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.util.concurrent.ExecutorService com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz.executorService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [java.util.concurrent.ExecutorService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.util.concurrent.ExecutorService com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz.executorService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [java.util.concurrent.ExecutorService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:285)
+	... 15 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [java.util.concurrent.ExecutorService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:986)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:856)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:768)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:486)
+	... 17 more
+2016-03-04 10:45:59,017 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:46:01,742 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1393)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1102)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:278)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 17 more
+2016-03-04 10:46:01,744 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:46:01,745 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:47:14,521 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:47:16,990 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1393)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1102)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:278)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 17 more
+2016-03-04 10:47:16,992 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:47:16,994 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:48:13,356 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:48:15,677 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1393)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1102)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:278)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 17 more
+2016-03-04 10:48:15,679 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:48:15,681 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:49:05,298 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:49:07,783 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1393)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1102)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:278)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 17 more
+2016-03-04 10:49:07,786 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:49:07,788 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:52:35,352 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:52:37,753 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'impl/demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'impl/demoApiImpl' is defined, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'impl/demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'impl/demoApiImpl' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1393)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'impl/demoApiImpl' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1102)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:278)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 17 more
+2016-03-04 10:52:37,758 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:52:37,760 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:52:50,002 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:52:52,403 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'api/impl/demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'api/impl/demoApiImpl' is defined, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'api/impl/demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'api/impl/demoApiImpl' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1393)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'api/impl/demoApiImpl' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1102)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:278)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 17 more
+2016-03-04 10:52:52,407 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:52:52,410 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:53:26,791 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:53:29,153 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.spark.cloud.coresvc.api.DemoApi': Cannot resolve reference to bean 'demoApiImpl' while setting bean property 'ref'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1393)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'demoApiImpl' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:568)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1102)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:278)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 17 more
+2016-03-04 10:53:29,155 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:53:29,157 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:56,107 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:58,656 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,000 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,000 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url httpt://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7808&server=tomcat&side=provider&timestamp=1457060218731, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,669 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,669 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,669 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,670 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,670 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,670 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,728 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] please config dubbo-provider-beans.xml, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+java.lang.NullPointerException: please config dubbo-provider-beans.xml
+	at com.alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer.addServletMapping(TomcatHttpServer.java:121)
+	at com.alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer.<init>(TomcatHttpServer.java:50)
+	at com.alibaba.dubbo.remoting.http.tomcat.TomcatHttpBinder.bind(TomcatHttpBinder.java:16)
+	at com.alibaba.dubbo.remoting.http.HttpBinder$Adpative.bind(HttpBinder$Adpative.java)
+	at com.iflytek.edu.dubbo.rpc.protocol.http.thrift.HttpThriftProtocol.doExport(HttpThriftProtocol.java:123)
+	at com.alibaba.dubbo.rpc.protocol.AbstractProxyProtocol.export(AbstractProxyProtocol.java:69)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper.export(ProtocolFilterWrapper.java:55)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolListenerWrapper.export(ProtocolListenerWrapper.java:56)
+	at com.alibaba.dubbo.rpc.Protocol$Adpative.export(Protocol$Adpative.java)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:497)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrls(ServiceConfig.java:285)
+	at com.alibaba.dubbo.config.ServiceConfig.doExport(ServiceConfig.java:246)
+	at com.alibaba.dubbo.config.ServiceConfig.export(ServiceConfig.java:145)
+	at com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:109)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:96)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:334)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:948)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+2016-03-04 10:56:59,729 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,731 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:56:59,732 [DubboShutdownHook] INFO  com.alibaba.dubbo.rpc.protocol.AbstractProtocol (AbstractProtocol.java:76) -  [DUBBO] Unexport service: injvm://127.0.0.1/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7808&server=tomcat&side=provider&timestamp=1457060218731, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:30,960 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:33,360 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:33,577 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:33,577 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url httpt://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=1112&server=tomcat&side=provider&timestamp=1457060253402, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:33,968 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:33,969 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:33,969 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:33,969 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:33,969 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:33,969 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:34,005 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] please config dubbo-provider-beans.xml, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+java.lang.NullPointerException: please config dubbo-provider-beans.xml
+	at com.alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer.addServletMapping(TomcatHttpServer.java:121)
+	at com.alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer.<init>(TomcatHttpServer.java:50)
+	at com.alibaba.dubbo.remoting.http.tomcat.TomcatHttpBinder.bind(TomcatHttpBinder.java:16)
+	at com.alibaba.dubbo.remoting.http.HttpBinder$Adpative.bind(HttpBinder$Adpative.java)
+	at com.iflytek.edu.dubbo.rpc.protocol.http.thrift.HttpThriftProtocol.doExport(HttpThriftProtocol.java:123)
+	at com.alibaba.dubbo.rpc.protocol.AbstractProxyProtocol.export(AbstractProxyProtocol.java:69)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolListenerWrapper.export(ProtocolListenerWrapper.java:56)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper.export(ProtocolFilterWrapper.java:55)
+	at com.alibaba.dubbo.rpc.Protocol$Adpative.export(Protocol$Adpative.java)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:497)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrls(ServiceConfig.java:285)
+	at com.alibaba.dubbo.config.ServiceConfig.doExport(ServiceConfig.java:246)
+	at com.alibaba.dubbo.config.ServiceConfig.export(ServiceConfig.java:145)
+	at com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:109)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:96)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:334)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:948)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+2016-03-04 10:57:34,007 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:34,008 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:57:34,008 [DubboShutdownHook] INFO  com.alibaba.dubbo.rpc.protocol.AbstractProtocol (AbstractProtocol.java:76) -  [DUBBO] Unexport service: injvm://127.0.0.1/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=1112&server=tomcat&side=provider&timestamp=1457060253402, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:55,835 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:58,436 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:58,705 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:58,705 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url httpt://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=6312&server=tomcat&side=provider&timestamp=1457060398494, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:59,119 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:59,119 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:59,119 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:59,119 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:59,120 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:59,120 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:59,160 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] please config dubbo-provider-beans.xml, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+java.lang.NullPointerException: please config dubbo-provider-beans.xml
+	at com.alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer.addServletMapping(TomcatHttpServer.java:121)
+	at com.alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer.<init>(TomcatHttpServer.java:50)
+	at com.alibaba.dubbo.remoting.http.tomcat.TomcatHttpBinder.bind(TomcatHttpBinder.java:16)
+	at com.alibaba.dubbo.remoting.http.HttpBinder$Adpative.bind(HttpBinder$Adpative.java)
+	at com.iflytek.edu.dubbo.rpc.protocol.http.thrift.HttpThriftProtocol.doExport(HttpThriftProtocol.java:123)
+	at com.alibaba.dubbo.rpc.protocol.AbstractProxyProtocol.export(AbstractProxyProtocol.java:69)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper.export(ProtocolFilterWrapper.java:55)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolListenerWrapper.export(ProtocolListenerWrapper.java:56)
+	at com.alibaba.dubbo.rpc.Protocol$Adpative.export(Protocol$Adpative.java)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:497)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrls(ServiceConfig.java:285)
+	at com.alibaba.dubbo.config.ServiceConfig.doExport(ServiceConfig.java:246)
+	at com.alibaba.dubbo.config.ServiceConfig.export(ServiceConfig.java:145)
+	at com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:109)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:96)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:334)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:948)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+2016-03-04 10:59:59,162 [DubboShutdownHook] INFO  com.alibaba.dubbo.config.AbstractConfig$1 (AbstractConfig.java:450) -  [DUBBO] Run shutdown hook now., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:59,164 [DubboShutdownHook] INFO  com.alibaba.dubbo.registry.support.AbstractRegistryFactory (AbstractRegistryFactory.java:63) -  [DUBBO] Close all registries [], dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 10:59:59,164 [DubboShutdownHook] INFO  com.alibaba.dubbo.rpc.protocol.AbstractProtocol (AbstractProtocol.java:76) -  [DUBBO] Unexport service: injvm://127.0.0.1/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=6312&server=tomcat&side=provider&timestamp=1457060398494, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:24,176 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:26,534 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:26,783 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:26,784 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7948&server=tomcat&side=provider&timestamp=1457060426594, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:27,226 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:27,226 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:27,226 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:27,226 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:27,227 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:27,227 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:38,293 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:00:38,299 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:04,151 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:06,466 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:06,684 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:06,685 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7760&server=tomcat&side=provider&timestamp=1457060586512, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:07,084 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:07,084 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:07,084 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:07,084 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:07,084 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:07,085 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:15,558 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:03:15,566 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:13,958 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:16,304 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:16,540 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:16,540 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7112&server=tomcat&side=provider&timestamp=1457060716349, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:17,031 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:17,031 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:17,032 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:17,032 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:17,032 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:17,032 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:24,426 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:05:24,433 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:33,503 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:35,780 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:35,994 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:35,995 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7392&server=tomcat&side=provider&timestamp=1457061155827, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:36,424 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:36,424 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:36,424 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:36,424 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:36,425 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:36,425 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:43,811 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:12:43,818 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:21,735 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:24,223 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:24,396 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:24,397 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7448&server=tomcat&side=provider&timestamp=1457061204256, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:24,809 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:24,809 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:24,809 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:24,809 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:24,810 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:24,810 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:32,794 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:13:32,801 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:08,584 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:11,150 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:11,327 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:11,327 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=8108&server=tomcat&side=provider&timestamp=1457061671188, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:11,726 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:11,726 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:11,727 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:11,727 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:11,727 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:11,727 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:19,559 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:21:19,568 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:11,558 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:14,035 [main] ERROR com.alibaba.dubbo.container.Main (Main.java:86) -  [DUBBO] Error creating bean with name 'createWorkPlanQuartzJobCronTrigger' defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]: Error setting property values; nested exception is org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'cronExpression' threw exception; nested exception is java.text.ParseException: '?' can only be specfied for Day-of-Month or Day-of-Week., dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'createWorkPlanQuartzJobCronTrigger' defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]: Error setting property values; nested exception is org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'cronExpression' threw exception; nested exception is java.text.ParseException: '?' can only be specfied for Day-of-Month or Day-of-Week.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1429)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:461)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:626)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+	at com.spark.cloud.coresvc.service.Main.main(Main.java:26)
+Caused by: org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'cronExpression' threw exception; nested exception is java.text.ParseException: '?' can only be specfied for Day-of-Month or Day-of-Week.
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:101)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:57)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1426)
+	... 15 more
+2016-03-04 11:25:44,779 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:47,231 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:47,439 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:47,439 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7616&server=tomcat&side=provider&timestamp=1457061947277, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:47,820 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:47,820 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:47,821 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:47,821 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:47,821 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:47,822 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:55,271 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:25:55,465 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:31,700 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:34,442 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:38,493 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:41,084 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:41,296 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:41,296 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=6572&server=tomcat&side=provider&timestamp=1457062181132, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:41,676 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:41,676 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:41,676 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:41,676 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:41,677 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:41,677 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:49,197 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:29:49,208 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:19,272 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:21,898 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:22,121 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:22,122 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=8020&server=tomcat&side=provider&timestamp=1457062461952, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:22,486 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:22,487 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:22,487 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:22,487 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:22,487 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:22,487 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:29,875 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:34:29,883 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:39,040 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:41,549 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:41,771 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:41,772 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7828&server=tomcat&side=provider&timestamp=1457062781608, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:42,134 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:42,134 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:42,134 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:42,134 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:42,134 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:42,135 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:49,665 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:39:49,672 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:37,281 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:39,804 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:40,009 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:40,010 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=4652&server=tomcat&side=provider&timestamp=1457062899847, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:40,374 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:40,374 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:40,374 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:40,375 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:40,375 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:40,375 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:49,982 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:41:49,990 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:50,150 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:52,739 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:52,966 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:52,967 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=8040&server=tomcat&side=provider&timestamp=1457062972801, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:53,346 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:53,346 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:53,347 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:53,347 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:53,347 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:42:53,347 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:43:02,644 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:43:02,654 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:13,061 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:15,810 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:15,991 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:15,992 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7884&server=tomcat&side=provider&timestamp=1457063175852, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:16,456 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:16,456 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:16,457 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:16,457 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:16,457 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:16,458 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:24,431 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:46:24,439 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:50,591 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:53,235 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:53,449 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:53,450 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7744&server=tomcat&side=provider&timestamp=1457063753284, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:53,811 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:53,812 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:53,812 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:53,812 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:53,812 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:55:53,813 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:56:01,794 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:56:01,805 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:09,981 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:12,397 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:12,619 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:12,620 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7092&server=tomcat&side=provider&timestamp=1457063892449, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:13,034 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:13,035 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:13,035 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:13,035 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:13,035 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:13,036 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:20,600 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 11:58:20,610 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:46,629 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:49,095 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:49,308 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:49,308 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7624&server=tomcat&side=provider&timestamp=1457064229144, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:49,672 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:49,672 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:49,673 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:49,673 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:49,673 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:49,673 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:57,330 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:03:57,340 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:40,957 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:44,240 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:44,491 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:44,492 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7484&server=tomcat&side=provider&timestamp=1457065904301, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:44,945 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:44,945 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:44,945 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:44,946 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:44,946 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:44,946 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:53,310 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:31:53,319 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:10,674 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:13,739 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:13,995 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:13,996 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7876&server=tomcat&side=provider&timestamp=1457065993794, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:14,457 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:14,457 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:14,457 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:14,457 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:14,457 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:14,458 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:25,813 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:33:25,821 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:43,525 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:46,355 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:46,537 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:46,538 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7628&server=tomcat&side=provider&timestamp=1457066146402, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:46,918 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:46,918 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:46,918 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:46,918 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:46,918 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:46,919 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:54,853 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:35:54,862 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:44,108 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:46,745 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:46,961 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:46,961 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7772&server=tomcat&side=provider&timestamp=1457066326793, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:47,313 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:47,314 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:47,314 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:47,314 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:47,314 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:47,315 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:55,063 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:38:55,072 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:10,036 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:12,520 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:12,720 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:12,720 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=7480&server=tomcat&side=provider&timestamp=1457067372560, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:13,210 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:13,211 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:13,211 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:13,211 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:13,211 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:13,212 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:20,647 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 12:56:20,656 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:16,857 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo Log4jContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:19,346 [main] INFO  com.alibaba.dubbo.config.spring.ServiceBean (ServiceBean.java:107) -  [DUBBO] The service ready on spring started. service: com.spark.cloud.coresvc.api.DemoApi, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:19,552 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:520) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to local registry, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:19,553 [main] INFO  com.alibaba.dubbo.config.ServiceConfig (ServiceConfig.java:476) -  [DUBBO] Export dubbo service com.spark.cloud.coresvc.api.DemoApi to url rest://192.168.61.86:9100/com.spark.cloud.coresvc.api.DemoApi?anyhost=true&application=coresvc&dubbo=2.5.10-SNAPSHOT&generic=false&interface=com.spark.cloud.coresvc.api.DemoApi&loadbalance=roundrobin&methods=getIndex&owner=spark&pid=5348&server=tomcat&side=provider&timestamp=1457067679390, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:19,908 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:66) -  [DUBBO] tomcat maxThreads:400, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:19,908 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:67) -  [DUBBO] tomcat acceptCount:500, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:19,908 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:68) -  [DUBBO] tomcat connectionTimeout:20000, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:19,908 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:69) -  [DUBBO] tomcat URIEncoding:UTF-8, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:19,909 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:70) -  [DUBBO] tomcat useBodyEncodingForURI:null, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:19,909 [main] INFO  alibaba.dubbo.remoting.http.tomcat.TomcatHttpServer (TomcatHttpServer.java:87) -  [DUBBO] base dir :C:\Users\admin\git\Service.coresvc\quartz\src\main\webapp, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:27,728 [main] INFO  alibaba.dubbo.rpc.protocol.rest.RestProtocol (RestProtocol.java:113) -  [DUBBO] implClass:class com.spark.cloud.coresvc.api.woaker.impl.DemoApiImpl, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1
+2016-03-04 13:01:27,735 [main] INFO  com.alibaba.dubbo.container.Main (Main.java:81) -  [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.5.10-SNAPSHOT, current host: 127.0.0.1

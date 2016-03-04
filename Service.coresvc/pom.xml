@@ -14,7 +14,8 @@
 		<module>common</module>
 		<module>client</module>
 		<module>web</module>
-	</modules>
+   		<module>quartz</module>
+  </modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

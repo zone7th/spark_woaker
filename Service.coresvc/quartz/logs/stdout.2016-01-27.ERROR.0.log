@@ -1,0 +1,5 @@
+2016-01-27 16:27:37,700 [main] ERROR ConfigurationHolder - 从配置中心加载配置文件异常...PropertiesConfigurationFactoryBean 没有初始化
+2016-01-27 16:33:10,669 [main] ERROR ConfigurationHolder - 从配置中心加载配置文件异常...PropertiesConfigurationFactoryBean 没有初始化
+2016-01-27 16:34:33,662 [main] ERROR ConfigurationHolder - 从配置中心加载配置文件异常...PropertiesConfigurationFactoryBean 没有初始化
+2016-01-27 16:36:11,584 [main] ERROR ConfigurationHolder - 从配置中心加载配置文件异常...PropertiesConfigurationFactoryBean 没有初始化
+2016-01-27 16:39:52,494 [main] ERROR ConfigurationHolder - 从配置中心加载配置文件异常...PropertiesConfigurationFactoryBean 没有初始化

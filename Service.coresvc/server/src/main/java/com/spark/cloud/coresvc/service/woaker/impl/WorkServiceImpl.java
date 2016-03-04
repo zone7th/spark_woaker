@@ -66,13 +66,16 @@ public class WorkServiceImpl implements WorkService
         List<WorkInfo> workInfoList = workDao.getWorkInfoList(userId, null, null, null, false, 0, 20);
         // 获取今日工作
         String today = DateUtils.getDate();
-        WorkInfo todayInfo = workDao.getWorkInfo(userId, null, today, false);
+        List<WorkInfo> todayInfoList = workDao.getWorkInfo(userId, null, today, false);
+        WorkInfo todayInfo = todayInfoList.size() > 0 ? todayInfoList.get(0) : null;
         // 明天的任务
         String tomorrow = DateUtils.formatDate(DateUtils.nextDay(1), "yyyy-MM-dd");
-        WorkInfo tomorrowInfo = workDao.getWorkInfo(userId, null, tomorrow, false);
+        List<WorkInfo> tomorrowInfoList = workDao.getWorkInfo(userId, null, tomorrow, false);
+        WorkInfo tomorrowInfo = tomorrowInfoList.size() > 0 ? tomorrowInfoList.get(0) : null;
         // 昨天的工作日志
-        String yesterday = DateUtils.formatDate(DateUtils.nextDay(-1), "yyyy-MM-dd");;
-        WorkInfo yesterdayInfo = workDao.getWorkInfo(userId, null, yesterday, false);
+        String yesterday = DateUtils.formatDate(DateUtils.nextDay(-1), "yyyy-MM-dd");
+        List<WorkInfo> yesterdayInfoList = workDao.getWorkInfo(userId, null, yesterday, false);
+        WorkInfo yesterdayInfo = yesterdayInfoList.size() > 0 ? yesterdayInfoList.get(0) : null;
 
         jsonObject.put("workInfoList", workInfoList);
         jsonObject.put("todayInfo", todayInfo);
@@ -91,19 +94,20 @@ public class WorkServiceImpl implements WorkService
     public JSONObject createWorkInfo(String userId, String planContent, String planCreateDate)
     {
         JSONObject jsonObject = new JSONObject();
-        //查询计划是否已经存在
-        int exist = workDao.checkWorkPlanExist(planCreateDate);
-        if(exist > 0){
-          jsonObject.put("exist", 1);
-          jsonObject.put("success", -1);
-          return jsonObject;  
+        // 查询计划是否已经存在
+        int exist = workDao.checkWorkPlanExist(userId, planCreateDate);
+        if (exist > 0)
+        {
+            jsonObject.put("exist", 1);
+            jsonObject.put("success", -1);
+            return jsonObject;
         }
         int success = workDao.createWorkInfo(userId, null, planContent, null, planCreateDate, null, DateUtils.getDate());
         jsonObject.put("exist", 0);
         jsonObject.put("success", success);
         return jsonObject;
     }
-    
+
     /*
      * (non-Javadoc)
      * 
@@ -115,14 +119,17 @@ public class WorkServiceImpl implements WorkService
             String logCreateDate, String createDate)
     {
         JSONObject jsonObject = new JSONObject();
-        //根据是否有时间和内容，来覆盖原来的时间
-        if(StringUtils.isBlank(planCreateDate)){
+        // 根据是否有时间和内容，来覆盖原来的时间
+        if (StringUtils.isBlank(planCreateDate))
+        {
             planCreateDate = DateUtils.formatDate(new Date(), "yyyy-MM-dd");
         }
-        if(StringUtils.isBlank(logCreateDate)){
+        if (StringUtils.isBlank(logCreateDate))
+        {
             logCreateDate = DateUtils.formatDate(new Date(), "yyyy-MM-dd");
         }
-        if(StringUtils.isBlank(createDate)){
+        if (StringUtils.isBlank(createDate))
+        {
             createDate = DateUtils.formatDate(new Date(), "yyyy-MM-dd");
         }
         int success = workDao.updateWorkInfo(id, userId, title, planContent, logContent, planCreateDate, logCreateDate, createDate);
@@ -130,16 +137,18 @@ public class WorkServiceImpl implements WorkService
         return jsonObject;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.spark.cloud.coresvc.service.woaker.WorkService#getWorkInfo(java.lang.String)
      */
     @Override
     public JSONObject getWorkInfo(String id)
     {
         JSONObject jsonObject = new JSONObject();
-        WorkInfo workInfo = workDao.getWorkInfo(null, id, null, false);
+        WorkInfo workInfo = workDao.getWorkInfo(null, id, null, false).get(0);
         jsonObject.put("workInfo", workInfo);
         return jsonObject;
     }
-    
+
 }

@@ -32,6 +32,7 @@
 		<property name="propertyFiles">
 			<list>
 				<value>config.properties</value>
+				<value>jdbc.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -60,6 +61,11 @@
 		<property name="testConnectionOnCheckout" value="true" />
 		<property name="maxStatements" value="100" />
 		<property name="maxStatementsPerConnection" value="5" />
+	</bean>
+	
+	<bean id="namedParameterJdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource" />
 	</bean>
 
 	<!-- <bean id="snsDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -216,11 +222,6 @@
 		<property name="testConnectionOnCheckout" value="true" />
 		<property name="maxStatements" value="100" />
 		<property name="maxStatementsPerConnection" value="5" />
-	</bean>
-
-	<bean id="namedParameterJdbcTemplate"
-		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
-		<constructor-arg ref="dataSource" />
 	</bean>
 
 	异常处理

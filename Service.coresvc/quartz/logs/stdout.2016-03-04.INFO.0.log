@@ -1,0 +1,876 @@
+2016-03-04 11:05:14,310 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@64f4b30a: startup date [Fri Mar 04 11:05:14 CST 2016]; root of context hierarchy
+2016-03-04 11:05:14,369 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:05:14,644 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:05:14,912 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:05:15,283 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:05:15,285 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:05:15,383 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b95eb41: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:05:15,496 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:05:15,793 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:05:15,982 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:05:15,985 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:05:15,992 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:05:15,992 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:12:33,911 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@201ce33e: startup date [Fri Mar 04 11:12:33 CST 2016]; root of context hierarchy
+2016-03-04 11:12:33,969 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:12:34,263 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:12:34,537 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:12:34,871 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:12:34,872 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:12:34,944 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4cd1063b: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:12:35,034 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:12:35,293 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:12:35,491 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:12:35,493 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:12:35,498 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:12:35,499 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:13:22,099 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@19b6b59c: startup date [Fri Mar 04 11:13:22 CST 2016]; root of context hierarchy
+2016-03-04 11:13:22,160 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:13:22,461 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:13:22,737 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:13:23,095 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:13:23,096 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:13:23,167 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@76e93442: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:13:23,255 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:13:23,536 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:13:23,879 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:13:23,882 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:13:23,890 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:13:23,891 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:21:08,954 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@73d6af61: startup date [Fri Mar 04 11:21:08 CST 2016]; root of context hierarchy
+2016-03-04 11:21:09,051 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:21:09,478 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:21:09,753 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:21:10,075 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:21:10,076 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:21:10,145 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@de98793: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:21:10,241 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:21:10,502 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:21:10,808 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:21:10,810 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:21:10,818 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:21:10,819 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:25:11,937 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b29ca81: startup date [Fri Mar 04 11:25:11 CST 2016]; root of context hierarchy
+2016-03-04 11:25:12,002 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:25:12,337 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:25:12,627 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:25:12,662 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:25:12,665 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:25:13,028 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:25:13,029 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:25:13,105 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6dc2ef83: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:25:13,246 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:25:13,559 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:25:13,950 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:25:13,952 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:25:13,959 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:25:13,959 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:25:14,030 [main] INFO  DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6dc2ef83: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:25:45,239 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1c6ea37a: startup date [Fri Mar 04 11:25:45 CST 2016]; root of context hierarchy
+2016-03-04 11:25:45,302 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:25:45,587 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:25:45,855 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:25:45,876 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:25:45,879 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:25:46,201 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:25:46,202 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:25:46,279 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2ccef28d: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:25:46,396 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:25:46,615 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:25:46,805 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:25:46,807 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:25:46,813 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:25:46,813 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:25:47,181 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:25:47,200 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:25:47,215 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:25:47,217 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:25:47,218 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:25:47,218 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:25:47,218 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:25:47,220 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@6662795b
+2016-03-04 11:25:47,228 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:25:47,228 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:25:47,228 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:25:55,465 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:26:00,406 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:26:00************************
+2016-03-04 11:26:00,533 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhnvnn211yqx5m|6dfc2e0b, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhnvnn211yqx5m|6dfc2e0b, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 11:26:00,827 [startQuertz_Worker-1] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2016-03-04 11:26:00,884 [startQuertz_Worker-1] INFO  SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2016-03-04 11:27:00,003 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:27:00************************
+2016-03-04 11:28:00,001 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:28:00************************
+2016-03-04 11:29:00,000 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:29:00************************
+2016-03-04 11:29:32,070 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4ae121e: startup date [Fri Mar 04 11:29:32 CST 2016]; root of context hierarchy
+2016-03-04 11:29:32,132 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:29:32,451 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:29:32,735 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:29:32,756 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:29:32,759 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:29:33,128 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:29:33,129 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:29:33,225 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@74b93ab6: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:29:33,388 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:29:33,714 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:29:34,020 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:29:34,022 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:29:34,030 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:29:34,030 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:29:34,399 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:29:34,424 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:29:34,426 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:29:34,428 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:29:34,430 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:29:34,430 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:29:34,430 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:29:34,433 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@6b1ce28e
+2016-03-04 11:29:34,439 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:29:34,439 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:29:34,439 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:29:38,850 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20eaf45a: startup date [Fri Mar 04 11:29:38 CST 2016]; root of context hierarchy
+2016-03-04 11:29:38,917 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:29:39,219 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:29:39,557 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:29:39,594 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:29:39,597 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:29:39,971 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:29:39,973 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:29:40,078 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@298925ae: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:29:40,219 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:29:40,495 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:29:40,671 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:29:40,673 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:29:40,678 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:29:40,679 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:29:41,051 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:29:41,069 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:29:41,070 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:29:41,072 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:29:41,074 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:29:41,074 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:29:41,074 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:29:41,076 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@427ce6b0
+2016-03-04 11:29:41,081 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:29:41,082 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:29:41,082 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:29:49,208 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:30:00,153 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:30:00************************
+2016-03-04 11:30:00,236 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fho0o2q1hkvm7c|469b762c, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fho0o2q1hkvm7c|469b762c, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 11:30:00,485 [startQuertz_Worker-1] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2016-03-04 11:30:00,524 [startQuertz_Worker-1] INFO  SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2016-03-04 11:34:19,747 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6ac006a6: startup date [Fri Mar 04 11:34:19 CST 2016]; root of context hierarchy
+2016-03-04 11:34:19,806 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:34:20,092 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:34:20,363 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:34:20,394 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:34:20,396 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:34:20,759 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:34:20,760 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:34:20,836 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2603826d: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:34:20,937 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:34:21,171 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:34:21,415 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:34:21,417 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:34:21,425 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:34:21,425 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:34:21,862 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:34:21,882 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:34:21,883 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:34:21,885 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:34:21,886 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:34:21,886 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:34:21,886 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:34:21,889 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@17712310
+2016-03-04 11:34:21,895 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:34:21,896 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:34:21,896 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:34:29,883 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:35:00,168 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:35:00************************
+2016-03-04 11:35:00,262 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fho6oo11lvvefr|28e67788, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fho6oo11lvvefr|28e67788, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 11:35:00,530 [startQuertz_Worker-1] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2016-03-04 11:35:00,568 [startQuertz_Worker-1] INFO  SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2016-03-04 11:36:00,002 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:36:00************************
+2016-03-04 11:37:00,001 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:37:00************************
+2016-03-04 11:38:00,000 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:38:00************************
+2016-03-04 11:39:00,001 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:39:00************************
+2016-03-04 11:39:39,428 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@21505198: startup date [Fri Mar 04 11:39:39 CST 2016]; root of context hierarchy
+2016-03-04 11:39:39,496 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:39:39,784 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:39:40,059 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:39:40,086 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:39:40,089 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:39:40,426 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:39:40,428 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:39:40,496 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6b08d7cf: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:39:40,605 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:39:40,835 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:39:41,049 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:39:41,051 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:39:41,059 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:39:41,059 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:39:41,515 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:39:41,534 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:39:41,535 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:39:41,536 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:39:41,538 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:39:41,538 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:39:41,538 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:39:41,540 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@160d4eea
+2016-03-04 11:39:41,546 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:39:41,546 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:39:41,546 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:39:49,672 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:40:00,155 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:40:00************************
+2016-03-04 11:40:00,233 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhodjbke4css1|7bfaa588, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhodjbke4css1|7bfaa588, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 11:40:00,484 [startQuertz_Worker-1] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2016-03-04 11:40:00,531 [startQuertz_Worker-1] INFO  SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2016-03-04 11:41:00,002 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:41:00************************
+2016-03-04 11:41:37,674 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20eaf45a: startup date [Fri Mar 04 11:41:37 CST 2016]; root of context hierarchy
+2016-03-04 11:41:37,752 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:41:38,075 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:41:38,374 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:41:38,400 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:41:38,403 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:41:38,730 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:41:38,732 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:41:38,806 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6b08d7cf: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:41:38,932 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:41:39,152 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:41:39,332 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:41:39,334 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:41:39,344 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:41:39,344 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:41:39,762 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:41:39,785 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:41:39,787 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:41:39,789 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:41:39,790 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:41:39,791 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:41:39,791 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:41:39,794 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@43b7eff5
+2016-03-04 11:41:39,801 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:41:39,801 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:41:39,801 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:41:49,990 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:42:00,170 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:42:00************************
+2016-03-04 11:42:00,251 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhog2md19r3jso|489c34f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhog2md19r3jso|489c34f, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 11:42:00,489 [startQuertz_Worker-1] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2016-03-04 11:42:00,533 [startQuertz_Worker-1] INFO  SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2016-03-04 11:42:50,636 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@64f4b30a: startup date [Fri Mar 04 11:42:50 CST 2016]; root of context hierarchy
+2016-03-04 11:42:50,726 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:42:51,068 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:42:51,340 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:42:51,371 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:42:51,375 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:42:51,749 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:42:51,751 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:42:51,822 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3067d59a: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:42:51,920 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:42:52,145 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:42:52,330 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:42:52,332 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:42:52,339 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:42:52,339 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:42:52,702 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:42:52,721 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:42:52,723 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:42:52,724 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:42:52,725 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:42:52,726 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:42:52,726 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:42:52,728 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@17712310
+2016-03-04 11:42:52,734 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:42:52,735 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:42:52,735 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:43:00,221 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:43:00************************
+2016-03-04 11:43:00,477 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhohmxz2qffcn|30939432, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhohmxz2qffcn|30939432, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 11:43:00,820 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:43:00************************
+2016-03-04 11:43:02,653 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:44:00,002 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:44:00************************
+2016-03-04 11:44:00,006 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:44:00************************
+2016-03-04 11:45:00,000 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:45:00************************
+2016-03-04 11:45:00,003 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:45:00************************
+2016-03-04 11:46:00,002 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:46:00************************
+2016-03-04 11:46:00,004 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:46:00************************
+2016-03-04 11:46:13,497 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@19b6b59c: startup date [Fri Mar 04 11:46:13 CST 2016]; root of context hierarchy
+2016-03-04 11:46:13,569 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:46:13,898 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:46:14,181 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:46:14,217 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:46:14,220 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:46:14,587 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:46:14,588 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:46:14,664 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1ffece0a: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:46:14,783 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:46:15,038 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:46:15,363 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:46:15,365 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:46:15,374 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:46:15,375 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:46:15,775 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:46:15,796 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:46:15,798 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:46:15,800 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:46:15,801 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:46:15,802 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:46:15,802 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:46:15,804 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@7853e351
+2016-03-04 11:46:15,808 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:46:15,809 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:46:15,809 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:46:24,439 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:47:00,165 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:47:00************************
+2016-03-04 11:47:08,289 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fholzhd17i3mxf|419fb314, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fholzhd17i3mxf|419fb314, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 11:48:02,527 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:48:02************************
+2016-03-04 11:48:02,532 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:48:02************************
+2016-03-04 11:48:02,973 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:48:02************************
+2016-03-04 11:49:00,003 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:49:00************************
+2016-03-04 11:49:03,298 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:49:03************************
+2016-03-04 11:50:00,002 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:50:00************************
+2016-03-04 11:50:00,003 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:50:00************************
+2016-03-04 11:55:50,994 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6ac006a6: startup date [Fri Mar 04 11:55:50 CST 2016]; root of context hierarchy
+2016-03-04 11:55:51,105 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:55:51,555 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:55:51,860 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:55:51,887 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:55:51,889 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:55:52,202 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:55:52,204 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:55:52,275 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2603826d: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:55:52,409 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:55:52,639 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:55:52,816 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:55:52,818 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:55:52,823 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:55:52,824 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:55:53,192 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:55:53,216 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:55:53,218 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:55:53,219 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:55:53,221 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:55:53,221 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:55:53,222 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:55:53,225 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@364077db
+2016-03-04 11:55:53,232 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:55:53,232 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:55:53,232 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:56:00,229 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:56:00************************
+2016-03-04 11:56:00,337 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhoyd67sfx8fy|86b66eb, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhoyd67sfx8fy|86b66eb, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 11:56:00,772 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:56:00************************
+2016-03-04 11:56:01,805 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:57:00,002 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:57:00************************
+2016-03-04 11:57:00,015 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:57:00************************
+2016-03-04 11:58:10,346 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@488b0bea: startup date [Fri Mar 04 11:58:10 CST 2016]; root of context hierarchy
+2016-03-04 11:58:10,405 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 11:58:10,691 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 11:58:10,977 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 11:58:11,006 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 11:58:11,009 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 11:58:11,384 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 11:58:11,386 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 11:58:11,471 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@61573b80: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 11:58:11,582 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 11:58:11,806 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 11:58:11,992 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 11:58:11,993 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:58:12,000 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 11:58:12,000 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 11:58:12,100 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 11:58:12,121 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 11:58:12,122 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 11:58:12,124 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 11:58:12,125 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 11:58:12,126 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 11:58:12,126 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 11:58:12,128 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@c5a86e1
+2016-03-04 11:58:12,394 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:58:12,394 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 11:58:12,394 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 11:58:20,610 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 11:59:00,172 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 11:59:00************************
+2016-03-04 11:59:00,248 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhp1ck0kfqdnn|469b762c, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhp1ck0kfqdnn|469b762c, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 11:59:00,522 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 11:59:00************************
+2016-03-04 12:00:00,000 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:00:00************************
+2016-03-04 12:00:00,003 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:00:00************************
+2016-03-04 12:01:00,001 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:01:00************************
+2016-03-04 12:01:00,002 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:01:00************************
+2016-03-04 12:02:00,001 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:02:00************************
+2016-03-04 12:02:00,003 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:02:00************************
+2016-03-04 12:03:00,001 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:03:00************************
+2016-03-04 12:03:00,003 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:03:00************************
+2016-03-04 12:03:46,972 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20eaf45a: startup date [Fri Mar 04 12:03:46 CST 2016]; root of context hierarchy
+2016-03-04 12:03:47,035 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 12:03:47,320 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 12:03:47,590 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 12:03:47,616 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 12:03:47,618 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 12:03:47,956 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 12:03:47,958 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 12:03:48,039 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6b08d7cf: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 12:03:48,144 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 12:03:48,364 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 12:03:48,551 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 12:03:48,553 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:03:48,559 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:03:48,560 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 12:03:48,654 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 12:03:48,678 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 12:03:48,679 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 12:03:48,681 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 12:03:48,683 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 12:03:48,683 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 12:03:48,683 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 12:03:48,686 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@c5a86e1
+2016-03-04 12:03:49,088 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:03:49,088 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 12:03:49,088 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 12:03:57,339 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:04:00,164 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:04:00************************
+2016-03-04 12:04:00,245 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhp8k8y1f5znb0|469b762c, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhp8k8y1f5znb0|469b762c, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 12:04:00,538 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:04:00************************
+2016-03-04 12:05:00,002 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:05:00************************
+2016-03-04 12:05:00,010 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:05:00************************
+2016-03-04 12:06:00,001 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:06:00************************
+2016-03-04 12:06:00,004 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:06:00************************
+2016-03-04 12:07:00,002 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:07:00************************
+2016-03-04 12:07:00,004 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:07:00************************
+2016-03-04 12:08:00,000 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:08:00************************
+2016-03-04 12:08:00,002 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:08:00************************
+2016-03-04 12:09:00,001 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:09:00************************
+2016-03-04 12:09:00,003 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:09:00************************
+2016-03-04 12:10:00,000 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:10:00************************
+2016-03-04 12:10:00,002 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:10:00************************
+2016-03-04 12:11:00,002 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:11:00************************
+2016-03-04 12:11:00,004 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:11:00************************
+2016-03-04 12:12:00,000 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:12:00************************
+2016-03-04 12:12:00,008 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:12:00************************
+2016-03-04 12:13:00,000 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:13:00************************
+2016-03-04 12:13:00,003 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:13:00************************
+2016-03-04 12:14:00,002 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:14:00************************
+2016-03-04 12:14:00,005 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:14:00************************
+2016-03-04 12:15:00,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:15:00************************
+2016-03-04 12:15:00,002 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:15:00************************
+2016-03-04 12:16:00,004 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:16:00************************
+2016-03-04 12:16:00,006 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:16:00************************
+2016-03-04 12:17:00,000 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:17:00************************
+2016-03-04 12:17:00,005 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:17:00************************
+2016-03-04 12:18:00,001 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:18:00************************
+2016-03-04 12:18:00,003 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:18:00************************
+2016-03-04 12:19:00,004 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:19:00************************
+2016-03-04 12:19:00,005 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:19:00************************
+2016-03-04 12:20:00,002 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:20:00************************
+2016-03-04 12:20:00,004 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:20:00************************
+2016-03-04 12:21:00,001 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:21:00************************
+2016-03-04 12:21:00,004 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:21:00************************
+2016-03-04 12:22:00,000 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:22:00************************
+2016-03-04 12:22:00,003 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:22:00************************
+2016-03-04 12:23:00,002 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:23:00************************
+2016-03-04 12:23:00,010 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:23:00************************
+2016-03-04 12:24:00,000 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:24:00************************
+2016-03-04 12:24:00,002 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:24:00************************
+2016-03-04 12:25:00,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:25:00************************
+2016-03-04 12:25:00,003 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:25:00************************
+2016-03-04 12:26:00,003 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:26:00************************
+2016-03-04 12:26:00,004 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:26:00************************
+2016-03-04 12:27:00,001 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:27:00************************
+2016-03-04 12:27:00,005 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:27:00************************
+2016-03-04 12:28:00,001 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:28:00************************
+2016-03-04 12:28:00,003 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:28:00************************
+2016-03-04 12:29:00,000 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:29:00************************
+2016-03-04 12:29:00,005 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:29:00************************
+2016-03-04 12:30:00,002 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:30:00************************
+2016-03-04 12:30:00,005 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:30:00************************
+2016-03-04 12:31:00,000 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:31:00************************
+2016-03-04 12:31:00,002 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:31:00************************
+2016-03-04 12:31:41,429 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20bb54db: startup date [Fri Mar 04 12:31:41 CST 2016]; root of context hierarchy
+2016-03-04 12:31:41,520 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 12:31:41,881 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 12:31:42,230 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 12:31:42,258 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 12:31:42,261 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 12:31:42,690 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 12:31:42,692 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 12:31:42,798 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2603826d: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 12:31:42,989 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 12:31:43,409 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 12:31:43,729 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 12:31:43,731 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:31:43,743 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:31:43,744 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 12:31:43,871 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 12:31:43,896 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 12:31:43,897 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 12:31:43,900 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 12:31:43,901 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 12:31:43,902 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 12:31:43,902 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 12:31:43,904 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@18093947
+2016-03-04 12:31:44,237 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:31:44,237 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 12:31:44,238 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 12:31:53,318 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:32:00,205 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:32:00************************
+2016-03-04 12:32:00,322 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhq8glsxjt68b|707579dc, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhq8glsxjt68b|707579dc, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 12:32:00,686 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:32:00************************
+2016-03-04 12:33:11,109 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20bb54db: startup date [Fri Mar 04 12:33:11 CST 2016]; root of context hierarchy
+2016-03-04 12:33:11,185 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 12:33:11,577 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 12:33:11,921 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 12:33:11,950 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 12:33:11,953 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 12:33:12,404 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 12:33:12,406 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 12:33:12,500 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@61573b80: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 12:33:12,630 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 12:33:12,895 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 12:33:13,133 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 12:33:13,136 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:33:13,144 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:33:13,145 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 12:33:13,303 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 12:33:13,333 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 12:33:13,335 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 12:33:13,337 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 12:33:13,340 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 12:33:13,340 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 12:33:13,340 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 12:33:13,345 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@21ec2b37
+2016-03-04 12:33:13,735 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:33:13,736 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 12:33:13,736 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 12:33:25,821 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:34:00,207 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:34:00************************
+2016-03-04 12:34:00,296 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhqadqq9cymcb|489c34f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhqadqq9cymcb|489c34f, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 12:34:00,620 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:34:00************************
+2016-03-04 12:35:00,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:35:00************************
+2016-03-04 12:35:00,003 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:35:00************************
+2016-03-04 12:35:43,908 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4ae121e: startup date [Fri Mar 04 12:35:43 CST 2016]; root of context hierarchy
+2016-03-04 12:35:43,977 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 12:35:44,310 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 12:35:44,595 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 12:35:44,616 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 12:35:44,619 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 12:35:44,974 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 12:35:44,975 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 12:35:45,044 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@18fab9c1: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 12:35:45,162 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 12:35:45,429 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 12:35:45,829 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 12:35:45,832 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:35:45,842 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:35:45,843 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 12:35:45,995 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 12:35:46,032 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 12:35:46,034 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 12:35:46,036 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 12:35:46,038 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 12:35:46,039 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 12:35:46,039 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 12:35:46,042 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2c84e2fd
+2016-03-04 12:35:46,352 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:35:46,352 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 12:35:46,352 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 12:35:54,861 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:36:00,179 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:36:00************************
+2016-03-04 12:36:04,504 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhqdnfvygsw01|419fb314, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhqdnfvygsw01|419fb314, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 12:36:32,010 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:36:32************************
+2016-03-04 12:36:32,012 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:36:32************************
+2016-03-04 12:36:32,721 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:36:32************************
+2016-03-04 12:37:00,002 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:37:00************************
+2016-03-04 12:37:00,004 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:37:00************************
+2016-03-04 12:37:30,002 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:37:30************************
+2016-03-04 12:37:30,004 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:37:30************************
+2016-03-04 12:38:00,001 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:38:00************************
+2016-03-04 12:38:00,002 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:38:00************************
+2016-03-04 12:38:44,528 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@201ce33e: startup date [Fri Mar 04 12:38:44 CST 2016]; root of context hierarchy
+2016-03-04 12:38:44,610 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 12:38:45,096 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 12:38:45,393 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 12:38:45,414 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 12:38:45,417 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 12:38:45,742 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 12:38:45,744 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 12:38:45,817 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@11908def: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 12:38:45,924 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 12:38:46,153 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 12:38:46,339 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 12:38:46,340 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:38:46,347 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:38:46,348 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 12:38:46,446 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 12:38:46,466 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 12:38:46,467 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 12:38:46,469 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 12:38:46,470 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 12:38:46,470 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 12:38:46,470 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 12:38:46,474 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@1f881ffd
+2016-03-04 12:38:46,741 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:38:46,742 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 12:38:46,742 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 12:38:55,072 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:39:00,166 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:39:00************************
+2016-03-04 12:39:00,237 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhqhiwi19pw7kh|86b66eb, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhqhiwi19pw7kh|86b66eb, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 12:39:00,479 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:39:00************************
+2016-03-04 12:39:30,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:39:30************************
+2016-03-04 12:39:30,003 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:39:30************************
+2016-03-04 12:40:00,001 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:40:00************************
+2016-03-04 12:40:00,003 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:40:00************************
+2016-03-04 12:40:30,001 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:40:30************************
+2016-03-04 12:40:30,003 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:40:30************************
+2016-03-04 12:41:00,001 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:41:00************************
+2016-03-04 12:41:00,004 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:41:00************************
+2016-03-04 12:41:30,001 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:41:30************************
+2016-03-04 12:41:30,002 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:41:30************************
+2016-03-04 12:42:00,002 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:42:00************************
+2016-03-04 12:42:00,005 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:42:00************************
+2016-03-04 12:42:30,001 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:42:30************************
+2016-03-04 12:42:30,008 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:42:30************************
+2016-03-04 12:43:00,000 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:43:00************************
+2016-03-04 12:43:00,002 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:43:00************************
+2016-03-04 12:43:30,002 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:43:30************************
+2016-03-04 12:43:30,004 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:43:30************************
+2016-03-04 12:44:00,001 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:44:00************************
+2016-03-04 12:44:00,003 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:44:00************************
+2016-03-04 12:44:30,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:44:30************************
+2016-03-04 12:44:30,004 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:44:30************************
+2016-03-04 12:45:00,000 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:45:00************************
+2016-03-04 12:45:00,003 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:45:00************************
+2016-03-04 12:45:30,006 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:45:30************************
+2016-03-04 12:45:30,008 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:45:30************************
+2016-03-04 12:46:00,002 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:46:00************************
+2016-03-04 12:46:00,003 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:46:00************************
+2016-03-04 12:46:30,002 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:46:30************************
+2016-03-04 12:46:30,004 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:46:30************************
+2016-03-04 12:47:00,002 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:47:00************************
+2016-03-04 12:47:00,004 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:47:00************************
+2016-03-04 12:47:30,001 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:47:30************************
+2016-03-04 12:47:30,003 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:47:30************************
+2016-03-04 12:48:00,001 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:48:00************************
+2016-03-04 12:48:00,003 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:48:00************************
+2016-03-04 12:48:30,000 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:48:30************************
+2016-03-04 12:48:30,002 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:48:30************************
+2016-03-04 12:49:00,001 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:49:00************************
+2016-03-04 12:49:00,003 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:49:00************************
+2016-03-04 12:49:30,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:49:30************************
+2016-03-04 12:49:30,003 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:49:30************************
+2016-03-04 12:50:00,000 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:50:00************************
+2016-03-04 12:50:00,003 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:50:00************************
+2016-03-04 12:50:30,001 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:50:30************************
+2016-03-04 12:50:30,003 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:50:30************************
+2016-03-04 12:51:00,001 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:51:00************************
+2016-03-04 12:51:00,005 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:51:00************************
+2016-03-04 12:51:30,001 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:51:30************************
+2016-03-04 12:51:30,003 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:51:30************************
+2016-03-04 12:52:00,000 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:52:00************************
+2016-03-04 12:52:00,006 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:52:00************************
+2016-03-04 12:52:30,002 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:52:30************************
+2016-03-04 12:52:30,003 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:52:30************************
+2016-03-04 12:53:00,001 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:53:00************************
+2016-03-04 12:53:00,003 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:53:00************************
+2016-03-04 12:53:30,001 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:53:30************************
+2016-03-04 12:53:30,002 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:53:30************************
+2016-03-04 12:54:00,002 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:54:00************************
+2016-03-04 12:54:00,004 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:54:00************************
+2016-03-04 12:54:30,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:54:30************************
+2016-03-04 12:54:30,003 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:54:30************************
+2016-03-04 12:55:00,001 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:55:00************************
+2016-03-04 12:55:00,003 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:55:00************************
+2016-03-04 12:55:30,000 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:55:30************************
+2016-03-04 12:55:30,003 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:55:30************************
+2016-03-04 12:56:00,001 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:56:00************************
+2016-03-04 12:56:00,003 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:56:00************************
+2016-03-04 12:56:10,384 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@52905e63: startup date [Fri Mar 04 12:56:10 CST 2016]; root of context hierarchy
+2016-03-04 12:56:10,444 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 12:56:10,738 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 12:56:11,012 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 12:56:11,039 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 12:56:11,041 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 12:56:11,441 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 12:56:11,444 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 12:56:11,566 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6130dd8e: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 12:56:11,718 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 12:56:11,959 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 12:56:12,138 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 12:56:12,140 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:56:12,145 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 12:56:12,145 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 12:56:12,245 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 12:56:12,264 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 12:56:12,266 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 12:56:12,268 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 12:56:12,269 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 12:56:12,269 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 12:56:12,269 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 12:56:12,271 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@42e88383
+2016-03-04 12:56:12,517 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:56:12,518 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 12:56:12,518 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 12:56:20,656 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 12:56:30,156 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:56:30************************
+2016-03-04 12:56:30,236 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhr3xuq1yl3quk|291c9a1e, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhr3xuq1yl3quk|291c9a1e, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 12:56:30,469 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:56:30************************
+2016-03-04 12:57:00,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:57:00************************
+2016-03-04 12:57:00,007 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:57:00************************
+2016-03-04 12:57:30,001 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:57:30************************
+2016-03-04 12:57:30,003 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:57:30************************
+2016-03-04 12:58:00,001 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:58:00************************
+2016-03-04 12:58:00,003 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:58:00************************
+2016-03-04 12:58:30,001 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:58:30************************
+2016-03-04 12:58:30,003 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:58:30************************
+2016-03-04 12:59:00,001 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:59:00************************
+2016-03-04 12:59:00,003 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:59:00************************
+2016-03-04 12:59:30,001 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 12:59:30************************
+2016-03-04 12:59:30,003 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 12:59:30************************
+2016-03-04 13:00:00,003 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 13:00:00************************
+2016-03-04 13:00:00,005 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 13:00:00************************
+2016-03-04 13:01:17,229 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@488b0bea: startup date [Fri Mar 04 13:01:17 CST 2016]; root of context hierarchy
+2016-03-04 13:01:17,302 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 13:01:17,660 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 13:01:17,942 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 13:01:17,969 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 13:01:17,973 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 13:01:18,309 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 13:01:18,311 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 13:01:18,382 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@61573b80: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 13:01:18,511 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 13:01:18,740 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 13:01:18,926 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 13:01:18,928 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 13:01:18,934 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 13:01:18,934 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 13:01:19,027 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 13:01:19,047 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 13:01:19,048 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 13:01:19,050 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 13:01:19,052 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 13:01:19,052 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 13:01:19,052 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 13:01:19,055 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@18093947
+2016-03-04 13:01:19,344 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 13:01:19,344 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 13:01:19,344 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 13:01:27,735 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 13:01:30,167 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 13:01:30************************
+2016-03-04 13:01:30,243 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhraikf1osirdh|7bfaa588, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhraikf1osirdh|7bfaa588, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 13:01:30,470 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 13:01:30************************
+2016-03-04 13:02:00,002 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 13:02:00************************
+2016-03-04 13:02:00,004 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 13:02:00************************

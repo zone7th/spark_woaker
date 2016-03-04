@@ -141,13 +141,13 @@ var workPlanInfo = {
 			format : 'yyyy-mm-dd',
 			language : 'zh-CN', // 加载日历语言包，可自定义
 			weekStart : 0,
-			todayBtn : 1,
+//			todayBtn : 1,
 			autoclose : true,
 			todayHighlight : 1,
 			startView : 2,
 			minView : 2,
 			forceParse : 0,
-			startDate : getTomorrow()
+			startDate : new Date()
 		});
 
 	},

@@ -24,11 +24,11 @@ import com.spark.cloud.coresvc.constants.WoakerConstants;
  * @version 1.0<br/>
  * 
  */
-public class BlogInfo implements Serializable
+public class BlogInfo implements Serializable   
 {
 
     /**
-     * serialVersionUID:TODO（用一句话描述这个变量表示什么）
+     * 
      *
      * @since 1.0
      */

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+    <!-- <conversionRule conversionWord="provider"
+    converterClass="com.iflytek.cycore.logback.layouts.ProviderConverter" /> -->
+
+    <property name="LOG_DIR" value="../logs" />
+    
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+            by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{0} -  %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    
+    <!-- 服务调用日志 -->
+    <appender name="ROLLING_FILE_SERVICE_INVOCATION" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/epdres-service.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <!-- rollover daily -->
+          <fileNamePattern>${LOG_DIR}/history/epdres-service-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+          <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+            <!-- or whenever the file size reaches 10MB -->
+            <maxFileSize>32MB</maxFileSize>
+          </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%date]-[%level]: %msg%n</pattern>
+        </encoder>
+      </appender>
+      
+      <appender name="ROLLING_FILE_COMMON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/epdres-common.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <!-- rollover daily -->
+          <fileNamePattern>${LOG_DIR}/epdreshistory/epdres-common-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+          <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+            <!-- or whenever the file size reaches 10MB -->
+            <maxFileSize>10MB</maxFileSize>
+          </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{10} [%file:%line] %provider %msg%n</pattern>
+        </encoder>
+      </appender>
+
+      <!-- flume收集日志配置 -->
+ <!--      <appender name="thriftAppender" class="com.iflytek.cycore.logback.core.ThriftAppender">
+        <encoder>
+            <pattern>%date %level [%thread] %logger{10} [%file:%line] %provider %msg%n</pattern>
+        </encoder>
+        <charset>UTF-8</charset>
+      </appender> -->
+    
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/stdout.log</file>  
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">   
+            <fileNamePattern>stdout.%d{yyyy-MM-dd}.log</fileNamePattern>   
+            <maxHistory>30</maxHistory>    
+        </rollingPolicy>   
+    <encoder>   
+      <pattern>%d [%thread] %-5level %logger{36} -  %msg%n</pattern>   
+    </encoder>   
+  </appender>
+
+    <appender name="INFOFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/stdout.%d{yyyy-MM-dd}.INFO.%i.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <appender name="DEBUGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/stdout.%d{yyyy-MM-dd}.DEBUG.%i.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    
+    <appender name="ERRORFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/stdout.%d{yyyy-MM-dd}.ERROR.%i.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+<!--     <logger name="com.iflytek.epdcloud.epsp.quartz.SafetySourceSynQuartz" level="INFO" addtivity="false">
+        <appender-ref ref="safetyResSyn" />
+    </logger> -->
+    
+    <root level="INFO">
+        <!--开发环境配置 -->
+        <appender-ref ref="STDOUT" />
+        <!--测试环境及正式环境请用如下配置  -->
+        <appender-ref ref="INFOFILE" />
+        <!-- <appender-ref ref="DEBUGFILE" />
+        <appender-ref ref="ERRORFILE" />-->
+        <!-- <appender-ref ref="ROLLING_FILE_COMMON" /> -->
+        <!-- flume收集日志配置 -->
+        <!-- <appender-ref ref="thriftAppender" /> -->
+    </root>
+    
+
+</configuration>
