@@ -5,6 +5,9 @@ $(function() {
 
 var workIndex = {
 	initBind : function() {
+		bindWordLimit("planContent");
+		bindWordLimit("logContent");
+		
 		$("#createWorkPlan").bind("click", function() {
 			workIndex.createWorkPlan();
 		})
@@ -131,6 +134,9 @@ var workIndex = {
 
 var workPlanInfo = {
 	initBind : function() {
+		bindWordLimit("planCreateDate");
+		bindWordLimit("planContent");
+		
 		$("#saveWorkPlan").bind("click", function() {
 			workPlanInfo.saveWorkPlan();
 		})

@@ -9,9 +9,9 @@
 		<input type="hidden" value="${workInfo.title }" id="title">
 		<input type="hidden" value="${workInfo.user_id }" id="userId">
 		今日计划：
-		<textarea style="width: 100%; height: 200px; resize: none; spellcheck: false;" id="planContent"> ${workInfo.plan_content }</textarea>
+		<textarea style="width: 100%; height: 200px; resize: none; spellcheck: false;" id="planContent"> ${workInfo.plan_content }</textarea><label><b>0</b>/140</label>
 		今日日志：
-		<textarea style="width: 100%; height: 200px; resize: none; spellcheck: false;" id="logContent">${workInfo.log_content }</textarea>
+		<textarea style="width: 100%; height: 200px; resize: none; spellcheck: false;" id="logContent">${workInfo.log_content }</textarea><label><b>0</b>/140</label>
 		<input type="button" value="保存" id="updateWorkInfo" /> <input type="button" value="返回" onclick="window.location.href='../work/workIndex.do'" />
 	</div>
 </div>

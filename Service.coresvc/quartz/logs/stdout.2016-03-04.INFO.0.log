@@ -874,3 +874,86 @@
 2016-03-04 13:01:30,470 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 13:01:30************************
 2016-03-04 13:02:00,002 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 13:02:00************************
 2016-03-04 13:02:00,004 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 13:02:00************************
+2016-03-04 16:53:12,957 [main] INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@f5c5bba: startup date [Fri Mar 04 16:53:12 CST 2016]; root of context hierarchy
+2016-03-04 16:53:13,044 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\applicationContext.xml]
+2016-03-04 16:53:13,375 [main] INFO  ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-03-04 16:53:13,711 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]
+2016-03-04 16:53:13,745 [main] INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'createWorkPlanQuartz': replacing [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\com\spark\cloud\coresvc\quartz\woaker\CreateWorkPlanQuartz.class]] with [Generic bean: class [com.spark.cloud.coresvc.quartz.woaker.CreateWorkPlanQuartz]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\quartz\applicationContext-quartz.xml]]
+2016-03-04 16:53:13,750 [main] INFO  XmlBeanDefinitionReader - Loading XML bean definitions from file [C:\Users\admin\git\Service.coresvc\quartz\target\classes\META-INF\spring\dubbo-provider-beans.xml]
+2016-03-04 16:53:14,226 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/config.properties]
+2016-03-04 16:53:14,228 [main] INFO  PropertyPlaceholderConfigurer - Loading properties file from URL [file:/C:/Users/admin/git/Service.coresvc/quartz/target/classes/jdbc.properties]
+2016-03-04 16:53:14,348 [main] INFO  DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3134fc5a: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,demoApiImpl,blogDaoImpl,commentDaoImpl,studyDaoImpl,userDaoImpl,workDaoImpl,createWorkPlanQuartz,blogServiceImpl,studyServiceImpl,userServiceImpl,workServiceImpl,cacheClientFactory,defaultDataSourceAspect,propertyConfigurer,configurationHolder,dataSource,namedParameterJdbcTemplate,createWorkPlanQuartzJob,createWorkPlanQuartzJobCronTrigger,startQuertz,com.alibaba.dubbo.config.MonitorConfig,rest,com.spark.cloud.coresvc.api.DemoApi,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2016-03-04 16:53:14,511 [MLog-Init-Reporter] INFO  MLog - MLog clients using slf4j logging.
+2016-03-04 16:53:14,808 [main] INFO  C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-03-04 16:53:15,077 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性开始============
+2016-03-04 16:53:15,080 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 16:53:15,088 [main] INFO  ConfigurationHolder - 从配置中心加载配置刷新内存...
+2016-03-04 16:53:15,088 [main] INFO  ConfigurationHolder - ===========从配置文件中加载属性结束============
+2016-03-04 16:53:15,227 [main] INFO  StdSchedulerFactory - Using default implementation for ThreadExecutor
+2016-03-04 16:53:15,256 [main] INFO  SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2016-03-04 16:53:15,257 [main] INFO  QuartzScheduler - Quartz Scheduler v.1.8.6 created.
+2016-03-04 16:53:15,260 [main] INFO  RAMJobStore - RAMJobStore initialized.
+2016-03-04 16:53:15,262 [main] INFO  QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v1.8.6) 'startQuertz' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2016-03-04 16:53:15,262 [main] INFO  StdSchedulerFactory - Quartz scheduler 'startQuertz' initialized from an externally provided properties instance.
+2016-03-04 16:53:15,262 [main] INFO  StdSchedulerFactory - Quartz scheduler version: 1.8.6
+2016-03-04 16:53:15,264 [main] INFO  QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@7944f0c
+2016-03-04 16:53:15,546 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 16:53:15,546 [main] INFO  SchedulerFactoryBean - Starting Quartz Scheduler now
+2016-03-04 16:53:15,546 [main] INFO  QuartzScheduler - Scheduler startQuertz_$_NON_CLUSTERED started.
+2016-03-04 16:53:24,850 [main] INFO  DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2016-03-04 16:53:30,249 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:53:30************************
+2016-03-04 16:53:30,421 [startQuertz_Worker-1] INFO  AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 50, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hged069fhzks9g1m7r97f|7143e96d, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hged069fhzks9g1m7r97f|7143e96d, idleConnectionTestPeriod -> 360, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://localhost:3306/spark_woaker?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 100, maxStatementsPerConnection -> 5, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> true, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-03-04 16:53:31,254 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:53:31************************
+2016-03-04 16:54:00,004 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:54:00************************
+2016-03-04 16:54:00,017 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:54:00************************
+2016-03-04 16:54:30,000 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:54:30************************
+2016-03-04 16:54:30,002 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:54:30************************
+2016-03-04 16:55:00,001 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:55:00************************
+2016-03-04 16:55:00,003 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:55:00************************
+2016-03-04 16:55:30,002 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:55:30************************
+2016-03-04 16:55:30,004 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:55:30************************
+2016-03-04 16:56:00,000 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:56:00************************
+2016-03-04 16:56:00,003 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:56:00************************
+2016-03-04 16:56:30,002 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:56:30************************
+2016-03-04 16:56:30,004 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:56:30************************
+2016-03-04 16:57:00,001 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:57:00************************
+2016-03-04 16:57:00,003 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:57:00************************
+2016-03-04 16:57:30,001 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:57:30************************
+2016-03-04 16:57:30,004 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:57:30************************
+2016-03-04 16:58:00,001 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:58:00************************
+2016-03-04 16:58:00,003 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:58:00************************
+2016-03-04 16:58:30,002 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:58:30************************
+2016-03-04 16:58:30,004 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:58:30************************
+2016-03-04 16:59:00,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:59:00************************
+2016-03-04 16:59:00,003 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:59:00************************
+2016-03-04 16:59:30,005 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 16:59:30************************
+2016-03-04 16:59:30,007 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 16:59:30************************
+2016-03-04 17:00:00,002 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:00:00************************
+2016-03-04 17:00:00,005 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:00:00************************
+2016-03-04 17:00:30,003 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:00:30************************
+2016-03-04 17:00:30,005 [startQuertz_Worker-5] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:00:30************************
+2016-03-04 17:01:00,004 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:01:00************************
+2016-03-04 17:01:00,006 [startQuertz_Worker-6] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:01:00************************
+2016-03-04 17:01:30,000 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:01:30************************
+2016-03-04 17:01:30,002 [startQuertz_Worker-7] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:01:30************************
+2016-03-04 17:02:00,001 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:02:00************************
+2016-03-04 17:02:00,004 [startQuertz_Worker-8] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:02:00************************
+2016-03-04 17:02:30,001 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:02:30************************
+2016-03-04 17:02:30,003 [startQuertz_Worker-9] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:02:30************************
+2016-03-04 17:03:00,000 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:03:00************************
+2016-03-04 17:03:00,002 [startQuertz_Worker-10] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:03:00************************
+2016-03-04 17:03:30,002 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:03:30************************
+2016-03-04 17:03:30,004 [startQuertz_Worker-1] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:03:30************************
+2016-03-04 17:04:00,001 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:04:00************************
+2016-03-04 17:04:00,003 [startQuertz_Worker-2] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:04:00************************
+2016-03-04 17:04:30,002 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:04:30************************
+2016-03-04 17:04:30,004 [startQuertz_Worker-3] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:04:30************************
+2016-03-04 17:05:00,001 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务start:*******************2016-03-04 17:05:00************************
+2016-03-04 17:05:00,003 [startQuertz_Worker-4] INFO  CreateWorkPlanQuartz - 创建工作计划服务End:*******************2016-03-04 17:05:00************************

@@ -6,7 +6,7 @@
 	</div>
 	<div>
 		计划内容：
-		<textarea style="width: 100%; height: 200px; resize: none; spellcheck: false;" id="planContent"></textarea>
+		<textarea style="width: 100%; height: 200px; resize: none; spellcheck: false;" id="planContent"></textarea><label><b>0</b>/140</label>
 		<input type="button" value="保存" id="saveWorkPlan" /> <input type="button" value="返回" onclick="window.location.href='../work/workIndex.do'" />
 	</div>
 </div>
